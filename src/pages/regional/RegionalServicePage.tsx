@@ -353,9 +353,8 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
                   </h2>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  En {city.displayName}, los muebles tapizados se ven afectados por{' '}
-                  {city.localProblem}. Esto hace que la limpieza profesional sea especialmente
-                  importante para mantener un hogar saludable.
+                  {regionalContent?.whyChooseText ||
+                    `En ${city.displayName}, los muebles tapizados se ven afectados por ${city.localProblem}. Esto hace que la limpieza profesional sea especialmente importante para mantener un hogar saludable.`}
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Nuestros productos ecológicos están especialmente formulados para eliminar los
@@ -483,27 +482,130 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
         </div>
       </section>
 
-      {/* Zonas cercanas */}
-      <section className="py-16 bg-white">
+      {/* Beneficios detallados (del sitio antiguo) */}
+      {regionalContent?.benefits && regionalContent.benefits.length > 0 && (
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                {regionalContent.benefitsIntro || `Beneficios de la Limpieza Regular de ${service.title}`}
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                La limpieza regular de {service.title.toLowerCase()} ofrece múltiples beneficios para la salud y el mantenimiento de su hogar en {city.displayName}.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {regionalContent.benefits.map((benefit, index) => {
+                const [title, ...descParts] = benefit.split(':');
+                const description = descParts.join(':');
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="flex items-start gap-4 p-5 rounded-xl bg-gray-50 border border-gray-100"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{title.trim()}</h3>
+                      <p className="text-gray-600 text-sm">{description.trim()}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Áreas de Servicio con barrios específicos */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <MapPin className="w-10 h-10 text-emerald-600 mx-auto mb-4" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Áreas de Servicio en {city.displayName}
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              {regionalContent?.serviceAreasIntro ||
+                `Ofrecemos nuestros servicios de ${service.title.toLowerCase()} en las siguientes zonas de ${city.displayName} y alrededores.`}
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+            {(regionalContent?.neighborhoods || city.neighborhoods).map((barrio, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-200 text-sm text-gray-700"
+              >
+                <MapPin className="w-3.5 h-3.5 text-emerald-500" />
+                {barrio}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Servicios adicionales */}
+      {regionalContent?.additionalServicesText && (
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                Servicios de Limpieza de Tapicería en {city.displayName} y Alrededores
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {regionalContent.additionalServicesText}
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA final */}
+      <section className="py-16 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Clock className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              También servimos zonas cercanas a {city.displayName}
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              Contacte con Nosotros Hoy
             </h2>
-            <p className="text-gray-600 mb-8">
-              Si resides en una zona próxima a {city.displayName}, también podemos atenderte.
-              Consulta disponibilidad sin compromiso.
+            <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+              {regionalContent?.ctaText ||
+                `Contacte con nosotros hoy mismo para una consulta gratuita y descubra cómo podemos transformar sus muebles y su hogar con nuestros servicios de ${service.title.toLowerCase()} en ${city.displayName}.`}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href={`tel:${businessConfig.phone}`}>
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-xl"
+                  className="bg-white text-emerald-700 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold shadow-xl"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Llamar Ahora
@@ -511,7 +613,7 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
               </a>
               <a
                 href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(
-                  `Hola! Me interesa información sobre ${service.title.toLowerCase()}`
+                  `Hola! Me interesa información sobre ${service.title.toLowerCase()} en ${city.displayName}`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -519,7 +621,7 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 rounded-full px-8 py-6 text-lg font-semibold"
+                  className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 rounded-full px-8 py-6 text-lg font-semibold"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   WhatsApp
