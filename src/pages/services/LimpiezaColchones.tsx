@@ -18,6 +18,7 @@ import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { businessConfig } from '@/config/business';
 import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { CityServiceLinks } from '@/components/CityServiceLinks';
 import { seoConfig } from '@/config/seo';
 
 const beneficios = [
@@ -302,6 +303,20 @@ export default function LimpiezaColchones() {
         </div>
       </section>
 
+      <CityServiceLinks
+        title="Limpieza de Colchones por Ciudad"
+        subtitle="Servicio profesional a domicilio en tu zona. Selecciona tu ciudad para más información."
+        serviceColor="from-amber-500 to-orange-500"
+        cities={[
+          { name: 'Sabadell', href: '/mas-servicios/limpieza-de-colchones-sabadell' },
+          { name: 'Barcelona', href: '/mas-servicios/limpieza-de-colchones-barcelona' },
+          { name: 'Terrassa', href: '/mas-servicios/limpieza-de-colchones-terrassa' },
+          { name: 'Cerdanyola', href: '/mas-servicios/limpieza-de-colchones-cerdanyola' },
+          { name: 'Castellar', href: '/mas-servicios/limpieza-de-colchones-castellar-del-valles' },
+          { name: 'Sant Cugat', href: '/mas-servicios/limpieza-de-colchones-sant-cugat-del-valles' },
+          { name: 'Sant Quirze', href: '/mas-servicios/limpieza-de-colchones-sant-quirze-del-valles' },
+        ]}
+      />
       <Footer />
       <WhatsAppButton />
     </div>

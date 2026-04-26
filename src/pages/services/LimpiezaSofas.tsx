@@ -20,6 +20,7 @@ import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { businessConfig } from '@/config/business';
 import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { CityServiceLinks } from '@/components/CityServiceLinks';
 import { seoConfig } from '@/config/seo';
 
 const procesoLimpieza = [
@@ -535,6 +536,20 @@ export default function LimpiezaSofas() {
         </div>
       </section>
 
+      <CityServiceLinks
+        title="Limpieza de Sofás por Ciudad"
+        subtitle="Servicio profesional a domicilio en tu zona. Selecciona tu ciudad para más información."
+        serviceColor="from-blue-500 to-cyan-500"
+        cities={[
+          { name: 'Barcelona', href: '/servicios/limpieza-de-sofas-barcelona' },
+          { name: 'Sabadell', href: '/servicios/limpieza-de-sofa-sabadell' },
+          { name: 'Terrassa', href: '/servicios/limpieza-de-sofas-terrassa' },
+          { name: 'Sant Cugat', href: '/servicios/limpieza-de-sofas-sant-cugat' },
+          { name: 'Cerdanyola', href: '/servicios/limpieza-de-sofa-cerdanyola' },
+          { name: 'Barberà', href: '/servicios/limpieza-de-sofas-barbera-del-valles' },
+          { name: 'Sant Quirze', href: '/servicios/limpieza-de-sofas-en-sant-quirze' },
+        ]}
+      />
       <Footer />
       <WhatsAppButton />
     </div>

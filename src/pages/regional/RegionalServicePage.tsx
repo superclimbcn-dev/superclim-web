@@ -25,6 +25,7 @@ import { businessConfig } from '@/config/business';
 import { getCityBySlug } from '@/config/cities';
 import { getRegionalSEO } from '@/config/seo';
 import { regionalSofaUrls, regionalMattressUrls, regionalCarpetUrls } from '@/config/regionalUrls';
+import { getRegionalContent } from '@/config/regionalContent';
 import { useSchemaOrg } from '@/hooks/useSchemaOrg';
 
 interface RegionalServicePageProps {
@@ -124,6 +125,7 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
   useTranslation();
   const { getServiceSchema } = useSchemaOrg();
   const city = getCityBySlug(citySlug);
+  const regionalContent = getRegionalContent(serviceType, citySlug);
   const service = serviceData[serviceType];
   const ServiceIcon = service.icon;
 
@@ -218,9 +220,8 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl text-white/80 mb-8 leading-relaxed"
               >
-                Servicio profesional de {service.title.toLowerCase()} a domicilio en{' '}
-                {city.displayName} y alrededores. Más de {businessConfig.experienceYears} años de
-                experiencia. Productos ecológicos y resultados garantizados.
+                {regionalContent?.introText ||
+                  `Servicio profesional de ${service.title.toLowerCase()} a domicilio en ${city.displayName} y alrededores. Más de ${businessConfig.experienceYears} años de experiencia. Productos ecológicos y resultados garantizados.`}
               </motion.p>
 
               <motion.div
@@ -332,14 +333,12 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
                   </h2>
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  Superclim ofrece servicios profesionales de {service.title.toLowerCase()} en{' '}
-                  {city.displayName}, una ciudad con {city.population} habitantes ubicada a{' '}
-                  {city.distanceFromSabadell} de nuestra sede en Sabadell. Conocemos bien las
-                  particularidades de la zona, incluyendo {city.localReference}.
+                  {regionalContent?.secondaryText ||
+                    `Superclim ofrece servicios profesionales de ${service.title.toLowerCase()} en ${city.displayName}, una ciudad con ${city.population} habitantes ubicada a ${city.distanceFromSabadell} de nuestra sede en Sabadell. Conocemos bien las particularidades de la zona, incluyendo ${city.localReference}.`}
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Trabajamos en todos los barrios de {city.displayName}, incluyendo:{' '}
-                  {city.neighborhoods.join(', ')}. Nuestro equipo se desplaza con equipos
+                  {(regionalContent?.neighborhoods || city.neighborhoods).join(', ')}. Nuestro equipo se desplaza con equipos
                   profesionales para ofrecer el mejor servicio sin que tengas que mover tus muebles.
                 </p>
               </CardContent>

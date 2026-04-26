@@ -19,6 +19,7 @@ import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { businessConfig } from '@/config/business';
 import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { CityServiceLinks } from '@/components/CityServiceLinks';
 import { seoConfig } from '@/config/seo';
 
 const beneficios = [
@@ -289,6 +290,22 @@ export default function LimpiezaAlfombras() {
         </div>
       </section>
 
+      <CityServiceLinks
+        title="Limpieza de Alfombras por Ciudad"
+        subtitle="Servicio profesional a domicilio en tu zona. Selecciona tu ciudad para más información."
+        serviceColor="from-purple-500 to-pink-500"
+        cities={[
+          { name: 'Barcelona', href: '/limpieza-de-alfombras/barcelona' },
+          { name: 'Sabadell', href: '/limpieza-de-alfombras/sabadell' },
+          { name: 'Terrassa', href: '/limpieza-de-alfombras/terrassa' },
+          { name: 'Sant Cugat', href: '/limpieza-de-alfombras/sant-cugat' },
+          { name: 'Cerdanyola', href: '/limpieza-de-alfombras/cerdanyola' },
+          { name: 'Barberà', href: '/limpieza-de-alfombras/barbera-del-valles' },
+          { name: 'Sant Quirze', href: '/limpieza-de-alfombras/sant-quirze' },
+          { name: 'Castellar', href: '/limpieza-de-alfombras/castellar-del-valles' },
+          { name: 'Lavado BCN', href: '/limpieza-de-alfombras/lavado-de-alfombras-barcelona' },
+        ]}
+      />
       <Footer />
       <WhatsAppButton />
     </div>
