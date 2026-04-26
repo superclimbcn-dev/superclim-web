@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact",
+    "quote": "Free Quote"
+  },
+  "hero": {
+    "title": "Welcome to Superclim",
+    "subtitle": "Specialists in sofa and carpet cleaning and waterproofing in Barcelona.",
+    "ctaPrimary": "Get a Quote",
+    "ctaSecondary": "See Services",
+    "badge": "More than 16 years of experience",
+    "stats": {
+      "experience": "Years of experience",
+      "clients": "Satisfied customers",
+      "guarantee": "Written warranty"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional solutions to keep your furniture spotless",
+    "sofaCleaning": {
+      "title": "Sofa Cleaning",
+      "description": "Recover the look and comfort of your sofas with our professional cleaning. We remove stains, dirt and bad odours, returning freshness to your furniture.",
+      "features": [
+        "Deep Vacuuming",
+        "Difficult stain removal",
+        "Odour treatment",
+        "Safe and eco-friendly products"
+      ]
+    },
+    "carpetCleaning": {
+      "title": "Carpet Cleaning",
+      "description": "Professional carpet washing service with collection and delivery in Sabadell, Terrassa, Castellar del Vallès, Sant Cugat, Sant Quirze, Barcelona and surrounding areas.",
+      "features": [
+        "Urine removal",
+        "Deep cleaning and disinfection",
+        "Dust mite and allergen removal",
+        "Preservation of carpet quality"
+      ]
+    },
+    "mattressCleaning": {
+      "title": "Mattress Cleaning",
+      "description": "We carry out mattress cleaning services to eliminate dust mites, bacteria and allergens. We guarantee a healthy and restorative rest in your own home.",
+      "features": [
+        "Bad odour removal",
+        "Dust mite and bacteria removal",
+        "Deep disinfection",
+        "Healthier sleeping environment"
+      ]
+    },
+    "impermeabilization": {
+      "title": "Waterproofing",
+      "description": "Protect your furniture with professional sofa waterproofing and a 2-year written guarantee. Protection against stains, spills and daily wear.",
+      "features": [
+        "2 years written guarantee",
+        "Liquid protection",
+        "Prevention of permanent stains",
+        "Easier daily cleaning"
+      ]
+    },
+    "armchairCleaning": {
+      "title": "Armchair Cleaning",
+      "description": "We carry out complete cleaning of your armchairs, removing dirt, stains and odours to restore the appearance and comfort of your furniture.",
+      "features": [
+        "Deep upholstery cleaning",
+        "Stain removal",
+        "Anti-odour treatment",
+        "Restoration of original colour"
+      ]
+    },
+    "homeService": {
+      "title": "Home Service",
+      "description": "We offer a convenient sofa cleaning service directly in your home, using professional equipment and products to guarantee an effective and high-quality service.",
+      "features": [
+        "Without moving your furniture",
+        "Portable professional equipment",
+        "Certified eco-friendly products",
+        "Immediate results"
+      ]
+    }
+  },
+  "beforeAfter": {
+    "title": "Results that Speak",
+    "subtitle": "Drag to see the transformation of our work",
+    "before": "Before",
+    "after": "After"
+  },
+  "calculator": {
+    "title": "Calculate your Budget",
+    "subtitle": "Get an instant estimate in less than 30 seconds",
+    "serviceType": "Service Type",
+    "sofaType": "Sofa Type",
+    "fabricType": "Fabric Type",
+    "quantity": "Quantity",
+    "estimatedPrice": "Estimated Price",
+    "from": "From",
+    "getQuote": "Request Detailed Quote",
+    "options": {
+      "cleaning": "Cleaning",
+      "impermeabilization": "Waterproofing",
+      "both": "Cleaning + Waterproofing",
+      "small": "2-seater sofa",
+      "medium": "3-seater sofa",
+      "large": "4+ seater sofa",
+      "corner": "Corner sofa",
+      "fabric": "Normal fabric",
+      "delicate": "Delicate fabric",
+      "leather": "Leather"
+    }
+  },
+  "whyUs": {
+    "title": "Why Choose Superclim?",
+    "subtitle": "More than 16 years transforming homes in Barcelona",
+    "ecoProducts": {
+      "title": "Eco-friendly Products",
+      "description": "Biodegradable and safe for your family and pets"
+    },
+    "certified": {
+      "title": "Certified Technicians",
+      "description": "Highly trained team with professional certifications"
+    },
+    "guarantee": {
+      "title": "2-Year Guarantee",
+      "description": "On waterproofing with written contract"
+    },
+    "homeService": {
+      "title": "Home Service",
+      "description": "We work in your home without moving your furniture"
+    },
+    "results": {
+      "title": "Guaranteed Results",
+      "description": "100% satisfaction guaranteed or your money back"
+    },
+    "fast": {
+      "title": "Fast Service",
+      "description": "Response in less than 24 hours"
+    }
+  },
+  "testimonials": {
+    "title": "Our Reviews",
+    "subtitle": "More than 5,000 satisfied customers in Barcelona",
+    "reviews": {
+      "1": {
+        "text": "Very professional and a very good service. The sofa is impeccable.",
+        "author": "Laura RS",
+        "location": "Barcelona"
+      },
+      "2": {
+        "text": "I was starting to see the sofa very dirty and discoloured. I called them, they gave me all the information I needed and left the sofa like new. They are fast, clean and very professional. When I need it again I will contact them.",
+        "author": "Montse Antón",
+        "location": "Sabadell"
+      },
+      "3": {
+        "text": "It has been fantastic to meet them. Very kind, they explained everything and gave us all the necessary support for our new sofas. We will stay in touch. Highly highly recommended!",
+        "author": "Laura Bayes",
+        "location": "Terrassa"
+      }
+    }
+  },
+  "locations": {
+    "title": "Service Areas",
+    "subtitle": "We cover the entire Barcelona metropolitan area",
+    "cities": {
+      "sabadell": {
+        "name": "Sabadell",
+        "description": "Sofa cleaning specialists in Sabadell. We know the challenges of industrial dust and Ripoll river pollution."
+      },
+      "barcelona": {
+        "name": "Barcelona",
+        "description": "Professional service throughout Barcelona. Experts in small spaces and problems with old elevators."
+      },
+      "terrassa": {
+        "name": "Terrassa",
+        "description": "Specialised cleaning for homes with pets and difficult stains in Terrassa."
+      },
+      "cerdanyola": {
+        "name": "Cerdanyola del Vallès",
+        "description": "Premium service for large houses and villas in Cerdanyola."
+      },
+      "santCugat": {
+        "name": "Sant Cugat del Vallès",
+        "description": "White-glove service of the highest quality for Sant Cugat."
+      },
+      "rubi": {
+        "name": "Rubí",
+        "description": "Specialists in neighbourhood communities and coordinated services in Rubí."
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "We answer your questions",
+    "questions": {
+      "1": {
+        "q": "How long does the service take?",
+        "a": "A 3-seater sofa takes approximately 2-3 hours to clean completely. Waterproofing requires an additional 4-6 hours for drying."
+      },
+      "2": {
+        "q": "Are the products safe for children and pets?",
+        "a": "Yes, we use 100% ecological and biodegradable products, safe for the whole family including babies and pets."
+      },
+      "3": {
+        "q": "How long does the waterproofing guarantee last?",
+        "a": "We offer a 2-year written guarantee on our waterproofing service."
+      },
+      "4": {
+        "q": "Do you work weekends?",
+        "a": "Yes, we offer service from Monday to Saturday, including holidays for your convenience."
+      },
+      "5": {
+        "q": "Do I need to move the furniture?",
+        "a": "No, our team takes care of everything. We work directly in your home without you having to worry about anything."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Request your free quote without obligation",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "address": "Address",
+    "hours": "Opening Hours",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "service": "Service of interest",
+      "message": "Message",
+      "submit": "Send Request",
+      "success": "Message sent! We will contact you in less than 24 hours."
+    }
+  },
+  "footer": {
+    "description": "Leaders in professional sofa, carpet and mattress cleaning in Barcelona and surroundings.",
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "terms": "Terms and Conditions",
+    "rights": "All rights reserved"
+  },
+  "whatsapp": {
+    "button": "Chat on WhatsApp",
+    "message": "Hello! I would like to request information about your cleaning services."
+  }
+}

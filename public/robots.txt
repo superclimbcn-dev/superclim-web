@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /login/
+Disallow: /config/
+Disallow: /tmp/
+Disallow: /*?m=*
+Disallow: /*m=*
+Disallow: /*product=
+Disallow: /main.php?
+Disallow: /*p=
+Disallow: /index.php
+Disallow: /554276
+
+Sitemap: https://www.superclim.es/sitemap.xml

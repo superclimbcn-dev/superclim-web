@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Quiénes Somos",
+    "contact": "Contacto",
+    "quote": "Presupuesto Gratis"
+  },
+  "hero": {
+    "title": "Bienvenido a Superclim",
+    "subtitle": "Especialistas en limpieza y impermeabilización de sofás y alfombras en Barcelona.",
+    "ctaPrimary": "Solicitar Presupuesto",
+    "ctaSecondary": "Ver Servicios",
+    "badge": "Más de 16 años de experiencia",
+    "stats": {
+      "experience": "Años de experiencia",
+      "clients": "Clientes satisfechos",
+      "guarantee": "Garantía en escritura"
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones profesionales para mantener tus muebles impecables",
+    "sofaCleaning": {
+      "title": "Limpieza de Sofás",
+      "description": "Recupera el aspecto y la comodidad de tus sofás con nuestra limpieza profesional. Eliminamos manchas, suciedad y malos olores, devolviendo a tus muebles su frescura original.",
+      "features": [
+        "Aspirado Profundo",
+        "Eliminación de manchas difíciles",
+        "Tratamiento de olores",
+        "Productos seguros y ecológicos"
+      ]
+    },
+    "carpetCleaning": {
+      "title": "Limpieza de Alfombras",
+      "description": "Servicio profesional de lavado de alfombras con recogida y entrega en Sabadell, Terrassa, Castellar del Vallès, Sant Cugat, Sant Quirze, Barcelona y alrededores.",
+      "features": [
+        "Eliminación de orina",
+        "Limpieza profunda y desinfección",
+        "Eliminación de ácaros y alérgenos",
+        "Preservación de la calidad de las alfombras"
+      ]
+    },
+    "mattressCleaning": {
+      "title": "Limpieza de Colchones",
+      "description": "Realizamos servicios de limpieza de colchones para eliminar ácaros, bacterias y alérgenos. Garantizamos un descanso saludable y reparador en tu propio domicilio.",
+      "features": [
+        "Eliminación de malos olores",
+        "Eliminación de ácaros y bacterias",
+        "Desinfección profunda",
+        "Ambiente más saludable para dormir"
+      ]
+    },
+    "impermeabilization": {
+      "title": "Impermeabilización",
+      "description": "Protege tus muebles con impermeabilización de sofás profesional y con garantía de 2 años por escrito. Protección contra manchas, derrames y desgaste diario.",
+      "features": [
+        "2 años de garantía por escrito",
+        "Protección contra líquidos",
+        "Prevención de manchas permanentes",
+        "Facilita la limpieza diaria"
+      ]
+    },
+    "armchairCleaning": {
+      "title": "Limpieza de Sillones",
+      "description": "Realizamos la limpieza completa de tus sillones, eliminando suciedad, manchas y olores para restaurar la apariencia y el confort de tus muebles.",
+      "features": [
+        "Limpieza profunda de tapicería",
+        "Eliminación de manchas",
+        "Tratamiento antiolores",
+        "Restauración del color original"
+      ]
+    },
+    "homeService": {
+      "title": "Servicio a Domicilio",
+      "description": "Ofrecemos un servicio conveniente de limpieza de sofás directamente en tu hogar, utilizando equipos y productos profesionales para garantizar un servicio eficaz y de alta calidad.",
+      "features": [
+        "Sin mover tus muebles",
+        "Equipos profesionales portátiles",
+        "Productos ecológicos certificados",
+        "Resultados inmediatos"
+      ]
+    }
+  },
+  "beforeAfter": {
+    "title": "Resultados que Hablan",
+    "subtitle": "Arrastra para ver la transformación de nuestros trabajos",
+    "before": "Antes",
+    "after": "Después"
+  },
+  "calculator": {
+    "title": "Calcula tu Presupuesto",
+    "subtitle": "Obtén un estimado instantáneo en menos de 30 segundos",
+    "serviceType": "Tipo de Servicio",
+    "sofaType": "Tipo de Sofá",
+    "fabricType": "Tipo de Tela",
+    "quantity": "Cantidad",
+    "estimatedPrice": "Precio Estimado",
+    "from": "Desde",
+    "getQuote": "Solicitar Presupuesto Detallado",
+    "options": {
+      "cleaning": "Limpieza",
+      "impermeabilization": "Impermeabilización",
+      "both": "Limpieza + Impermeabilización",
+      "small": "Sofá 2 plazas",
+      "medium": "Sofá 3 plazas",
+      "large": "Sofá 4+ plazas",
+      "corner": "Sofá rinconera",
+      "fabric": "Tela normal",
+      "delicate": "Tela delicada",
+      "leather": "Piel/Cuero"
+    }
+  },
+  "whyUs": {
+    "title": "¿Por Qué Elegir Superclim?",
+    "subtitle": "Más de 16 años transformando hogares en Barcelona",
+    "ecoProducts": {
+      "title": "Productos Ecológicos",
+      "description": "Biodegradables y seguros para tu familia y mascotas"
+    },
+    "certified": {
+      "title": "Técnicos Certificados",
+      "description": "Equipo altamente capacitado con certificaciones profesionales"
+    },
+    "guarantee": {
+      "title": "Garantía de 2 Años",
+      "description": "En impermeabilización con contrato por escrito"
+    },
+    "homeService": {
+      "title": "Servicio a Domicilio",
+      "description": "Trabajamos en tu hogar sin mover tus muebles"
+    },
+    "results": {
+      "title": "Resultados Garantizados",
+      "description": "Satisfacción 100% garantizada o devolvemos tu dinero"
+    },
+    "fast": {
+      "title": "Servicio Rápido",
+      "description": "Respuesta en menos de 24 horas"
+    }
+  },
+  "testimonials": {
+    "title": "Nuestras Reseñas",
+    "subtitle": "Más de 5.000 clientes satisfechos en Barcelona",
+    "reviews": {
+      "1": {
+        "text": "Muy profesionales y un muy buen servicio realizado. El sofá ha quedado impecable.",
+        "author": "Laura RS",
+        "location": "Barcelona"
+      },
+      "2": {
+        "text": "Empezaba a ver el sofá muy sucio y con cambio de color. Les llamé, me dieron toda la información que necesitaba y me dejaron el sofá como nuevo. Son rápidos, limpios y muy profesionales. Cuando vuelva a necesitarlo volveré a contactar con ellos.",
+        "author": "Montse Antón",
+        "location": "Sabadell"
+      },
+      "3": {
+        "text": "Ha sido fantástico conocerles. Muy amables, nos lo han explicado todo y dado todo el soporte necesario para nuestros sofás nuevos. Seguiremos en contacto. Muy muy recomendables!",
+        "author": "Laura Bayes",
+        "location": "Terrassa"
+      }
+    }
+  },
+  "locations": {
+    "title": "Zonas de Servicio",
+    "subtitle": "Cobrimos toda el área metropolitana de Barcelona",
+    "cities": {
+      "sabadell": {
+        "name": "Sabadell",
+        "description": "Especialistas en limpieza de sofás en Sabadell. Conocemos los desafíos del polvo industrial y la contaminación del río Ripoll."
+      },
+      "barcelona": {
+        "name": "Barcelona",
+        "description": "Servicio profesional en toda Barcelona. Expertos en espacios pequeños y problemas con ascensores antiguos."
+      },
+      "terrassa": {
+        "name": "Terrassa",
+        "description": "Limpieza especializada para hogares con mascotas y manchas difíciles en Terrassa."
+      },
+      "cerdanyola": {
+        "name": "Cerdanyola del Vallès",
+        "description": "Servicio premium para casas grandes y chalets en Cerdanyola."
+      },
+      "santCugat": {
+        "name": "Sant Cugat del Vallès",
+        "description": "Servicio white-glove de máxima calidad para Sant Cugat."
+      },
+      "rubi": {
+        "name": "Rubí",
+        "description": "Especialistas en comunidades de vecinos y servicios coordinados en Rubí."
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Resolvemos tus dudas",
+    "questions": {
+      "1": {
+        "q": "¿Cuánto tiempo tarda el servicio?",
+        "a": "Un sofá de 3 plazas tarda aproximadamente 2-3 horas en limpiarse completamente. La impermeabilización requiere 4-6 horas adicionales para el secado."
+      },
+      "2": {
+        "q": "¿Los productos son seguros para niños y mascotas?",
+        "a": "Sí, utilizamos productos 100% ecológicos y biodegradables, seguros para toda la familia incluyendo bebés y mascotas."
+      },
+      "3": {
+        "q": "¿Cuánto dura la garantía de impermeabilización?",
+        "a": "Ofrecemos 2 años de garantía por escrito en nuestro servicio de impermeabilización."
+      },
+      "4": {
+        "q": "¿Trabajan fines de semana?",
+        "a": "Sí, ofrecemos servicio de lunes a sábado, incluyendo festivos para tu mayor comodidad."
+      },
+      "5": {
+        "q": "¿Necesito mover los muebles?",
+        "a": "No, nuestro equipo se encarga de todo. Trabajamos directamente en tu hogar sin que tengas que preocuparte por nada."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacta con Nosotros",
+    "subtitle": "Solicita tu presupuesto gratuito sin compromiso",
+    "phone": "Teléfono",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "address": "Dirección",
+    "hours": "Horario",
+    "form": {
+      "name": "Nombre",
+      "phone": "Teléfono",
+      "email": "Email",
+      "service": "Servicio de interés",
+      "message": "Mensaje",
+      "submit": "Enviar Solicitud",
+      "success": "¡Mensaje enviado! Te contactaremos en menos de 24 horas."
+    }
+  },
+  "footer": {
+    "description": "Líderes en limpieza profesional de sofás, alfombras y colchones en Barcelona y alrededores.",
+    "services": "Servicios",
+    "company": "Empresa",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "terms": "Términos y Condiciones",
+    "rights": "Todos los derechos reservados"
+  },
+  "whatsapp": {
+    "button": "Chatear por WhatsApp",
+    "message": "¡Hola! Me gustaría solicitar información sobre sus servicios de limpieza."
+  }
+}

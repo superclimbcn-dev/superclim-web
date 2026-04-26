@@ -1,0 +1,251 @@
+{
+  "nav": {
+    "home": "Inici",
+    "services": "Serveis",
+    "about": "Qui Som",
+    "contact": "Contacte",
+    "quote": "Pressupost Gratis"
+  },
+  "hero": {
+    "title": "Benvingut a Superclim",
+    "subtitle": "Especialistes en neteja i impermeabilització de sofàs i catifes a Barcelona.",
+    "ctaPrimary": "Sol·licitar Pressupost",
+    "ctaSecondary": "Veure Serveis",
+    "badge": "Més de 16 anys d'experiència",
+    "stats": {
+      "experience": "Anys d'experiència",
+      "clients": "Clients satisfets",
+      "guarantee": "Garantia per escrit"
+    }
+  },
+  "services": {
+    "title": "Els Nostres Serveis",
+    "subtitle": "Solucions professionals per mantenir els teus mobles impecables",
+    "sofaCleaning": {
+      "title": "Neteja de Sofàs",
+      "description": "Recupera l'aspecte i la comoditat dels teus sofàs amb la nostra neteja professional. Eliminem taques, brutícia i males olors, retornant als teus mobles la seva frescor original.",
+      "features": [
+        "Aspirat Profund",
+        "Eliminació de taques difícils",
+        "Tractament d'olors",
+        "Productes segurs i ecològics"
+      ]
+    },
+    "carpetCleaning": {
+      "title": "Neteja de Catifes",
+      "description": "Servei professional de rentat de catifes amb recollida i lliurament a Sabadell, Terrassa, Castellar del Vallès, Sant Cugat, Sant Quirze, Barcelona i voltants.",
+      "features": [
+        "Eliminació d'orina",
+        "Neteja profunda i desinfecció",
+        "Eliminació d'àcars i al·lèrgens",
+        "Preservació de la qualitat de les catifes"
+      ]
+    },
+    "mattressCleaning": {
+      "title": "Neteja de Matalassos",
+      "description": "Realitzem serveis de neteja de matalassos per eliminar àcars, bacteris i al·lèrgens. Garantim un descans saludable i reparador al teu propi domicili.",
+      "features": [
+        "Eliminació de males olors",
+        "Eliminació d'àcars i bacteris",
+        "Desinfecció profunda",
+        "Ambient més saludable per dormir"
+      ]
+    },
+    "impermeabilization": {
+      "title": "Impermeabilització",
+      "description": "Protegeix els teus mobles amb impermeabilització de sofàs professional i amb garantia de 2 anys per escrit. Protecció contra taques, abocaments i desgast diari.",
+      "features": [
+        "2 anys de Garantia per escrit",
+        "Protecció contra líquids",
+        "Prevenció de taques permanents",
+        "Facilita la neteja diària"
+      ]
+    },
+    "armchairCleaning": {
+      "title": "Neteja de Butaques",
+      "description": "Realitzem la neteja completa de les teves butaques, eliminant brutícia, taques i olors per restaurar l'aparença i el confort dels teus mobles.",
+      "features": [
+        "Neteja profunda de tapisseria",
+        "Eliminació de taques",
+        "Tractament antiolors",
+        "Restauració del color original"
+      ]
+    },
+    "homeService": {
+      "title": "Servei a Domicili",
+      "description": "Oferim un servei convenient de neteja de sofàs directament a casa teva, utilitzant equips i productes professionals per garantir un servei eficaç i d'alta qualitat.",
+      "features": [
+        "Sense moure els teus mobles",
+        "Equips professionals portàtils",
+        "Productes ecològics certificats",
+        "Resultats immediats"
+      ]
+    }
+  },
+  "beforeAfter": {
+    "title": "Resultats que Parlen",
+    "subtitle": "Arrossega per veure la transformació dels nostres treballs",
+    "before": "Abans",
+    "after": "Després"
+  },
+  "calculator": {
+    "title": "Calcula el teu Pressupost",
+    "subtitle": "Obtén un estimat instantani en menys de 30 segons",
+    "serviceType": "Tipus de Servei",
+    "sofaType": "Tipus de Sofà",
+    "fabricType": "Tipus de Tela",
+    "quantity": "Quantitat",
+    "estimatedPrice": "Preu Estimat",
+    "from": "Des de",
+    "getQuote": "Sol·licitar Pressupost Detallat",
+    "options": {
+      "cleaning": "Neteja",
+      "impermeabilization": "Impermeabilització",
+      "both": "Neteja + Impermeabilització",
+      "small": "Sofà 2 places",
+      "medium": "Sofà 3 places",
+      "large": "Sofà 4+ places",
+      "corner": "Sofà raconer",
+      "fabric": "Tela normal",
+      "delicate": "Tela delicada",
+      "leather": "Pell/Cuir"
+    }
+  },
+  "whyUs": {
+    "title": "Per Què Triar Superclim?",
+    "subtitle": "Més de 16 anys transformant llars a Barcelona",
+    "ecoProducts": {
+      "title": "Productes Ecològics",
+      "description": "Biodegradables i segurs per a la teva família i mascotes"
+    },
+    "certified": {
+      "title": "Tècnics Certificats",
+      "description": "Equip altament capacitat amb certificacions professionals"
+    },
+    "guarantee": {
+      "title": "Garantia de 2 Anys",
+      "description": "En impermeabilització amb contracte per escrit"
+    },
+    "homeService": {
+      "title": "Servei a Domicili",
+      "description": "Treballem a casa teva sense moure els teus mobles"
+    },
+    "results": {
+      "title": "Resultats Garantits",
+      "description": "Satisfacció 100% garantida o et retornem els diners"
+    },
+    "fast": {
+      "title": "Servei Ràpid",
+      "description": "Resposta en menys de 24 hores"
+    }
+  },
+  "testimonials": {
+    "title": "Les Nostres Ressenyes",
+    "subtitle": "Més de 5.000 clients satisfets a Barcelona",
+    "reviews": {
+      "1": {
+        "text": "Molt professionals i un molt bon servei realitzat. El sofà ha quedat impecable.",
+        "author": "Laura RS",
+        "location": "Barcelona"
+      },
+      "2": {
+        "text": "Començava a veure el sofà molt brut i amb canvi de color. Els vaig trucar, em van donar tota la informació que necessitava i em van deixar el sofà com nou. Són ràpids, nets i molt professionals. Quan torni a necessitar-ho tornaré a contactar amb ells.",
+        "author": "Montse Antón",
+        "location": "Sabadell"
+      },
+      "3": {
+        "text": "Ha estat fantàstic conèixer-los. Molt amables, ens ho han explicat tot i donat tot el suport necessari per als nostres sofàs nous. Seguirem en contacte. Molt molt recomanables!",
+        "author": "Laura Bayes",
+        "location": "Terrassa"
+      }
+    }
+  },
+  "locations": {
+    "title": "Zones de Servei",
+    "subtitle": "Cobrim tota l'àrea metropolitana de Barcelona",
+    "cities": {
+      "sabadell": {
+        "name": "Sabadell",
+        "description": "Especialistes en neteja de sofàs a Sabadell. Coneixem els reptes de la pols industrial i la contaminació del riu Ripoll."
+      },
+      "barcelona": {
+        "name": "Barcelona",
+        "description": "Servei professional a tota Barcelona. Experts en espais petits i problemes amb ascensors antics."
+      },
+      "terrassa": {
+        "name": "Terrassa",
+        "description": "Neteja especialitzada per a llars amb mascotes i taques difícils a Terrassa."
+      },
+      "cerdanyola": {
+        "name": "Cerdanyola del Vallès",
+        "description": "Servei premium per a cases grans i xalets a Cerdanyola."
+      },
+      "santCugat": {
+        "name": "Sant Cugat del Vallès",
+        "description": "Servei white-glove de màxima qualitat per a Sant Cugat."
+      },
+      "rubi": {
+        "name": "Rubí",
+        "description": "Especialistes en comunitats de veïns i serveis coordinats a Rubí."
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntes Freqüents",
+    "subtitle": "Resolem els teus dubtes",
+    "questions": {
+      "1": {
+        "q": "Quant de temps triga el servei?",
+        "a": "Un sofà de 3 places triga aproximadament 2-3 hores a netejar-se completament. La impermeabilització requereix 4-6 hores addicionals per l'assecat."
+      },
+      "2": {
+        "q": "Els productes són segurs per a nens i mascotes?",
+        "a": "Sí, utilitzem productes 100% ecològics i biodegradables, segurs per a tota la família incloent-hi nadons i mascotes."
+      },
+      "3": {
+        "q": "Quant dura la garantia d'impermeabilització?",
+        "a": "Oferim 2 anys de garantia per escrit en el nostre servei d'impermeabilització."
+      },
+      "4": {
+        "q": "Treballau caps de setmana?",
+        "a": "Sí, oferim servei de dilluns a dissabte, incloent-hi festius per a la teva major comoditat."
+      },
+      "5": {
+        "q": "Necessito moure els mobles?",
+        "a": "No, el nostre equip s'encarrega de tot. Treballem directament a casa teva sense que hagis de preocupar-te de res."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacta amb Nosaltres",
+    "subtitle": "Sol·licita el teu pressupost gratuït sense compromís",
+    "phone": "Telèfon",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "address": "Adreça",
+    "hours": "Horari",
+    "form": {
+      "name": "Nom",
+      "phone": "Telèfon",
+      "email": "Email",
+      "service": "Servei d'interès",
+      "message": "Missatge",
+      "submit": "Enviar Sol·licitud",
+      "success": "¡Missatge enviat! Et contactarem en menys de 24 hores."
+    }
+  },
+  "footer": {
+    "description": "Líders en neteja professional de sofàs, catifes i matalassos a Barcelona i voltants.",
+    "services": "Serveis",
+    "company": "Empresa",
+    "legal": "Legal",
+    "privacy": "Política de Privacitat",
+    "cookies": "Política de Cookies",
+    "terms": "Termes i Condicions",
+    "rights": "Tots els drets reservats"
+  },
+  "whatsapp": {
+    "button": "Xatejar per WhatsApp",
+    "message": "¡Hola! M'agradaria sol·licitar informació sobre els vostres serveis de neteja."
+  }
+}
