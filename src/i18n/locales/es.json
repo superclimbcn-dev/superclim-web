@@ -73,12 +73,22 @@
     },
     "homeService": {
       "title": "Servicio a Domicilio",
-      "description": "Ofrecemos un servicio conveniente de limpieza de sofás directamente en tu hogar, utilizando equipos y productos profesionales para garantizar un servicio eficaz y de alta calidad.",
+      "description": "Ofrecemos un servicio conveniente de limpieza de sofás directamente en tu hogar, utilizando equipos y productes profesionales para garantizar un servicio eficaz y de alta calidad.",
       "features": [
         "Sin mover tus muebles",
         "Equipos profesionales portátiles",
         "Productos ecológicos certificados",
         "Resultados inmediatos"
+      ]
+    },
+    "carpetRestoration": {
+      "title": "Restauración de Alfombras",
+      "description": "Restauración profesional de alfombras orientales y persas. Reparación de orillas, recuperación de color, tejido de agujeros y lavado especializado.",
+      "features": [
+        "Reparación de orillas y flecos",
+        "Restauración del color original",
+        "Tejido manual de agujeros",
+        "Lavado especializado por fibra"
       ]
     }
   },

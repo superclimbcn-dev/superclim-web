@@ -80,6 +80,16 @@
         "Productes ecològics certificats",
         "Resultats immediats"
       ]
+    },
+    "carpetRestoration": {
+      "title": "Restauració d'Alfombres",
+      "description": "Restauració professional d'alfombres orientals i perses. Reparació de vores, recuperació del color, teixit de forats i rentat especialitzat.",
+      "features": [
+        "Reparació de vores i serrells",
+        "Restauració del color original",
+        "Teixit manual de forats",
+        "Rentat especialitzat per fibra"
+      ]
     }
   },
   "beforeAfter": {

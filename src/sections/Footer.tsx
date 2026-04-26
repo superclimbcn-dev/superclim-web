@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Sofa, BedDouble, Shield, Phone, Mail, MapPin, Grid3X3 } from 'lucide-react';
+import { Sofa, BedDouble, Shield, Phone, Mail, MapPin, Grid3X3, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { businessConfig } from '@/config/business';
 
@@ -9,6 +9,7 @@ const services = [
   { key: 'carpetCleaning', icon: Grid3X3, href: businessConfig.urls.services.carpetCleaning },
   { key: 'mattressCleaning', icon: BedDouble, href: businessConfig.urls.services.mattressCleaning },
   { key: 'impermeabilization', icon: Shield, href: businessConfig.urls.services.impermeabilization },
+  { key: 'carpetRestoration', icon: Wrench, href: businessConfig.urls.services.carpetRestoration },
 ];
 
 const companyLinks = [

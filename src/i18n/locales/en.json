@@ -80,6 +80,16 @@
         "Certified eco-friendly products",
         "Immediate results"
       ]
+    },
+    "carpetRestoration": {
+      "title": "Carpet Restoration",
+      "description": "Professional restoration of oriental and Persian carpets. Edge repair, colour recovery, hole weaving and specialised washing.",
+      "features": [
+        "Edge and fringe repair",
+        "Restoration of original colour",
+        "Hand weaving of holes",
+        "Specialised fibre washing"
+      ]
     }
   },
   "beforeAfter": {

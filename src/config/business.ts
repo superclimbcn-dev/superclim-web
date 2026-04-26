@@ -40,6 +40,7 @@ export const businessConfig = {
       carpetCleaning: '/limpieza-de-alfombras/',
       mattressCleaning: '/mas-servicios/',
       impermeabilization: '/impermeabilizacion-de-sofas',
+      carpetRestoration: '/restauracion-de-alfombras',
       armchairCleaning: '/limpieza-de-sofas/limpieza-de-sillones',
       homeService: '/limpieza-de-sofas/limpieza-de-sofas-a-domicilio',
     },
