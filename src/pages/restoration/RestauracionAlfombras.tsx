@@ -219,14 +219,14 @@ export default function RestauracionAlfombras() {
                 caption: 'Reparación artesanal de orillas y flecos',
               },
               {
-                src: 'https://images.pexels.com/photos/6044198/pexels-photo-6044198.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
-                alt: 'Detalle de tejido de alfombra persa',
-                caption: 'Tejido tradicional a mano',
+                src: 'https://images.pexels.com/photos/11482124/pexels-photo-11482124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
+                alt: 'Manos de experto cosiendo flecos de alfombra oriental',
+                caption: 'Confección y costura de flecos a mano',
               },
               {
-                src: 'https://images.pexels.com/photos/3621234/pexels-photo-3621234.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
-                alt: 'Trabajador especializado en restauración de alfombras',
-                caption: 'Confección de flecos nuevos',
+                src: 'https://images.pexels.com/photos/12519510/pexels-photo-12519510.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
+                alt: 'Detalle de ribete y flecos de alfombra persa restaurada',
+                caption: 'Ribeteado y acabado de alfombras orientales',
               },
             ].map((img, index) => (
               <motion.div
