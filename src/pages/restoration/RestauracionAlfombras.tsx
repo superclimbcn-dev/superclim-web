@@ -28,8 +28,8 @@ const servicios = [
   },
   {
     icon: Award,
-    title: 'Restauración de Color',
-    description: 'Recuperamos los colores originales de alfombras desvaídas por el sol o el uso.',
+    title: 'Confección y Reparación de Flecos',
+    description: 'Renovamos, confeccionamos y reparamos flecos desgastados o dañados en alfombras orientales y persas.',
   },
   {
     icon: Star,
@@ -187,6 +187,66 @@ export default function RestauracionAlfombras() {
                     <p className="text-gray-600">{servicio.description}</p>
                   </CardContent>
                 </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Galería de trabajos */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Nuestro <span className="text-amber-600">Taller de Restauración</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Manos expertas devolviendo la vida a alfombras orientales. Desde la confección de flecos
+              hasta la reparación de orillas, cada pieza es tratada con el máximo cuidado artesanal.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                src: 'https://images.pexels.com/photos/14258629/pexels-photo-14258629.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
+                alt: 'Artesano restaurando alfombra oriental en taller',
+                caption: 'Reparación artesanal de orillas y flecos',
+              },
+              {
+                src: 'https://images.pexels.com/photos/6044198/pexels-photo-6044198.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
+                alt: 'Detalle de tejido de alfombra persa',
+                caption: 'Tejido tradicional a mano',
+              },
+              {
+                src: 'https://images.pexels.com/photos/3621234/pexels-photo-3621234.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
+                alt: 'Trabajador especializado en restauración de alfombras',
+                caption: 'Confección de flecos nuevos',
+              },
+            ].map((img, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="group relative overflow-hidden rounded-2xl shadow-lg"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white font-semibold text-lg">{img.caption}</p>
+                </div>
               </motion.div>
             ))}
           </div>
