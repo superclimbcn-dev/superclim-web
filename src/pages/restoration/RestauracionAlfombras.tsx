@@ -219,9 +219,9 @@ export default function RestauracionAlfombras() {
                 caption: 'Reparación artesanal de orillas y flecos',
               },
               {
-                src: 'https://images.pexels.com/photos/11482124/pexels-photo-11482124.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
-                alt: 'Manos de experto cosiendo flecos de alfombra oriental',
-                caption: 'Confección y costura de flecos a mano',
+                src: '/images/restaurando-flecos.jpg',
+                alt: 'Experto restaurando flecos de alfombra persa',
+                caption: 'Instalación y reparación de flecos orientales',
               },
               {
                 src: 'https://images.pexels.com/photos/12519510/pexels-photo-12519510.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=1',
