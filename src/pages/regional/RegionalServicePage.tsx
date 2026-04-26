@@ -26,6 +26,8 @@ import { getCityBySlug } from '@/config/cities';
 import { getRegionalSEO } from '@/config/seo';
 import { regionalSofaUrls, regionalMattressUrls, regionalCarpetUrls } from '@/config/regionalUrls';
 import { getRegionalContent } from '@/config/regionalContent';
+import { CityServiceLinks } from '@/components/CityServiceLinks';
+import { RegionalCTA } from '@/components/RegionalCTA';
 import { useSchemaOrg } from '@/hooks/useSchemaOrg';
 
 interface RegionalServicePageProps {
@@ -128,6 +130,49 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
   const regionalContent = getRegionalContent(serviceType, citySlug);
   const service = serviceData[serviceType];
   const ServiceIcon = service.icon;
+
+  // Listas de ciudades para interlinking
+  const sofaCities = [
+    { name: 'Barcelona', href: '/servicios/limpieza-de-sofas-barcelona' },
+    { name: 'Sabadell', href: '/servicios/limpieza-de-sofa-sabadell' },
+    { name: 'Terrassa', href: '/servicios/limpieza-de-sofas-terrassa' },
+    { name: 'Sant Cugat', href: '/servicios/limpieza-de-sofas-sant-cugat' },
+    { name: 'Cerdanyola', href: '/servicios/limpieza-de-sofa-cerdanyola' },
+    { name: 'Barberà', href: '/servicios/limpieza-de-sofas-barbera-del-valles' },
+    { name: 'Sant Quirze', href: '/servicios/limpieza-de-sofas-en-sant-quirze' },
+  ];
+
+  const mattressCities = [
+    { name: 'Sabadell', href: '/mas-servicios/limpieza-de-colchones-sabadell' },
+    { name: 'Barcelona', href: '/mas-servicios/limpieza-de-colchones-barcelona' },
+    { name: 'Terrassa', href: '/mas-servicios/limpieza-de-colchones-terrassa' },
+    { name: 'Cerdanyola', href: '/mas-servicios/limpieza-de-colchones-cerdanyola' },
+    { name: 'Castellar', href: '/mas-servicios/limpieza-de-colchones-castellar-del-valles' },
+    { name: 'Sant Cugat', href: '/mas-servicios/limpieza-de-colchones-sant-cugat-del-valles' },
+    { name: 'Sant Quirze', href: '/mas-servicios/limpieza-de-colchones-sant-quirze-del-valles' },
+  ];
+
+  const carpetCities = [
+    { name: 'Barcelona', href: '/limpieza-de-alfombras/barcelona' },
+    { name: 'Sabadell', href: '/limpieza-de-alfombras/sabadell' },
+    { name: 'Terrassa', href: '/limpieza-de-alfombras/terrassa' },
+    { name: 'Sant Cugat', href: '/limpieza-de-alfombras/sant-cugat' },
+    { name: 'Cerdanyola', href: '/limpieza-de-alfombras/cerdanyola' },
+    { name: 'Barberà', href: '/limpieza-de-alfombras/barbera-del-valles' },
+    { name: 'Sant Quirze', href: '/limpieza-de-alfombras/sant-quirze' },
+    { name: 'Castellar', href: '/limpieza-de-alfombras/castellar-del-valles' },
+    { name: 'Lavado BCN', href: '/limpieza-de-alfombras/lavado-de-alfombras-barcelona' },
+  ];
+
+  const cityLinks =
+    serviceType === 'sofas' ? sofaCities : serviceType === 'colchones' ? mattressCities : carpetCities;
+
+  const serviceColor =
+    serviceType === 'sofas'
+      ? 'from-blue-500 to-cyan-500'
+      : serviceType === 'colchones'
+      ? 'from-amber-500 to-orange-500'
+      : 'from-purple-500 to-pink-500';
 
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -366,6 +411,9 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
           </motion.div>
         </div>
       </section>
+
+      {/* CTA intermedio */}
+      <RegionalCTA cityName={city.displayName} serviceName={service.title.toLowerCase()} />
 
       {/* Proceso */}
       <section className="py-24 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 text-white">
@@ -631,6 +679,15 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
           </motion.div>
         </div>
       </section>
+
+      {/* Navegación a otras ciudades */}
+      <CityServiceLinks
+        title={`${service.title} en otras ciudades`}
+        subtitle={`¿No eres de ${city.displayName}? Selecciona tu ciudad y te atenderemos con el mismo servicio profesional.`}
+        serviceColor={serviceColor}
+        cities={cityLinks}
+        excludeCity={city.displayName}
+      />
 
       <Footer />
       <WhatsAppButton />

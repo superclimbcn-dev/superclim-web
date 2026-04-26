@@ -13,6 +13,7 @@ interface CityServiceLinksProps {
   subtitle?: string;
   cities: CityLink[];
   serviceColor?: string;
+  excludeCity?: string;
 }
 
 export function CityServiceLinks({
@@ -20,7 +21,11 @@ export function CityServiceLinks({
   subtitle,
   cities,
   serviceColor = 'from-emerald-500 to-teal-500',
+  excludeCity,
 }: CityServiceLinksProps) {
+  const filteredCities = excludeCity
+    ? cities.filter((c) => c.name.toLowerCase() !== excludeCity.toLowerCase())
+    : cities;
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +48,7 @@ export function CityServiceLinks({
         </motion.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {cities.map((city, index) => (
+          {filteredCities.map((city, index) => (
             <motion.div
               key={city.href}
               initial={{ opacity: 0, y: 15 }}
