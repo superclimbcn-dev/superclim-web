@@ -249,7 +249,7 @@ export default function Impermeabilizacion() {
                       {[1,2,3,4,5].map(i => (
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                       ))}
-                      <span className="text-white/80 ml-2">4.9/5 (156 reseñas)</span>
+                      <span className="text-white/80 ml-2">4.9/5 (35 reseñas)</span>
                     </div>
                   </div>
                 </CardContent>
@@ -272,7 +272,7 @@ export default function Impermeabilizacion() {
               Nuestro Servicio
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              ¿Por qué elegir nuestra <span className="text-emerald-600">impermeabilización</span>?
+              Impermeabilización de Sofás con Superclim
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Superclim ofrece un servicio especializado de impermeabilización de sofás, diseñado para proteger tus muebles contra derrames accidentales, manchas y el desgaste general del uso diario. Con más de 16 años de experiencia, garantizamos la máxima protección y durabilidad para tus sofás.
@@ -315,7 +315,7 @@ export default function Impermeabilizacion() {
               Ventajas Exclusivas
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Impermeabilización con <span className="text-emerald-400">2 años de garantía</span>
+              2 Años de Garantía por escrito!
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Nuestro tratamiento ofrece beneficios únicos que protegen tus muebles 
@@ -354,7 +354,7 @@ export default function Impermeabilizacion() {
               <Umbrella className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              ¿Listo para proteger tus muebles?
+              Impermeabilización de Sofás en Barcelona y Alrededores
             </h2>
             <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
               No esperes más para darle a tus sofás la protección que merecen. 

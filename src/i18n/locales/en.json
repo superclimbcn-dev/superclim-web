@@ -14,8 +14,9 @@
     "badge": "More than 16 years of experience",
     "stats": {
       "experience": "Years of experience",
-      "clients": "Satisfied customers",
-      "guarantee": "Written warranty"
+      "guarantee": "Written warranty",
+      "reviews": "Google reviews",
+      "clients": "Clients served"
     }
   },
   "services": {
@@ -94,7 +95,7 @@
   },
   "beforeAfter": {
     "title": "Results that Speak",
-    "subtitle": "Drag to see the transformation of our work",
+    "subtitle": "Compare real cleaning jobs before and after",
     "before": "Before",
     "after": "After"
   },
@@ -151,7 +152,7 @@
   },
   "testimonials": {
     "title": "Our Reviews",
-    "subtitle": "More than 5,000 satisfied customers in Barcelona",
+    "subtitle": "35 real verified Google reviews",
     "reviews": {
       "1": {
         "text": "Very professional and a very good service. The sofa is impeccable.",

@@ -1,31 +1,76 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 
-const beforeAfterImages = [
+type BeforeAfterItem = {
+  id: string;
+  before: string;
+  after: string;
+  title: string;
+  description: string;
+  desktopLayout?: 'split' | 'stacked';
+};
+
+const beforeAfterImages: BeforeAfterItem[] = [
   {
     id: '1',
-    before: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000',
-    after: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000&sat=-100&con=1.5',
+    before: '/images/before-after/img_1438.jpg',
+    after: '/images/before-after/img_1448.jpg',
     title: 'Limpieza de Sofá',
-    description: 'Eliminación de manchas profundas',
+    description: 'Recuperación del color y eliminación de manchas visibles',
+    desktopLayout: 'stacked',
   },
   {
     id: '2',
-    before: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000&sat=0.3&con=0.8',
-    after: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000',
-    title: 'Restauración Completa',
-    description: 'Recuperación del color original',
+    before: '/images/before-after/img_2870.jpg',
+    after: '/images/before-after/img_2875.jpg',
+    title: 'Limpieza de Sofá Chaise Longue',
+    description: 'Tratamiento profundo en zonas de uso diario',
   },
   {
     id: '3',
-    before: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000&blur=2&sat=0.5',
-    after: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000',
-    title: 'Limpieza de Alfombra',
-    description: 'Eliminación de ácaros y alérgenos',
+    before: '/images/before-after/img_0640.jpg',
+    after: '/images/before-after/img_0647.jpg',
+    title: 'Limpieza de Sillón',
+    description: 'Resultado real en tapicería clara',
   },
 ];
+
+function ResultImage({
+  src,
+  alt,
+  label,
+  tone,
+  desktopLayout = 'split',
+}: {
+  src: string;
+  alt: string;
+  label: string;
+  tone: 'before' | 'after';
+  desktopLayout?: 'split' | 'stacked';
+}) {
+  return (
+    <div
+      className={`relative overflow-hidden bg-gray-100 ${
+        desktopLayout === 'stacked' ? 'lg:h-32' : 'lg:h-64'
+      }`}
+    >
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="h-auto w-full lg:h-full lg:object-cover"
+      />
+      <div
+        className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold text-white shadow-lg ${
+          tone === 'before' ? 'bg-gray-900/75' : 'bg-emerald-600/90'
+        }`}
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
 
 export function BeforeAfter() {
   const { t } = useTranslation();
@@ -52,52 +97,39 @@ export function BeforeAfter() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 lg:grid-cols-3">
           {beforeAfterImages.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group"
+              className="overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <ReactCompareSlider
-                  itemOne={
-                    <ReactCompareSliderImage
-                      src={item.before}
-                      alt={`${t('beforeAfter.before')} - ${item.title}`}
-                      style={{ filter: 'grayscale(30%) brightness(0.8)' }}
-                    />
-                  }
-                  itemTwo={
-                    <ReactCompareSliderImage
-                      src={item.after}
-                      alt={`${t('beforeAfter.after')} - ${item.title}`}
-                    />
-                  }
-                  style={{ height: 300 }}
-                  className="w-full"
-                  handle={
-                    <div className="w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center border-4 border-emerald-500">
-                      <div className="flex gap-1">
-                        <div className="w-0 h-0 border-t-6 border-b-6 border-r-8 border-transparent border-r-emerald-500" />
-                        <div className="w-0 h-0 border-t-6 border-b-6 border-l-8 border-transparent border-l-emerald-500" />
-                      </div>
-                    </div>
-                  }
+              <div
+                className={
+                  item.desktopLayout === 'stacked'
+                    ? 'grid'
+                    : 'grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2'
+                }
+              >
+                <ResultImage
+                  src={item.before}
+                  alt={`${t('beforeAfter.before')} - ${item.title}`}
+                  label={t('beforeAfter.before')}
+                  tone="before"
+                  desktopLayout={item.desktopLayout}
                 />
-
-                {/* Labels */}
-                <div className="absolute top-4 left-4 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-lg">
-                  <span className="text-white text-sm font-medium">{t('beforeAfter.before')}</span>
-                </div>
-                <div className="absolute top-4 right-4 px-3 py-1.5 bg-emerald-600/90 backdrop-blur-sm rounded-lg">
-                  <span className="text-white text-sm font-medium">{t('beforeAfter.after')}</span>
-                </div>
+                <ResultImage
+                  src={item.after}
+                  alt={`${t('beforeAfter.after')} - ${item.title}`}
+                  label={t('beforeAfter.after')}
+                  tone="after"
+                  desktopLayout={item.desktopLayout}
+                />
               </div>
 
-              <div className="mt-4 text-center">
+              <div className="min-h-[104px] p-5 text-center">
                 <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </div>

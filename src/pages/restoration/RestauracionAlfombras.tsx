@@ -75,8 +75,7 @@ export default function RestauracionAlfombras() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
-                Restauración de{' '}
-                <span className="block text-amber-400">Alfombras Orientales</span>
+                Restauración de Alfombras
               </motion.h1>
 
               <motion.p
@@ -161,7 +160,7 @@ export default function RestauracionAlfombras() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Nuestros Servicios de <span className="text-amber-600">Restauración</span>
+              Restauración de Alfombras
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Cada alfombra es única y merece un tratamiento especializado. Nuestros expertos

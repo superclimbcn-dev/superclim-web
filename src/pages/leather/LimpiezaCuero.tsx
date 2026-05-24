@@ -75,8 +75,7 @@ export default function LimpiezaCuero() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
-                Limpieza de{' '}
-                <span className="block text-amber-400">Muebles en Cuero</span>
+                Limpieza y Hidratación de Sofás de Piel
               </motion.h1>
 
               <motion.p
@@ -160,7 +159,7 @@ export default function LimpiezaCuero() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Cuidado Profesional del <span className="text-amber-600">Cuero</span>
+              Limpieza y Hidratación de Sofás de Piel
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               El cuero natural requiere un tratamiento especializado. Nuestros productos y técnicas
