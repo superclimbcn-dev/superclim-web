@@ -10,6 +10,7 @@ import {
   Armchair,
   Home,
   ArrowRight,
+  Car,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -65,6 +66,13 @@ const services = [
     href: '/limpieza-de-sofas/limpieza-de-sofas-a-domicilio',
     color: 'from-rose-500 to-pink-500',
   },
+  {
+    icon: Car,
+    title: 'Limpieza de Tapicería de Coche',
+    description: 'Servicio en local para asientos, moquetas, alfombrillas, maletero e interior del vehículo en Sabadell.',
+    href: '/servicios/limpieza-tapiceria-coche-sabadell',
+    color: 'from-slate-600 to-cyan-600',
+  },
 ];
 
 export default function ServicesPage() {
@@ -94,7 +102,7 @@ export default function ServicesPage() {
             className="mt-8 max-w-3xl"
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Nuestros <span className="text-emerald-400">Servicios</span>
+              Servicios de Limpieza Profesional
             </h1>
             <p className="text-xl text-white/80 leading-relaxed">
               Descubre todos nuestros servicios de limpieza profesional de tapicerías. Desde sofás
@@ -124,7 +132,7 @@ export default function ServicesPage() {
                     >
                       <service.icon className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                    <h2 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h2>
                     <p className="text-gray-600 mb-6">{service.description}</p>
                     <Link
                       to={service.href}

@@ -7,7 +7,6 @@ import {
   MessageCircle,
   MapPin,
   Star,
-  Clock,
   Wind,
   Droplets,
   Sofa,
@@ -255,8 +254,7 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
-                {service.title}
-                <span className="block text-emerald-400">en {city.displayName}</span>
+                {seo.h1 || `${service.title} en ${city.displayName}`}
               </motion.h1>
 
               <motion.p

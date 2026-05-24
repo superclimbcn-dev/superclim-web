@@ -93,7 +93,7 @@ export default function QuienesSomos() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Nuestra <span className="text-emerald-600">Historia</span>
+                Limpieza y impermeabilizacion de sofas
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>

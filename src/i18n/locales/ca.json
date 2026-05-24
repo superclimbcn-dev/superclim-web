@@ -14,8 +14,9 @@
     "badge": "Més de 16 anys d'experiència",
     "stats": {
       "experience": "Anys d'experiència",
-      "clients": "Clients satisfets",
-      "guarantee": "Garantia per escrit"
+      "guarantee": "Garantia per escrit",
+      "reviews": "Ressenyes a Google",
+      "clients": "Clients atesos"
     }
   },
   "services": {
@@ -94,7 +95,7 @@
   },
   "beforeAfter": {
     "title": "Resultats que Parlen",
-    "subtitle": "Arrossega per veure la transformació dels nostres treballs",
+    "subtitle": "Compara treballs reals de neteja abans i després",
     "before": "Abans",
     "after": "Després"
   },
@@ -151,7 +152,7 @@
   },
   "testimonials": {
     "title": "Les Nostres Ressenyes",
-    "subtitle": "Més de 5.000 clients satisfets a Barcelona",
+    "subtitle": "35 ressenyes reals verificades a Google",
     "reviews": {
       "1": {
         "text": "Molt professionals i un molt bon servei realitzat. El sofà ha quedat impecable.",

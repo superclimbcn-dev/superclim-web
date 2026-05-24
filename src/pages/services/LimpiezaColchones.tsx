@@ -84,7 +84,7 @@ export default function LimpiezaColchones() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Limpieza de <span className="text-amber-300">Colchones</span>
+              Limpieza y desinfeccion de colchones en barcelona y alrededores
             </h1>
 
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
@@ -233,7 +233,7 @@ export default function LimpiezaColchones() {
               Tratamientos Especializados 2026
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Limpieza de colchones <span className="text-violet-600">antiácaros</span>
+              Más Servicios de Limpieza de Tapicerías en Barcelona
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               El colchón es el lugar donde pasamos un tercio de nuestra vida. Nuestro tratamiento

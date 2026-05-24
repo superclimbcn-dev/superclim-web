@@ -4,6 +4,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { businessConfig } from '@/config/business';
+import { Button } from '@/components/ui/button';
 
 const testimonials = [
   {
@@ -136,7 +138,9 @@ export function Testimonials() {
           </div>
           <div className="w-px h-16 bg-white/10 hidden sm:block" />
           <div className="text-center">
-            <div className="text-4xl font-bold text-emerald-400">156+</div>
+            <div className="text-4xl font-bold text-emerald-400">
+              {businessConfig.reviews.google.reviewCount}
+            </div>
             <div className="text-sm text-gray-400">Reseñas Verificadas</div>
           </div>
           <div className="w-px h-16 bg-white/10 hidden sm:block" />
@@ -145,6 +149,14 @@ export function Testimonials() {
             <div className="text-sm text-gray-400">Clientes Satisfechos</div>
           </div>
         </motion.div>
+
+        <div className="mt-10 flex justify-center">
+          <a href={businessConfig.social.googleReviews} target="_blank" rel="noopener noreferrer">
+            <Button className="rounded-full bg-white text-emerald-800 hover:bg-gray-100">
+              Ver reseñas en Google
+            </Button>
+          </a>
+        </div>
       </div>
     </section>
   );

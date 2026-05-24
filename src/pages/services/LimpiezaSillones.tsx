@@ -66,7 +66,7 @@ export default function LimpiezaSillones() {
             </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Limpieza de <span className="text-pink-300">Sillones</span>
+              Limpieza de Sillones en Sant quirze, Barbera del Valles y ciudades cercanas
             </h1>
 
             <p className="text-xl text-white/80 mb-8 leading-relaxed">
@@ -107,7 +107,7 @@ export default function LimpiezaSillones() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Nuestro <span className="text-rose-600">proceso</span>
+              Limpieza de Sillones en Barcelona, Sabadell, Terrassa, Sant Cugat
             </h2>
           </div>
 

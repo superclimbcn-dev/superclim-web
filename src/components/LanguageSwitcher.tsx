@@ -2,16 +2,33 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
+import type { ReactNode } from 'react';
 
 interface Language {
   code: string;
   name: string;
-  flag: string;
+  flag: ReactNode;
+}
+
+function CataloniaFlag() {
+  return (
+    <span
+      className="inline-block h-4 w-6 overflow-hidden rounded-[2px] border border-yellow-600/30 align-middle shadow-sm"
+      aria-hidden="true"
+    >
+      {Array.from({ length: 9 }).map((_, index) => (
+        <span
+          key={index}
+          className={`block h-[1.8px] ${index % 2 === 0 ? 'bg-yellow-300' : 'bg-red-600'}`}
+        />
+      ))}
+    </span>
+  );
 }
 
 const languages: Language[] = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'ca', name: 'Català', flag: '🏴󠁥󠁳󠁣󠁴󠁿' },
+  { code: 'ca', name: 'Català', flag: <CataloniaFlag /> },
   { code: 'en', name: 'English', flag: '🇬🇧' },
 ];
 
@@ -50,7 +67,9 @@ export function LanguageSwitcher() {
         <span className="text-sm font-medium text-white hidden sm:inline">
           {currentLanguage.name}
         </span>
-        <span className="text-lg">{currentLanguage.flag}</span>
+        <span className="flex h-5 w-6 items-center justify-center text-lg">
+          {currentLanguage.flag}
+        </span>
         <ChevronDown
           className={`w-4 h-4 text-white transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''
@@ -78,7 +97,9 @@ export function LanguageSwitcher() {
                 }`}
                 whileHover={{ x: 4 }}
               >
-                <span className="text-xl">{language.flag}</span>
+                <span className="flex h-5 w-6 items-center justify-center text-xl">
+                  {language.flag}
+                </span>
                 <span className="font-medium">{language.name}</span>
                 {i18n.language === language.code && (
                   <motion.div

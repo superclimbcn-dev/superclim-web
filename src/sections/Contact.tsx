@@ -67,6 +67,21 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const selectedService = services.find((service) => service.value === formData.service)?.label || 'No especificado';
+    const subject = `Solicitud de presupuesto - ${selectedService}`;
+    const body = [
+      'Nueva solicitud desde superclim.es',
+      '',
+      `Nombre: ${formData.name}`,
+      `Teléfono: ${formData.phone}`,
+      `Email: ${formData.email || 'No indicado'}`,
+      `Servicio: ${selectedService}`,
+      '',
+      'Mensaje:',
+      formData.message || 'No indicado',
+    ].join('\n');
+
+    window.location.href = `mailto:${businessConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);

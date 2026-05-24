@@ -14,8 +14,9 @@
     "badge": "Más de 16 años de experiencia",
     "stats": {
       "experience": "Años de experiencia",
-      "clients": "Clientes satisfechos",
-      "guarantee": "Garantía en escritura"
+      "guarantee": "Garantía en escritura",
+      "reviews": "Reseñas en Google",
+      "clients": "Clientes atendidos"
     }
   },
   "services": {
@@ -94,7 +95,7 @@
   },
   "beforeAfter": {
     "title": "Resultados que Hablan",
-    "subtitle": "Arrastra para ver la transformación de nuestros trabajos",
+    "subtitle": "Compara trabajos reales de limpieza antes y después",
     "before": "Antes",
     "after": "Después"
   },
@@ -151,7 +152,7 @@
   },
   "testimonials": {
     "title": "Nuestras Reseñas",
-    "subtitle": "Más de 5.000 clientes satisfechos en Barcelona",
+    "subtitle": "35 reseñas reales verificadas en Google",
     "reviews": {
       "1": {
         "text": "Muy profesionales y un muy buen servicio realizado. El sofá ha quedado impecable.",
