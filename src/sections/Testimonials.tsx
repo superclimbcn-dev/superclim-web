@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink, BadgeCheck } from 'lucide-react';
 import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { businessConfig } from '@/config/business';
@@ -12,19 +12,19 @@ const testimonials = [
     id: '1',
     key: '1',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150',
+    initials: 'LR',
   },
   {
     id: '2',
     key: '2',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
+    initials: 'MA',
   },
   {
     id: '3',
     key: '3',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150',
+    initials: 'LB',
   },
 ];
 
@@ -90,15 +90,16 @@ export function Testimonials() {
                     </p>
 
                     <div className="flex items-center gap-4">
-                      <img
-                        src={testimonial.image}
-                        alt={t(`testimonials.reviews.${testimonial.key}.author`)}
-                        className="w-12 h-12 rounded-full object-cover border-2 border-emerald-400"
-                      />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-emerald-400 bg-emerald-500 text-sm font-bold text-white">
+                        {testimonial.initials}
+                      </div>
                       <div>
-                        <p className="font-semibold text-white">
-                          {t(`testimonials.reviews.${testimonial.key}.author`)}
-                        </p>
+                        <div className="flex items-center gap-2">
+                          <p className="font-semibold text-white">
+                            {t(`testimonials.reviews.${testimonial.key}.author`)}
+                          </p>
+                          <BadgeCheck className="h-4 w-4 text-emerald-300" />
+                        </div>
                         <p className="text-sm text-gray-400">
                           {t(`testimonials.reviews.${testimonial.key}.location`)}
                         </p>
@@ -154,6 +155,7 @@ export function Testimonials() {
           <a href={businessConfig.social.googleReviews} target="_blank" rel="noopener noreferrer">
             <Button className="rounded-full bg-white text-emerald-800 hover:bg-gray-100">
               Ver reseñas en Google
+              <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
         </div>

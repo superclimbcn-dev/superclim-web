@@ -25,6 +25,7 @@ import { businessConfig } from '@/config/business';
 import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { seoConfig } from '@/config/seo';
+import { MediaGallery, type MediaGalleryItem } from '@/components/MediaGallery';
 
 const ventajas = [
   "100 % hipoalergénico",
@@ -75,6 +76,33 @@ const beneficios = [
     title: "Seguro para la Familia",
     description: "Hipoalergénico y seguro para niños y mascotas."
   }
+];
+
+const impermeabilizacionMedia: MediaGalleryItem[] = [
+  {
+    id: 'sofa-claro-antes',
+    type: 'image',
+    src: '/images/before-after/img_1438.jpg',
+    title: 'Preparación del tejido',
+    description: 'Revisión de zonas de uso antes del tratamiento protector',
+    alt: 'Sofá antes del tratamiento de limpieza y protección',
+  },
+  {
+    id: 'sofa-claro-despues',
+    type: 'image',
+    src: '/images/before-after/img_1448.jpg',
+    title: 'Resultado final',
+    description: 'Tapicería recuperada y lista para aplicar protección',
+    alt: 'Sofá después del tratamiento de limpieza y protección',
+  },
+  {
+    id: 'sillon-claro',
+    type: 'image',
+    src: '/images/before-after/img_0647.jpg',
+    title: 'Acabado en tapicería clara',
+    description: 'Resultado real en tejido claro tratado por Superclim',
+    alt: 'Sillón limpio después del servicio Superclim',
+  },
 ];
 
 export default function Impermeabilizacion() {
@@ -199,8 +227,8 @@ export default function Impermeabilizacion() {
                   <div className="text-sm text-white/60">Años experiencia</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-400">5K+</div>
-                  <div className="text-sm text-white/60">Clientes felices</div>
+                  <div className="text-3xl font-bold text-emerald-400">1200+</div>
+                  <div className="text-sm text-white/60">Clientes atendidos</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-emerald-400">2</div>
@@ -341,6 +369,14 @@ export default function Impermeabilizacion() {
           </div>
         </div>
       </section>
+
+      <MediaGallery
+        eyebrow="Galería"
+        title="Resultados y detalles del tratamiento"
+        subtitle="Imágenes reales de trabajos Superclim para mostrar el acabado del tejido antes de protegerlo contra manchas y líquidos."
+        items={impermeabilizacionMedia}
+        className="bg-gray-50"
+      />
 
       {/* CTA Final */}
       <section id="contacto" className="py-24 bg-gray-50">
