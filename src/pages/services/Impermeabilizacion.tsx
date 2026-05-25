@@ -366,16 +366,34 @@ export default function Impermeabilizacion() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-950 via-teal-900 to-cyan-900 p-8 shadow-xl"
+            className="overflow-hidden rounded-2xl bg-gray-950 shadow-xl ring-1 ring-gray-200"
           >
-            <div className="flex aspect-video items-center justify-center rounded-xl border border-white/15 bg-black/20 text-center text-white">
-              <div className="max-w-md px-6">
-                <Umbrella className="mx-auto mb-5 h-14 w-14 text-emerald-300" />
-                <h3 className="text-2xl font-bold">Video pendiente</h3>
-                <p className="mt-3 text-white/75">
-                  Cuando tengamos el video de impermeabilización, lo colocaremos aquí sin mezclarlo
-                  con imágenes de limpieza.
-                </p>
+            <div className="flex justify-center bg-black">
+              <video
+                src="/videos/impermeabilizacion-de-sofa.mp4"
+                poster="/images/impermeabilizacion/blindaje-sofa-barcelona.jpeg"
+                controls
+                preload="metadata"
+                playsInline
+                className="max-h-[76vh] w-auto max-w-full bg-black"
+              >
+                Tu navegador no soporta la reproducción de video.
+              </video>
+            </div>
+            <div className="bg-white p-5 sm:p-6">
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <Umbrella className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    Demostración del tratamiento protector
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    Video específico de impermeabilización de sofá: repelencia del tejido y
+                    protección frente a líquidos después de aplicar el producto.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
