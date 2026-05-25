@@ -25,7 +25,6 @@ import { businessConfig } from '@/config/business';
 import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { seoConfig } from '@/config/seo';
-import { MediaGallery, type MediaGalleryItem } from '@/components/MediaGallery';
 
 const ventajas = [
   "100 % hipoalergénico",
@@ -76,33 +75,6 @@ const beneficios = [
     title: "Seguro para la Familia",
     description: "Hipoalergénico y seguro para niños y mascotas."
   }
-];
-
-const impermeabilizacionMedia: MediaGalleryItem[] = [
-  {
-    id: 'sofa-claro-antes',
-    type: 'image',
-    src: '/images/before-after/img_1438.jpg',
-    title: 'Preparación del tejido',
-    description: 'Revisión de zonas de uso antes del tratamiento protector',
-    alt: 'Sofá antes del tratamiento de limpieza y protección',
-  },
-  {
-    id: 'sofa-claro-despues',
-    type: 'image',
-    src: '/images/before-after/img_1448.jpg',
-    title: 'Resultado final',
-    description: 'Tapicería recuperada y lista para aplicar protección',
-    alt: 'Sofá después del tratamiento de limpieza y protección',
-  },
-  {
-    id: 'sillon-claro',
-    type: 'image',
-    src: '/images/before-after/img_0647.jpg',
-    title: 'Acabado en tapicería clara',
-    description: 'Resultado real en tejido claro tratado por Superclim',
-    alt: 'Sillón limpio después del servicio Superclim',
-  },
 ];
 
 export default function Impermeabilizacion() {
@@ -370,13 +342,45 @@ export default function Impermeabilizacion() {
         </div>
       </section>
 
-      <MediaGallery
-        eyebrow="Galería"
-        title="Resultados y detalles del tratamiento"
-        subtitle="Imágenes reales de trabajos Superclim para mostrar el acabado del tejido antes de protegerlo contra manchas y líquidos."
-        items={impermeabilizacionMedia}
-        className="bg-gray-50"
-      />
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+              Video
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Prueba real de impermeabilización
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Aquí mostraremos únicamente contenido específico del tratamiento protector:
+              demostración con líquidos, repelencia del tejido y resultado después de aplicar el producto.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-950 via-teal-900 to-cyan-900 p-8 shadow-xl"
+          >
+            <div className="flex aspect-video items-center justify-center rounded-xl border border-white/15 bg-black/20 text-center text-white">
+              <div className="max-w-md px-6">
+                <Umbrella className="mx-auto mb-5 h-14 w-14 text-emerald-300" />
+                <h3 className="text-2xl font-bold">Video pendiente</h3>
+                <p className="mt-3 text-white/75">
+                  Cuando tengamos el video de impermeabilización, lo colocaremos aquí sin mezclarlo
+                  con imágenes de limpieza.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA Final */}
       <section id="contacto" className="py-24 bg-gray-50">
