@@ -48,7 +48,7 @@ export const businessConfig = {
 
   social: {
     googleMaps: 'https://maps.google.com/?q=Carrer+de+Alfons+Sala+57,+Sabadell',
-    googleReviews: 'https://www.google.com/search?q=Superclim+Servicios+Sabadell+rese%C3%B1as',
+    googleReviews: 'https://www.google.com/maps/search/?api=1&query=Superclim%20Servicios%20Carrer%20de%20Alfons%20Sala%2057%20Sabadell',
   },
 
   reviews: {
