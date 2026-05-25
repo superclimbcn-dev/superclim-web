@@ -46,33 +46,6 @@
     <meta name="business:contact_data:country_name" content="Spain">
     <meta name="business:contact_data:phone_number" content="+34 624 529 442">
     <meta name="business:contact_data:email" content="superclimbcn@gmail.com">
-    <script>
-      (function () {
-        var baseUrl = 'https://superclim.es';
-        var path = window.location.pathname || '/';
-        if (path.length > 1 && path.endsWith('.html')) {
-          path = path.slice(0, -5);
-        }
-        if (path.length > 1 && path.endsWith('/')) {
-          path = path.slice(0, -1);
-        }
-        var canonicalUrl = baseUrl + path;
-        var canonical = document.querySelector('link[rel="canonical"]');
-        if (!canonical) {
-          canonical = document.createElement('link');
-          canonical.setAttribute('rel', 'canonical');
-          document.head.appendChild(canonical);
-        }
-        canonical.setAttribute('href', canonicalUrl);
-        var ogUrl = document.querySelector('meta[property="og:url"]');
-        if (!ogUrl) {
-          ogUrl = document.createElement('meta');
-          ogUrl.setAttribute('property', 'og:url');
-          document.head.appendChild(ogUrl);
-        }
-        ogUrl.setAttribute('content', canonicalUrl);
-      })();
-    </script>
   </head>
   <body>
     <div id="root"></div>
