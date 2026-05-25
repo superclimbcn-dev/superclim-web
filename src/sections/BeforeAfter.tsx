@@ -52,14 +52,19 @@ function ResultImage({
   return (
     <div
       className={`relative overflow-hidden bg-gray-100 ${
-        desktopLayout === 'stacked' ? 'lg:h-32' : 'lg:h-64'
+        desktopLayout === 'stacked' ? '' : 'lg:h-64'
       }`}
     >
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="h-auto w-full lg:h-full lg:object-cover"
+        decoding="async"
+        className={
+          desktopLayout === 'stacked'
+            ? 'h-auto w-full'
+            : 'h-auto w-full lg:h-full lg:object-cover'
+        }
       />
       <div
         className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold text-white shadow-lg ${

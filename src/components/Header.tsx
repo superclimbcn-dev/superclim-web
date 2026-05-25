@@ -100,7 +100,7 @@ export function Header() {
 
             {/* Right Section */}
             <div className="flex items-center gap-4">
-              <LanguageSwitcher />
+              <LanguageSwitcher isScrolled={effectiveIsScrolled} />
               
               <a
                 href={`tel:${businessConfig.phone}`}
