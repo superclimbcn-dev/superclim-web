@@ -21,6 +21,9 @@ const routeConfigKeys = new Map([
   ['/restauracion-de-alfombras', 'restoration'],
   ['/limpieza-de-muebles-en-cuero', 'leatherCleaning'],
   ['/servicios/limpieza-tapiceria-coche-sabadell', 'carUpholsterySabadell'],
+  ['/politica-de-privacidad', 'privacyPolicy'],
+  ['/politica-de-cookies', 'cookiesPolicy'],
+  ['/terminos-y-condiciones', 'terms'],
 ]);
 
 function loadSeoModule() {

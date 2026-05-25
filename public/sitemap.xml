@@ -74,6 +74,24 @@
     <priority>0.64</priority>
   </url>
   <url>
+    <loc>https://superclim.es/politica-de-privacidad</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/politica-de-cookies</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/terminos-y-condiciones</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
     <loc>https://superclim.es/servicios/limpieza-tapiceria-coche-sabadell</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>

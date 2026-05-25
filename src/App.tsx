@@ -35,6 +35,7 @@ import QuienesSomos from '@/pages/about/QuienesSomos';
 import ContactPage from '@/pages/contact/ContactPage';
 import RestauracionAlfombras from '@/pages/restoration/RestauracionAlfombras';
 import LimpiezaCuero from '@/pages/leather/LimpiezaCuero';
+import LegalPage from '@/pages/legal/LegalPage';
 
 // Regional Pages
 import RegionalServicePage from '@/pages/regional/RegionalServicePage';
@@ -137,6 +138,9 @@ function App() {
         <Route path="/restauracion-de-alfombras.html" element={<RestauracionAlfombras />} />
         <Route path="/limpieza-de-muebles-en-cuero" element={<LimpiezaCuero />} />
         <Route path="/limpieza-de-muebles-en-cuero.html" element={<LimpiezaCuero />} />
+        <Route path="/politica-de-privacidad" element={<LegalPage type="privacy" />} />
+        <Route path="/politica-de-cookies" element={<LegalPage type="cookies" />} />
+        <Route path="/terminos-y-condiciones" element={<LegalPage type="terms" />} />
         
         {/* Regional pages - Sofás (URLs EXATAS do site antigo) */}
         {Object.entries(regionalSofaUrls).map(([citySlug, urlPath]) => (
