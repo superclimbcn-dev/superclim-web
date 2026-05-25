@@ -125,7 +125,8 @@ function App() {
         <Route path="/limpieza-de-colchones-cerdanyola.html" element={<RegionalServicePage serviceType="colchones" citySlug="cerdanyola" />} />
         <Route path="/limpieza-de-colchones-terrassa.html" element={<RegionalServicePage serviceType="colchones" citySlug="terrassa" />} />
         <Route path="/limpieza-de-colchones-sant-cugat-del-valles.html" element={<RegionalServicePage serviceType="colchones" citySlug="sant-cugat-del-valles" />} />
-        <Route path="/limpieza-de-sofas-en-sant-quirze.html" element={<RegionalServicePage serviceType="colchones" citySlug="sant-quirze-del-valles" />} />
+        <Route path="/limpieza-de-sofas-en-sant-quirze.html" element={<RegionalServicePage serviceType="sofas" citySlug="sant-quirze" />} />
+        <Route path="/limpieza-de-sofas-en-sant-quirze" element={<RegionalServicePage serviceType="sofas" citySlug="sant-quirze" />} />
         
         {/* Additional service pages */}
         <Route path="/quienes-somos" element={<QuienesSomos />} />
