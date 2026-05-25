@@ -28,7 +28,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   sofaCleaning: {
     title: 'Limpieza de Sofás, limpieza de alfombras, limpieza de colchon - SuperClim Servicios',
     description: 'Limpieza profesional de sofás en Barcelona. Eliminamos manchas, suciedad y malos olores, restaurando tus muebles a su estado original.',
-    canonical: `${baseUrl}/limpieza-de-sofas/`,
+    canonical: `${baseUrl}/limpieza-de-sofas`,
     ogTitle: 'Limpieza de Sofás Profesional | Superclim',
     ogDescription: 'Recupera el aspecto y la comodidad de tus sofás con nuestra limpieza profesional. Eliminamos manchas, suciedad y malos olores.',
     ogImage: defaultOgImage,
@@ -38,7 +38,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   carpetCleaning: {
     title: 'Lavado de Alfombras y Limpieza de Alfombras - SuperClim',
     description: 'Lavado profesional de alfombras en Barcelona, Sabadell y alrededores. Eliminamos manchas, suciedad y olores, con servicio de recogida y entrega y restauración de alfombras.',
-    canonical: `${baseUrl}/limpieza-de-alfombras/`,
+    canonical: `${baseUrl}/limpieza-de-alfombras`,
     ogTitle: 'Lavado de Alfombras Profesional | Superclim',
     ogDescription: 'Realizamos una limpieza profunda de alfombras, eliminando manchas, suciedad y olores. Servicio de recogida y entrega.',
     ogImage: defaultOgImage,
@@ -48,7 +48,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   mattressCleaning: {
     title: 'Limpieza de colchones barcelona, limpiar colchon, desinfeccion de colchon| Superclim',
     description: 'Descubre los servicios de limpieza de colchones y tapicerías de Superclim en Barcelona y alrededores. Ofrecemos limpieza profesional para eliminar ácaros, moho y manchas, garantizando un ambiente saludable y confortable.',
-    canonical: `${baseUrl}/mas-servicios/`,
+    canonical: `${baseUrl}/mas-servicios`,
     ogTitle: 'Limpieza de Colchones a Domicilio | Superclim',
     ogDescription: 'Limpieza y desinfección de colchones en Barcelona y alrededores. Elimina ácaros, bacterias y malos olores.',
     ogImage: defaultOgImage,
@@ -128,7 +128,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   services: {
     title: 'Limpieza de sofas, limpieza alfombras, limpieza de colchon, impermeabilizacion de sofas - barcelona y alrededores - Superclim Servícios',
     description: 'Descubre nuestros servicios de limpieza profesional en Barcelona: limpieza de sofás, lavado de alfombras, impermeabilización de muebles, y más. Calidad garantizada para un hogar más limpio y saludable.',
-    canonical: `${baseUrl}/servicios/`,
+    canonical: `${baseUrl}/servicios`,
     ogTitle: 'Todos los Servicios de Limpieza | Superclim',
     ogDescription: 'Limpieza profesional de sofás, alfombras, colchones y más. Servicio a domicilio en toda el área metropolitana de Barcelona.',
     ogImage: defaultOgImage,

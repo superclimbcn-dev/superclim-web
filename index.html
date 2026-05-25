@@ -53,8 +53,8 @@
         if (path.length > 1 && path.endsWith('.html')) {
           path = path.slice(0, -5);
         }
-        if (['/', '/servicios', '/limpieza-de-sofas', '/limpieza-de-alfombras', '/mas-servicios'].indexOf(path) !== -1 && !path.endsWith('/')) {
-          path += '/';
+        if (path.length > 1 && path.endsWith('/')) {
+          path = path.slice(0, -1);
         }
         var canonicalUrl = baseUrl + path;
         var canonical = document.querySelector('link[rel="canonical"]');
