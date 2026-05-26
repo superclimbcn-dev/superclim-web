@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { SchemaOrg } from '@/components/SchemaOrg';
 import { SEOMeta } from '@/components/SEOMeta';
+import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { seoConfig } from '@/config/seo';
 import { Hero } from '@/sections/Hero';
 import { Services } from '@/sections/Services';
@@ -190,6 +191,7 @@ function App() {
           />
         ))}
       </Routes>
+      <CookieConsentBanner />
     </BrowserRouter>
   );
 }

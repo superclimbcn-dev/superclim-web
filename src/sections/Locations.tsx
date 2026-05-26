@@ -4,6 +4,8 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { MapPin, ArrowRight, Navigation } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { businessConfig } from '@/config/business';
+import { Button } from '@/components/ui/button';
+import { useCookieConsent } from '@/hooks/useCookieConsent';
 
 const locations = [
   {
@@ -41,6 +43,7 @@ const locations = [
 export function Locations() {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { hasAcceptedCookies, setConsent } = useCookieConsent();
 
   return (
     <section className="py-24 lg:py-32 bg-gray-50">
@@ -118,13 +121,32 @@ export function Locations() {
         >
           <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-200">
             <div className="grid lg:grid-cols-[1.5fr_1fr]">
-              <iframe
-                title="Mapa de Superclim Servicios en Sabadell"
-                src={businessConfig.social.googleMapsEmbed}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-80 w-full border-0 lg:h-96"
-              />
+              {hasAcceptedCookies ? (
+                <iframe
+                  title="Mapa de Superclim Servicios en Sabadell"
+                  src={businessConfig.social.googleMapsEmbed}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-80 w-full border-0 lg:h-96"
+                />
+              ) : (
+                <div className="flex h-80 flex-col items-center justify-center bg-gray-100 px-6 text-center lg:h-96">
+                  <MapPin className="mb-4 h-10 w-10 text-emerald-600" />
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {t('cookieConsent.mapTitle')}
+                  </h3>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">
+                    {t('cookieConsent.mapDescription')}
+                  </p>
+                  <Button
+                    type="button"
+                    className="mt-5 bg-emerald-600 text-white hover:bg-emerald-700"
+                    onClick={() => setConsent('accepted')}
+                  >
+                    {t('cookieConsent.mapAccept')}
+                  </Button>
+                </div>
+              )}
               <div className="flex flex-col justify-center bg-gradient-to-br from-emerald-50 to-teal-50 p-8">
                 <MapPin className="mb-4 h-12 w-12 text-emerald-600" />
                 <h3 className="text-2xl font-bold text-gray-900">

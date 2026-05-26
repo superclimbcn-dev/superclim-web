@@ -258,5 +258,15 @@
   "whatsapp": {
     "button": "Chatear por WhatsApp",
     "message": "¡Hola! Me gustaría solicitar información sobre sus servicios de limpieza."
+  },
+  "cookieConsent": {
+    "title": "Configuración de cookies",
+    "description": "Utilizamos cookies técnicas necesarias y, solo con tu consentimiento, cargamos servicios externos como Google Maps que pueden usar cookies o tecnologías similares.",
+    "policyLink": "Ver política de cookies",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "mapTitle": "Mapa bloqueado por privacidad",
+    "mapDescription": "Para mostrar el mapa de Google necesitamos tu consentimiento para cargar servicios externos.",
+    "mapAccept": "Aceptar cookies y ver mapa"
   }
 }

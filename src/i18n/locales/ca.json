@@ -258,5 +258,15 @@
   "whatsapp": {
     "button": "Xatejar per WhatsApp",
     "message": "¡Hola! M'agradaria sol·licitar informació sobre els vostres serveis de neteja."
+  },
+  "cookieConsent": {
+    "title": "Configuració de cookies",
+    "description": "Utilitzem cookies tècniques necessàries i, només amb el teu consentiment, carreguem serveis externs com Google Maps que poden utilitzar cookies o tecnologies similars.",
+    "policyLink": "Veure política de cookies",
+    "accept": "Acceptar",
+    "reject": "Rebutjar",
+    "mapTitle": "Mapa bloquejat per privacitat",
+    "mapDescription": "Per mostrar el mapa de Google necessitem el teu consentiment per carregar serveis externs.",
+    "mapAccept": "Acceptar cookies i veure mapa"
   }
 }
