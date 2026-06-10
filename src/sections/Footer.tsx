@@ -164,16 +164,16 @@ export function Footer() {
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} Superclim. {t('footer.rights')}.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6">
-              <Link to="/politica-de-privacidad" className="text-gray-500 hover:text-emerald-400 transition-colors text-sm">
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-gray-500 hover:text-emerald-400 transition-colors text-sm">
                 {t('footer.privacy')}
-              </Link>
-              <Link to="/politica-de-cookies" className="text-gray-500 hover:text-emerald-400 transition-colors text-sm">
+              </a>
+              <a href="#" className="text-gray-500 hover:text-emerald-400 transition-colors text-sm">
                 {t('footer.cookies')}
-              </Link>
-              <Link to="/terminos-y-condiciones" className="text-gray-500 hover:text-emerald-400 transition-colors text-sm">
+              </a>
+              <a href="#" className="text-gray-500 hover:text-emerald-400 transition-colors text-sm">
                 {t('footer.terms')}
-              </Link>
+              </a>
             </div>
           </div>
         </motion.div>

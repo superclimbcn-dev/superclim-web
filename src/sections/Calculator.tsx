@@ -8,35 +8,21 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { businessConfig } from '@/config/business';
-import type { PriceCalculatorState } from '@/types';
 
-const serviceTypes: Array<{
-  key: PriceCalculatorState['serviceType'];
-  icon: typeof Sparkles;
-  color: string;
-  label: string;
-}> = [
+const serviceTypes = [
   { key: 'cleaning', icon: Sparkles, color: 'bg-emerald-500', label: 'Limpieza' },
   { key: 'impermeabilization', icon: Droplets, color: 'bg-blue-500', label: 'Impermeabilización' },
   { key: 'both', icon: Layers, color: 'bg-purple-500', label: 'Limpieza + Impermeabilización' },
 ];
 
-const sofaTypes: Array<{
-  key: PriceCalculatorState['sofaType'];
-  label: string;
-  price: number;
-}> = [
+const sofaTypes = [
   { key: 'small', label: '2 plazas', price: 60 },
   { key: 'medium', label: '3 plazas', price: 80 },
   { key: 'large', label: '4+ plazas', price: 100 },
   { key: 'corner', label: 'Rinconera', price: 120 },
 ];
 
-const fabricTypes: Array<{
-  key: PriceCalculatorState['fabricType'];
-  label: string;
-  multiplier: number;
-}> = [
+const fabricTypes = [
   { key: 'fabric', label: 'Tela normal', multiplier: 1 },
   { key: 'delicate', label: 'Tela delicada', multiplier: 1.2 },
   { key: 'leather', label: 'Piel/Cuero', multiplier: 1.3 },

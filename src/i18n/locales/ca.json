@@ -14,9 +14,8 @@
     "badge": "Més de 16 anys d'experiència",
     "stats": {
       "experience": "Anys d'experiència",
-      "guarantee": "Garantia per escrit",
-      "reviews": "Ressenyes a Google",
-      "clients": "Clients atesos"
+      "clients": "Clients satisfets",
+      "guarantee": "Garantia per escrit"
     }
   },
   "services": {
@@ -95,7 +94,7 @@
   },
   "beforeAfter": {
     "title": "Resultats que Parlen",
-    "subtitle": "Compara treballs reals de neteja abans i després",
+    "subtitle": "Arrossega per veure la transformació dels nostres treballs",
     "before": "Abans",
     "after": "Després"
   },
@@ -152,7 +151,7 @@
   },
   "testimonials": {
     "title": "Les Nostres Ressenyes",
-    "subtitle": "35 ressenyes reals verificades a Google",
+    "subtitle": "Més de 5.000 clients satisfets a Barcelona",
     "reviews": {
       "1": {
         "text": "Molt professionals i un molt bon servei realitzat. El sofà ha quedat impecable.",
@@ -258,15 +257,5 @@
   "whatsapp": {
     "button": "Xatejar per WhatsApp",
     "message": "¡Hola! M'agradaria sol·licitar informació sobre els vostres serveis de neteja."
-  },
-  "cookieConsent": {
-    "title": "Configuració de cookies",
-    "description": "Utilitzem cookies tècniques necessàries i, només amb el teu consentiment, carreguem serveis externs com Google Maps que poden utilitzar cookies o tecnologies similars.",
-    "policyLink": "Veure política de cookies",
-    "accept": "Acceptar",
-    "reject": "Rebutjar",
-    "mapTitle": "Mapa bloquejat per privacitat",
-    "mapDescription": "Per mostrar el mapa de Google necessitem el teu consentiment per carregar serveis externs.",
-    "mapAccept": "Acceptar cookies i veure mapa"
   }
 }

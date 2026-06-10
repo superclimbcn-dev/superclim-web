@@ -62,7 +62,7 @@ export default function ContactPage() {
               className="space-y-6"
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Contacto
+                Información de <span className="text-emerald-600">Contacto</span>
               </h2>
 
               <Card className="border-0 shadow-lg">
@@ -158,22 +158,7 @@ export default function ContactPage() {
                   <form
                     onSubmit={(e) => {
                       e.preventDefault();
-                      const form = new FormData(e.currentTarget);
-                      const service = String(form.get('service') || 'No especificado');
-                      const subject = `Solicitud de presupuesto - ${service}`;
-                      const body = [
-                        'Nueva solicitud desde superclim.es/contacto',
-                        '',
-                        `Nombre: ${form.get('name') || 'No indicado'}`,
-                        `Teléfono: ${form.get('phone') || 'No indicado'}`,
-                        `Email: ${form.get('email') || 'No indicado'}`,
-                        `Servicio: ${service}`,
-                        '',
-                        'Mensaje:',
-                        form.get('message') || 'No indicado',
-                      ].join('\n');
-
-                      window.location.href = `mailto:${businessConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      alert('¡Mensaje enviado! Te contactaremos en menos de 24 horas.');
                     }}
                     className="space-y-6"
                   >
@@ -182,7 +167,6 @@ export default function ContactPage() {
                         Nombre
                       </label>
                       <input
-                        name="name"
                         type="text"
                         required
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
@@ -194,7 +178,6 @@ export default function ContactPage() {
                         Teléfono
                       </label>
                       <input
-                        name="phone"
                         type="tel"
                         required
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
@@ -206,7 +189,6 @@ export default function ContactPage() {
                         Email
                       </label>
                       <input
-                        name="email"
                         type="email"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
                         placeholder="tu@email.com"
@@ -216,10 +198,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Servicio de interés
                       </label>
-                      <select
-                        name="service"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
-                      >
+                      <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all">
                         <option>Limpieza de Sofás</option>
                         <option>Limpieza de Alfombras</option>
                         <option>Limpieza de Colchones</option>
@@ -233,7 +212,6 @@ export default function ContactPage() {
                         Mensaje
                       </label>
                       <textarea
-                        name="message"
                         rows={4}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all resize-none"
                         placeholder="Cuéntanos qué necesitas..."

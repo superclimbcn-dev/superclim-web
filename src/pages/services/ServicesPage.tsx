@@ -132,7 +132,7 @@ export default function ServicesPage() {
                     >
                       <service.icon className="w-7 h-7 text-white" />
                     </div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h2>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
                     <p className="text-gray-600 mb-6">{service.description}</p>
                     <Link
                       to={service.href}

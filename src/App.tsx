@@ -7,7 +7,6 @@ import { Header } from '@/components/Header';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { SchemaOrg } from '@/components/SchemaOrg';
 import { SEOMeta } from '@/components/SEOMeta';
-import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { seoConfig } from '@/config/seo';
 import { Hero } from '@/sections/Hero';
 import { Services } from '@/sections/Services';
@@ -36,7 +35,6 @@ import QuienesSomos from '@/pages/about/QuienesSomos';
 import ContactPage from '@/pages/contact/ContactPage';
 import RestauracionAlfombras from '@/pages/restoration/RestauracionAlfombras';
 import LimpiezaCuero from '@/pages/leather/LimpiezaCuero';
-import LegalPage from '@/pages/legal/LegalPage';
 
 // Regional Pages
 import RegionalServicePage from '@/pages/regional/RegionalServicePage';
@@ -127,8 +125,7 @@ function App() {
         <Route path="/limpieza-de-colchones-cerdanyola.html" element={<RegionalServicePage serviceType="colchones" citySlug="cerdanyola" />} />
         <Route path="/limpieza-de-colchones-terrassa.html" element={<RegionalServicePage serviceType="colchones" citySlug="terrassa" />} />
         <Route path="/limpieza-de-colchones-sant-cugat-del-valles.html" element={<RegionalServicePage serviceType="colchones" citySlug="sant-cugat-del-valles" />} />
-        <Route path="/limpieza-de-sofas-en-sant-quirze.html" element={<RegionalServicePage serviceType="sofas" citySlug="sant-quirze" />} />
-        <Route path="/limpieza-de-sofas-en-sant-quirze" element={<RegionalServicePage serviceType="sofas" citySlug="sant-quirze" />} />
+        <Route path="/limpieza-de-sofas-en-sant-quirze.html" element={<RegionalServicePage serviceType="colchones" citySlug="sant-quirze-del-valles" />} />
         
         {/* Additional service pages */}
         <Route path="/quienes-somos" element={<QuienesSomos />} />
@@ -139,9 +136,6 @@ function App() {
         <Route path="/restauracion-de-alfombras.html" element={<RestauracionAlfombras />} />
         <Route path="/limpieza-de-muebles-en-cuero" element={<LimpiezaCuero />} />
         <Route path="/limpieza-de-muebles-en-cuero.html" element={<LimpiezaCuero />} />
-        <Route path="/politica-de-privacidad" element={<LegalPage type="privacy" />} />
-        <Route path="/politica-de-cookies" element={<LegalPage type="cookies" />} />
-        <Route path="/terminos-y-condiciones" element={<LegalPage type="terms" />} />
         
         {/* Regional pages - Sofás (URLs EXATAS do site antigo) */}
         {Object.entries(regionalSofaUrls).map(([citySlug, urlPath]) => (
@@ -191,7 +185,6 @@ function App() {
           />
         ))}
       </Routes>
-      <CookieConsentBanner />
     </BrowserRouter>
   );
 }

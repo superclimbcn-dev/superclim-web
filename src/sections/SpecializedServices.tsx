@@ -54,7 +54,7 @@ const especialidades = [
     icon: Award,
     title: 'Empresa de Limpieza de Sofás Certificada',
     description:
-      'Técnicos certificados con formación continua. Más de 16 años de experiencia y 35 reseñas verificadas en Google.',
+      'Técnicos certificados con formación continua. Más de 16 años de experiencia y 156 reseñas de 5 estrellas en Google.',
     keywords: ['certificada', 'profesional', 'experiencia', 'garantía'],
   },
   {

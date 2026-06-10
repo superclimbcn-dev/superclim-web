@@ -36,9 +36,9 @@ export const businessConfig = {
   urls: {
     base: 'https://superclim.es',
     services: {
-      sofaCleaning: '/limpieza-de-sofas',
-      carpetCleaning: '/limpieza-de-alfombras',
-      mattressCleaning: '/mas-servicios',
+      sofaCleaning: '/limpieza-de-sofas/',
+      carpetCleaning: '/limpieza-de-alfombras/',
+      mattressCleaning: '/mas-servicios/',
       impermeabilization: '/impermeabilizacion-de-sofas',
       carpetRestoration: '/restauracion-de-alfombras',
       armchairCleaning: '/limpieza-de-sofas/limpieza-de-sillones',
@@ -47,15 +47,13 @@ export const businessConfig = {
   },
 
   social: {
-    googleMaps: 'https://www.google.com/maps/search/?api=1&query=Superclim%20Servicios%20Sabadell',
-    googleMapsEmbed: 'https://www.google.com/maps?q=Superclim%20Servicios%20Sabadell&output=embed',
-    googleReviews: 'https://g.page/r/CS-9nm-_gOIyEAE/review',
+    googleMaps: 'https://maps.google.com/?q=Carrer+de+Alfons+Sala+57,+Sabadell',
   },
 
   reviews: {
     google: {
       ratingValue: 4.9,
-      reviewCount: 35,
+      reviewCount: 156,
     },
   },
 };

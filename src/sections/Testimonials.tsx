@@ -1,30 +1,28 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Star, Quote, ChevronLeft, ChevronRight, ExternalLink, BadgeCheck } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { businessConfig } from '@/config/business';
-import { Button } from '@/components/ui/button';
 
 const testimonials = [
   {
     id: '1',
     key: '1',
     rating: 5,
-    initials: 'LR',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150',
   },
   {
     id: '2',
     key: '2',
     rating: 5,
-    initials: 'MA',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150',
   },
   {
     id: '3',
     key: '3',
     rating: 5,
-    initials: 'LB',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150',
   },
 ];
 
@@ -90,16 +88,15 @@ export function Testimonials() {
                     </p>
 
                     <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-emerald-400 bg-emerald-500 text-sm font-bold text-white">
-                        {testimonial.initials}
-                      </div>
+                      <img
+                        src={testimonial.image}
+                        alt={t(`testimonials.reviews.${testimonial.key}.author`)}
+                        className="w-12 h-12 rounded-full object-cover border-2 border-emerald-400"
+                      />
                       <div>
-                        <div className="flex items-center gap-2">
-                          <p className="font-semibold text-white">
-                            {t(`testimonials.reviews.${testimonial.key}.author`)}
-                          </p>
-                          <BadgeCheck className="h-4 w-4 text-emerald-300" />
-                        </div>
+                        <p className="font-semibold text-white">
+                          {t(`testimonials.reviews.${testimonial.key}.author`)}
+                        </p>
                         <p className="text-sm text-gray-400">
                           {t(`testimonials.reviews.${testimonial.key}.location`)}
                         </p>
@@ -139,9 +136,7 @@ export function Testimonials() {
           </div>
           <div className="w-px h-16 bg-white/10 hidden sm:block" />
           <div className="text-center">
-            <div className="text-4xl font-bold text-emerald-400">
-              {businessConfig.reviews.google.reviewCount}
-            </div>
+            <div className="text-4xl font-bold text-emerald-400">156+</div>
             <div className="text-sm text-gray-400">Reseñas Verificadas</div>
           </div>
           <div className="w-px h-16 bg-white/10 hidden sm:block" />
@@ -150,15 +145,6 @@ export function Testimonials() {
             <div className="text-sm text-gray-400">Clientes Satisfechos</div>
           </div>
         </motion.div>
-
-        <div className="mt-10 flex justify-center">
-          <a href={businessConfig.social.googleReviews} target="_blank" rel="noopener noreferrer">
-            <Button className="rounded-full bg-white text-emerald-800 hover:bg-gray-100">
-              Ver reseñas en Google
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
-          </a>
-        </div>
       </div>
     </section>
   );

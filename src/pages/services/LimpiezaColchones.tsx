@@ -233,7 +233,7 @@ export default function LimpiezaColchones() {
               Tratamientos Especializados 2026
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Más Servicios de Limpieza de Tapicerías en Barcelona
+              Limpieza de colchones <span className="text-violet-600">antiácaros</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               El colchón es el lugar donde pasamos un tercio de nuestra vida. Nuestro tratamiento

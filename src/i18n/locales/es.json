@@ -14,9 +14,8 @@
     "badge": "Más de 16 años de experiencia",
     "stats": {
       "experience": "Años de experiencia",
-      "guarantee": "Garantía en escritura",
-      "reviews": "Reseñas en Google",
-      "clients": "Clientes atendidos"
+      "clients": "Clientes satisfechos",
+      "guarantee": "Garantía en escritura"
     }
   },
   "services": {
@@ -95,7 +94,7 @@
   },
   "beforeAfter": {
     "title": "Resultados que Hablan",
-    "subtitle": "Compara trabajos reales de limpieza antes y después",
+    "subtitle": "Arrastra para ver la transformación de nuestros trabajos",
     "before": "Antes",
     "after": "Después"
   },
@@ -152,7 +151,7 @@
   },
   "testimonials": {
     "title": "Nuestras Reseñas",
-    "subtitle": "35 reseñas reales verificadas en Google",
+    "subtitle": "Más de 5.000 clientes satisfechos en Barcelona",
     "reviews": {
       "1": {
         "text": "Muy profesionales y un muy buen servicio realizado. El sofá ha quedado impecable.",
@@ -258,15 +257,5 @@
   "whatsapp": {
     "button": "Chatear por WhatsApp",
     "message": "¡Hola! Me gustaría solicitar información sobre sus servicios de limpieza."
-  },
-  "cookieConsent": {
-    "title": "Configuración de cookies",
-    "description": "Utilizamos cookies técnicas necesarias y, solo con tu consentimiento, cargamos servicios externos como Google Maps que pueden usar cookies o tecnologías similares.",
-    "policyLink": "Ver política de cookies",
-    "accept": "Aceptar",
-    "reject": "Rechazar",
-    "mapTitle": "Mapa bloqueado por privacidad",
-    "mapDescription": "Para mostrar el mapa de Google necesitamos tu consentimiento para cargar servicios externos.",
-    "mapAccept": "Aceptar cookies y ver mapa"
   }
 }

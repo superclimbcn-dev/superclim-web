@@ -160,7 +160,7 @@ export default function RestauracionAlfombras() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Restauración de Alfombras
+              Nuestros Servicios de <span className="text-amber-600">Restauración</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Cada alfombra es única y merece un tratamiento especializado. Nuestros expertos

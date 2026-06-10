@@ -7,6 +7,7 @@ import {
   MessageCircle,
   MapPin,
   Star,
+  Clock,
   Wind,
   Droplets,
   Sofa,

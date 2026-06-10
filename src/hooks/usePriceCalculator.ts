@@ -9,16 +9,16 @@ const BASE_PRICES = {
     corner: 120,
   },
   impermeabilization: {
-    small: 150,
-    medium: 200,
-    large: 220,
-    corner: 240,
+    small: 80,
+    medium: 100,
+    large: 130,
+    corner: 150,
   },
   both: {
-    small: 250,
-    medium: 320,
-    large: 370,
-    corner: 390,
+    small: 120,
+    medium: 160,
+    large: 200,
+    corner: 240,
   },
 };
 
@@ -36,14 +36,13 @@ export function usePriceCalculator() {
     quantity: 1,
   });
 
-  const updateState = <K extends keyof PriceCalculatorState>(key: K, value: PriceCalculatorState[K]) => {
+  const updateState = (key: keyof PriceCalculatorState, value: any) => {
     setState((prev) => ({ ...prev, [key]: value }));
   };
 
   const estimatedPrice = useMemo(() => {
     const basePrice = BASE_PRICES[state.serviceType][state.sofaType];
-    const multiplier =
-      state.serviceType === 'cleaning' ? FABRIC_MULTIPLIERS[state.fabricType] : 1;
+    const multiplier = FABRIC_MULTIPLIERS[state.fabricType];
     return Math.round(basePrice * multiplier * state.quantity);
   }, [state]);
 

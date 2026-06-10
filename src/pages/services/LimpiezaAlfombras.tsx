@@ -125,7 +125,7 @@ export default function LimpiezaAlfombras() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Lavado de Alfombras
+              ¿Por Qué es Importante Limpiar las Alfombras <span className="text-purple-600">Regularmente</span>?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Las alfombras acumulan polvo, suciedad y otros contaminantes que pueden afectar la salud de los habitantes del hogar. Además, mantener las alfombras limpias prolonga su vida útil y mantiene su apariencia como nueva por más tiempo. Nuestro servicio de lavado de alfombras en Barcelona asegura que tus alfombras no solo luzcan impecables, sino que también contribuyan a un ambiente más saludable en tu hogar.

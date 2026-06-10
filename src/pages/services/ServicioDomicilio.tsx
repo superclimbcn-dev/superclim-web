@@ -127,7 +127,7 @@ export default function ServicioDomicilio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Limpieza de Sofás a Domicilio
+              Ventajas de nuestro <span className="text-indigo-600">servicio</span>
             </h2>
           </div>
 
@@ -161,7 +161,7 @@ export default function ServicioDomicilio() {
           <div className="text-center mb-12">
             <MapPin className="w-12 h-12 text-violet-300 mx-auto mb-4" />
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Métodos de Limpieza de sofás a domicilio
+              Zonas que <span className="text-violet-300">cubrimos</span>
             </h2>
             <p className="text-white/70 max-w-2xl mx-auto">
               Servicio de limpieza a domicilio en Barcelona y todas las ciudades cercanas.

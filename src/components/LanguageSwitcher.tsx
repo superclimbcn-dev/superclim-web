@@ -2,41 +2,20 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
-import type { ReactNode } from 'react';
 
 interface Language {
   code: string;
   name: string;
-  flag: ReactNode;
-}
-
-function CataloniaFlag() {
-  return (
-    <span
-      className="inline-block h-4 w-6 overflow-hidden rounded-[2px] border border-yellow-600/30 align-middle shadow-sm"
-      aria-hidden="true"
-    >
-      {Array.from({ length: 9 }).map((_, index) => (
-        <span
-          key={index}
-          className={`block h-[1.8px] ${index % 2 === 0 ? 'bg-yellow-300' : 'bg-red-600'}`}
-        />
-      ))}
-    </span>
-  );
+  flag: string;
 }
 
 const languages: Language[] = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'ca', name: 'Català', flag: <CataloniaFlag /> },
+  { code: 'ca', name: 'Català', flag: '🏴󠁥󠁳󠁣󠁴󠁿' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
 ];
 
-type LanguageSwitcherProps = {
-  isScrolled?: boolean;
-};
-
-export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) {
+export function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,23 +42,17 @@ export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) 
     <div ref={containerRef} className="relative">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors duration-200 ${
-          isScrolled
-            ? 'border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
-            : 'border-white/20 bg-white/10 text-white hover:bg-white/20'
-        }`}
+        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-200 border border-white/20"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <Globe className="w-4 h-4" />
-        <span className="text-sm font-medium hidden sm:inline">
+        <Globe className="w-4 h-4 text-white" />
+        <span className="text-sm font-medium text-white hidden sm:inline">
           {currentLanguage.name}
         </span>
-        <span className="flex h-5 w-6 items-center justify-center text-lg">
-          {currentLanguage.flag}
-        </span>
+        <span className="text-lg">{currentLanguage.flag}</span>
         <ChevronDown
-          className={`w-4 h-4 transition-transform duration-200 ${
+          className={`w-4 h-4 text-white transition-transform duration-200 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
@@ -105,9 +78,7 @@ export function LanguageSwitcher({ isScrolled = false }: LanguageSwitcherProps) 
                 }`}
                 whileHover={{ x: 4 }}
               >
-                <span className="flex h-5 w-6 items-center justify-center text-xl">
-                  {language.flag}
-                </span>
+                <span className="text-xl">{language.flag}</span>
                 <span className="font-medium">{language.name}</span>
                 {i18n.language === language.code && (
                   <motion.div
