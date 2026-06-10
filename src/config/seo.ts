@@ -147,7 +147,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   },
 };
 
-const regionalLegacySEO: Record<string, Pick<SEOPageConfig, 'title' | 'description' | 'h1'>> = {
+const regionalLegacySEO: Partial<Record<string, Pick<SEOPageConfig, 'title' | 'description' | 'h1'>>> = {
   '/servicios/limpieza-de-sofas-barcelona': {
     title: 'Limpieza de sofas en Barcelona, limpieza sofas',
     description: 'Contrata el mejor servicio de limpieza de sofás en Barcelona. Eliminamos manchas, ácaros y olores con técnicas avanzadas y productos ecológicos. ¡Deja tu sofá como nuevo!',
