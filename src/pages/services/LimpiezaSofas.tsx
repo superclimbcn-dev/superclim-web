@@ -110,7 +110,7 @@ export default function LimpiezaSofas() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
-                Limpieza sofas, limpieza de alfombras, limpieza de colchon en barcelona y alrededores
+                Limpieza de Sofás Profesional a Domicilio
               </motion.h1>
 
               <motion.p
@@ -208,7 +208,7 @@ export default function LimpiezaSofas() {
               Importancia de la Limpieza
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Limpieza de Sofás
+              ¿Por Qué es Importante Limpiar el Sofá <span className="text-blue-600">Regularmente</span>?
             </h2>
           </motion.div>
 

@@ -26,9 +26,9 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     keywords: 'limpieza de sofás, limpieza de alfombras, limpieza de colchones, impermeabilización de sofás, Barcelona, Sabadell, Terrassa',
   },
   sofaCleaning: {
-    title: 'Limpieza de Sofás, limpieza de alfombras, limpieza de colchon - SuperClim Servicios',
+    title: 'Limpieza de Sofás Profesional a Domicilio | Superclim',
     description: 'Limpieza profesional de sofás en Barcelona. Eliminamos manchas, suciedad y malos olores, restaurando tus muebles a su estado original.',
-    canonical: `${baseUrl}/limpieza-de-sofas`,
+    canonical: `${baseUrl}/limpieza-de-sofas/`,
     ogTitle: 'Limpieza de Sofás Profesional | Superclim',
     ogDescription: 'Recupera el aspecto y la comodidad de tus sofás con nuestra limpieza profesional. Eliminamos manchas, suciedad y malos olores.',
     ogImage: defaultOgImage,
@@ -38,7 +38,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   carpetCleaning: {
     title: 'Lavado de Alfombras y Limpieza de Alfombras - SuperClim',
     description: 'Lavado profesional de alfombras en Barcelona, Sabadell y alrededores. Eliminamos manchas, suciedad y olores, con servicio de recogida y entrega y restauración de alfombras.',
-    canonical: `${baseUrl}/limpieza-de-alfombras`,
+    canonical: `${baseUrl}/limpieza-de-alfombras/`,
     ogTitle: 'Lavado de Alfombras Profesional | Superclim',
     ogDescription: 'Realizamos una limpieza profunda de alfombras, eliminando manchas, suciedad y olores. Servicio de recogida y entrega.',
     ogImage: defaultOgImage,
@@ -48,7 +48,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
   mattressCleaning: {
     title: 'Limpieza de colchones barcelona, limpiar colchon, desinfeccion de colchon| Superclim',
     description: 'Descubre los servicios de limpieza de colchones y tapicerías de Superclim en Barcelona y alrededores. Ofrecemos limpieza profesional para eliminar ácaros, moho y manchas, garantizando un ambiente saludable y confortable.',
-    canonical: `${baseUrl}/mas-servicios`,
+    canonical: `${baseUrl}/mas-servicios/`,
     ogTitle: 'Limpieza de Colchones a Domicilio | Superclim',
     ogDescription: 'Limpieza y desinfección de colchones en Barcelona y alrededores. Elimina ácaros, bacterias y malos olores.',
     ogImage: defaultOgImage,
@@ -56,8 +56,8 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     keywords: 'limpieza de colchones, limpiar colchon, desinfeccion de colchon, limpieza colchones barcelona, eliminar ácaros colchón',
   },
   impermeabilization: {
-    title: 'Impermeabilización de Sofás en Barcelona y Alrededores, impermeabilizacion de sofas - Superclim Servicios',
-    description: 'Beneficios de impermeabilizar tu sofa con Superclim Servicios. Ofrecemos servicios de impermeabilización de sofás en Barcelona, con garatía de 2 años para la  protección  contra manchas y derrames. Más de 16 años de experiencia nos avalan como líderes en el cuidado de tapicerías. Solicita tu presupuesto gratuito.',
+    title: 'Impermeabilizar Sofá en Barcelona: Precio y Garantía — Superclim',
+    description: 'Impermeabilización de sofás en Barcelona. Garantía de 2 años por escrito contra manchas y derrames. Productos ecológicos. Más de 16 años de experiencia. Solicita presupuesto.',
     canonical: `${baseUrl}/impermeabilizacion-de-sofas`,
     ogTitle: 'Impermeabilización de Sofás con 2 Años de Garantía | Superclim',
     ogDescription: 'Protege tus sofás contra manchas y líquidos con garantía de 2 años por escrito. Productos ecológicos y seguros.',
@@ -86,7 +86,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     keywords: 'limpieza de sofás a domicilio, limpieza sofás casa, servicio a domicilio barcelona, limpieza tapicerías a domicilio',
   },
   about: {
-    title: 'Limpieza sofas, limpieza alfombras, limpieza colchon, impermeabilizacion de sofas - barcelona y alrededores - Superclim Servícios',
+    title: 'Quiénes Somos — Superclim, Empresa de Limpieza en Barcelona',
     description: 'Superclim es líder en limpieza profesional de sofás, alfombras y colchones en Barcelona. Con más de 16 años de experiencia, ofrecemos servicios personalizados para garantizar un hogar más saludable y fresco. Descubre más sobre nuestra misión, equipo y beneficios de la limpieza profesional.',
     canonical: `${baseUrl}/quienes-somos`,
     ogTitle: 'Quiénes Somos | Superclim Servicios',
@@ -126,7 +126,7 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     keywords: 'limpieza de muebles en cuero, limpieza sofás piel, cuidado cuero barcelona, limpieza leather',
   },
   services: {
-    title: 'Limpieza de sofas, limpieza alfombras, limpieza de colchon, impermeabilizacion de sofas - barcelona y alrededores - Superclim Servícios',
+    title: 'Servicios de Limpieza Profesional en Barcelona | Superclim',
     description: 'Descubre nuestros servicios de limpieza profesional en Barcelona: limpieza de sofás, lavado de alfombras, impermeabilización de muebles, y más. Calidad garantizada para un hogar más limpio y saludable.',
     canonical: `${baseUrl}/servicios`,
     ogTitle: 'Todos los Servicios de Limpieza | Superclim',
@@ -144,24 +144,6 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     ogImage: defaultOgImage,
     ogType: 'article',
     keywords: 'limpieza tapicería coche Sabadell, limpieza interior coche Sabadell, limpieza asientos coche, limpieza moquetas coche, Superclim',
-  },
-  privacyPolicy: {
-    title: 'Política de Privacidad | Superclim Servicios',
-    description: 'Información sobre el tratamiento de datos personales, finalidades, conservación y derechos de los usuarios de Superclim Servicios.',
-    canonical: `${baseUrl}/politica-de-privacidad`,
-    ogType: 'website',
-  },
-  cookiesPolicy: {
-    title: 'Política de Cookies | Superclim Servicios',
-    description: 'Información sobre el uso de cookies técnicas y servicios externos integrados en el sitio web de Superclim Servicios.',
-    canonical: `${baseUrl}/politica-de-cookies`,
-    ogType: 'website',
-  },
-  terms: {
-    title: 'Términos y Condiciones | Superclim Servicios',
-    description: 'Condiciones generales de uso del sitio web, presupuestos orientativos, garantías y contacto de Superclim Servicios.',
-    canonical: `${baseUrl}/terminos-y-condiciones`,
-    ogType: 'website',
   },
 };
 
@@ -312,16 +294,14 @@ export function getRegionalSEO(
   const legacy = regionalLegacySEO[exactPath];
 
   return {
-    title: legacy?.title ?? `${s.titlePrefix} en ${cityDisplay} — Superclim Servicios`,
-    description:
-      legacy?.description ??
-      `${s.descPrefix} en ${cityDisplay} y alrededores. Servicio a domicilio con productos ecológicos. Presupuesto gratuito sin compromiso. Llámanos al +34 624 529 442.`,
+    title: `${s.titlePrefix} en ${cityDisplay} — Superclim Servicios`,
+    description: `${s.descPrefix} en ${cityDisplay} y alrededores. Servicio a domicilio con productos ecológicos. Presupuesto gratuito sin compromiso. Llámanos al +34 624 529 442.`,
     canonical: `${baseUrl}${exactPath}`,
     ogTitle: `${s.titlePrefix} en ${cityDisplay} | Superclim`,
     ogDescription: `${s.descPrefix} a domicilio en ${cityDisplay}. Productos ecológicos y resultados garantizados.`,
     ogImage: defaultOgImage,
     ogType: 'article',
     keywords: `${s.keywords} ${cityDisplay}, limpieza tapicerías ${cityDisplay}, servicio a domicilio ${cityDisplay}`,
-    h1: legacy?.h1,
+    ...legacy,
   };
 }
