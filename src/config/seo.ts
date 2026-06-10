@@ -149,9 +149,9 @@ export const seoConfig: Record<string, SEOPageConfig> = {
 
 const regionalLegacySEO: Partial<Record<string, Pick<SEOPageConfig, 'title' | 'description' | 'h1'>>> = {
   '/servicios/limpieza-de-sofas-barcelona': {
-    title: 'Limpieza de sofas en Barcelona, limpieza sofas',
-    description: 'Contrata el mejor servicio de limpieza de sofás en Barcelona. Eliminamos manchas, ácaros y olores con técnicas avanzadas y productos ecológicos. ¡Deja tu sofá como nuevo!',
-    h1: 'Limpieza de Sofás en Barcelona y Alrededores',
+    title: 'Limpieza de Sofás a Domicilio en Barcelona | Superclim',
+    description: 'Limpieza de sofás a domicilio en Barcelona. Eliminamos manchas, ácaros y olores con productos ecológicos. Presupuesto gratuito sin compromiso. Resultados garantizados.',
+    h1: 'Limpieza de Sofás a Domicilio en Barcelona y Alrededores',
   },
   '/servicios/limpieza-de-sofa-sabadell': {
     title: 'Limpieza de Sofa Sabadell, limpieza sofa sabadell, limpieza Sofa',
