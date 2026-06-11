@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { SchemaOrg } from '@/components/SchemaOrg';
 import { SEOMeta } from '@/components/SEOMeta';
+import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { seoConfig } from '@/config/seo';
 import { Hero } from '@/sections/Hero';
 import { Services } from '@/sections/Services';
@@ -29,6 +30,9 @@ import LimpiezaSillones from '@/pages/services/LimpiezaSillones';
 import ServicioDomicilio from '@/pages/services/ServicioDomicilio';
 import ServicesPage from '@/pages/services/ServicesPage';
 import LimpiezaTapiceriaCocheSabadell from '@/pages/services/LimpiezaTapiceriaCocheSabadell';
+
+// Legal Pages
+import LegalPage from '@/pages/legal/LegalPage';
 
 // Additional Pages
 import QuienesSomos from '@/pages/about/QuienesSomos';
@@ -136,7 +140,12 @@ function App() {
         <Route path="/restauracion-de-alfombras.html" element={<RestauracionAlfombras />} />
         <Route path="/limpieza-de-muebles-en-cuero" element={<LimpiezaCuero />} />
         <Route path="/limpieza-de-muebles-en-cuero.html" element={<LimpiezaCuero />} />
-        
+
+        {/* Legal pages */}
+        <Route path="/politica-de-privacidad" element={<LegalPage type="privacy" />} />
+        <Route path="/politica-de-cookies" element={<LegalPage type="cookies" />} />
+        <Route path="/terminos-y-condiciones" element={<LegalPage type="terms" />} />
+
         {/* Regional pages - Sofás (URLs EXATAS do site antigo) */}
         {Object.entries(regionalSofaUrls).map(([citySlug, urlPath]) => (
           <Route
@@ -185,6 +194,7 @@ function App() {
           />
         ))}
       </Routes>
+      <CookieConsentBanner />
     </BrowserRouter>
   );
 }
