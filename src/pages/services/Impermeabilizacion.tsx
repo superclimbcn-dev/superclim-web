@@ -272,7 +272,7 @@ export default function Impermeabilizacion() {
               Nuestro Servicio
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              ¿Por qué elegir nuestra <span className="text-emerald-600">impermeabilización</span>?
+              Impermeabilización de Sofás con Superclim
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Superclim ofrece un servicio especializado de impermeabilización de sofás, diseñado para proteger tus muebles contra derrames accidentales, manchas y el desgaste general del uso diario. Con más de 16 años de experiencia, garantizamos la máxima protección y durabilidad para tus sofás.
@@ -342,6 +342,64 @@ export default function Impermeabilizacion() {
         </div>
       </section>
 
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+              Video
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Prueba real de impermeabilización
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Aquí mostraremos únicamente contenido específico del tratamiento protector:
+              demostración con líquidos, repelencia del tejido y resultado después de aplicar el producto.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-2xl bg-gray-950 shadow-xl ring-1 ring-gray-200"
+          >
+            <div className="flex justify-center bg-black">
+              <video
+                src="/videos/impermeabilizacion-de-sofa.mp4"
+                poster="/images/impermeabilizacion/blindaje-sofa-barcelona.jpeg"
+                controls
+                preload="metadata"
+                playsInline
+                className="max-h-[76vh] w-auto max-w-full bg-black"
+              >
+                Tu navegador no soporta la reproducción de video.
+              </video>
+            </div>
+            <div className="bg-white p-5 sm:p-6">
+              <div className="flex items-start gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <Umbrella className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    Demostración del tratamiento protector
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    Video específico de impermeabilización de sofá: repelencia del tejido y
+                    protección frente a líquidos después de aplicar el producto.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section id="contacto" className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -354,7 +412,7 @@ export default function Impermeabilizacion() {
               <Umbrella className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              ¿Listo para proteger tus muebles?
+              Impermeabilización de Sofás en Barcelona y Alrededores
             </h2>
             <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
               No esperes más para darle a tus sofás la protección que merecen. 
