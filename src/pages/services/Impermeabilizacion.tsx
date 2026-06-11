@@ -249,7 +249,7 @@ export default function Impermeabilizacion() {
                       {[1,2,3,4,5].map(i => (
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                       ))}
-                      <span className="text-white/80 ml-2">4.9/5 (156 reseñas)</span>
+                      <span className="text-white/80 ml-2">4.9/5 (36 reseñas)</span>
                     </div>
                   </div>
                 </CardContent>

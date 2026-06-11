@@ -16,7 +16,7 @@ export function Hero() {
 
   const stats = [
     { icon: Clock, value: `${businessConfig.experienceYears}+`, label: t('hero.stats.experience') },
-    { icon: Star, value: '5,000+', label: t('hero.stats.clients') },
+    { icon: Star, value: '1200+', label: t('hero.stats.clients') },
     { icon: Shield, value: '2', label: t('hero.stats.guarantee') },
   ];
 
@@ -54,7 +54,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
             >
-              {t('hero.title')}
+              {t('hero.title')}{" "}
               <span className="block text-emerald-400 mt-2">Barcelona</span>
             </motion.h1>
 

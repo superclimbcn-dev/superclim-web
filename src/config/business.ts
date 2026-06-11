@@ -53,7 +53,7 @@ export const businessConfig = {
   reviews: {
     google: {
       ratingValue: 4.9,
-      reviewCount: 156,
+      reviewCount: 36,
     },
   },
 };
