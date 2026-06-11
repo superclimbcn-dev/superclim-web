@@ -199,8 +199,8 @@ export default function Impermeabilizacion() {
                   <div className="text-sm text-white/60">Años experiencia</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-emerald-400">5K+</div>
-                  <div className="text-sm text-white/60">Clientes felices</div>
+                  <div className="text-3xl font-bold text-emerald-400">1200+</div>
+                  <div className="text-sm text-white/60">Clientes atendidos</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-emerald-400">2</div>

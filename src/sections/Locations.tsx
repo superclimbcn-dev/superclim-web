@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { MapPin, ArrowRight, Navigation } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { businessConfig } from '@/config/business';
+import { Button } from '@/components/ui/button';
+import { useCookieConsent } from '@/hooks/useCookieConsent';
 
 const locations = [
   {
@@ -40,6 +43,7 @@ const locations = [
 export function Locations() {
   const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { hasAcceptedCookies, setConsent } = useCookieConsent();
 
   return (
     <section className="py-24 lg:py-32 bg-gray-50">
@@ -108,30 +112,61 @@ export function Locations() {
           ))}
         </div>
 
-        {/* Map Placeholder */}
+        {/* Service Area Map */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12"
         >
-          <div className="relative rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-emerald-100 to-teal-100 h-80 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
-              <p className="text-gray-600 font-medium">
-                Área de servicio: Barcelona y alrededores
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Sabadell, Barcelona, Terrassa, Cerdanyola, Sant Cugat, Rubí
-              </p>
+          <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-200">
+            <div className="grid lg:grid-cols-[1.5fr_1fr]">
+              {hasAcceptedCookies ? (
+                <iframe
+                  title="Mapa de Superclim Servicios en Sabadell"
+                  src={businessConfig.social.googleMapsEmbed}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-80 w-full border-0 lg:h-96"
+                />
+              ) : (
+                <div className="flex h-80 flex-col items-center justify-center bg-gray-100 px-6 text-center lg:h-96">
+                  <MapPin className="mb-4 h-10 w-10 text-emerald-600" />
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {t('cookieConsent.mapTitle')}
+                  </h3>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">
+                    {t('cookieConsent.mapDescription')}
+                  </p>
+                  <Button
+                    type="button"
+                    className="mt-5 bg-emerald-600 text-white hover:bg-emerald-700"
+                    onClick={() => setConsent('accepted')}
+                  >
+                    {t('cookieConsent.mapAccept')}
+                  </Button>
+                </div>
+              )}
+              <div className="flex flex-col justify-center bg-gradient-to-br from-emerald-50 to-teal-50 p-8">
+                <MapPin className="mb-4 h-12 w-12 text-emerald-600" />
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Área de servicio: Barcelona y alrededores
+                </h3>
+                <p className="mt-3 text-gray-600">
+                  Sabadell, Barcelona, Terrassa, Cerdanyola, Sant Cugat, Rubí y ciudades cercanas.
+                </p>
+                <a
+                  href={businessConfig.social.googleMaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-700"
+                >
+                  <Navigation className="h-4 w-4" />
+                  Abrir en Google Maps
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-            {/* Decorative dots */}
-            <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
-            <div className="absolute top-1/3 left-1/2 w-3 h-3 bg-emerald-500 rounded-full animate-pulse delay-100" />
-            <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-pulse delay-200" />
-            <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-pulse delay-300" />
-            <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-emerald-500 rounded-full animate-pulse delay-150" />
-            <div className="absolute top-1/2 right-1/2 w-3 h-3 bg-emerald-500 rounded-full animate-pulse delay-250" />
           </div>
         </motion.div>
       </div>

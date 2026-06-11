@@ -145,6 +145,24 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     ogType: 'article',
     keywords: 'limpieza tapicería coche Sabadell, limpieza interior coche Sabadell, limpieza asientos coche, limpieza moquetas coche, Superclim',
   },
+  privacyPolicy: {
+    title: 'Política de Privacidad | Superclim Servicios',
+    description: 'Información sobre el tratamiento de datos personales, finalidades, conservación y derechos de los usuarios de Superclim Servicios.',
+    canonical: `${baseUrl}/politica-de-privacidad`,
+    ogType: 'website' as const,
+  },
+  cookiesPolicy: {
+    title: 'Política de Cookies | Superclim Servicios',
+    description: 'Información sobre el uso de cookies técnicas y servicios externos integrados en el sitio web de Superclim Servicios.',
+    canonical: `${baseUrl}/politica-de-cookies`,
+    ogType: 'website' as const,
+  },
+  terms: {
+    title: 'Términos y Condiciones | Superclim Servicios',
+    description: 'Condiciones generales de uso del sitio web, presupuestos orientativos, garantías y contacto de Superclim Servicios.',
+    canonical: `${baseUrl}/terminos-y-condiciones`,
+    ogType: 'website' as const,
+  },
 };
 
 const regionalLegacySEO: Partial<Record<string, Pick<SEOPageConfig, 'title' | 'description' | 'h1'>>> = {

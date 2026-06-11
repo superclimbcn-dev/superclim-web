@@ -10,22 +10,22 @@ import { Slider } from '@/components/ui/slider';
 import { businessConfig } from '@/config/business';
 
 const serviceTypes = [
-  { key: 'cleaning', icon: Sparkles, color: 'bg-emerald-500', label: 'Limpieza' },
-  { key: 'impermeabilization', icon: Droplets, color: 'bg-blue-500', label: 'Impermeabilización' },
-  { key: 'both', icon: Layers, color: 'bg-purple-500', label: 'Limpieza + Impermeabilización' },
+  { key: 'cleaning' as const, icon: Sparkles, color: 'bg-emerald-500', label: 'Limpieza' },
+  { key: 'impermeabilization' as const, icon: Droplets, color: 'bg-blue-500', label: 'Impermeabilización' },
+  { key: 'both' as const, icon: Layers, color: 'bg-purple-500', label: 'Limpieza + Impermeabilización' },
 ];
 
 const sofaTypes = [
-  { key: 'small', label: '2 plazas', price: 60 },
-  { key: 'medium', label: '3 plazas', price: 80 },
-  { key: 'large', label: '4+ plazas', price: 100 },
-  { key: 'corner', label: 'Rinconera', price: 120 },
+  { key: 'small' as const, label: '2 plazas', price: 60 },
+  { key: 'medium' as const, label: '3 plazas', price: 80 },
+  { key: 'large' as const, label: '4+ plazas', price: 100 },
+  { key: 'corner' as const, label: 'Rinconera', price: 120 },
 ];
 
 const fabricTypes = [
-  { key: 'fabric', label: 'Tela normal', multiplier: 1 },
-  { key: 'delicate', label: 'Tela delicada', multiplier: 1.2 },
-  { key: 'leather', label: 'Piel/Cuero', multiplier: 1.3 },
+  { key: 'fabric' as const, label: 'Tela normal', multiplier: 1 },
+  { key: 'delicate' as const, label: 'Tela delicada', multiplier: 1.2 },
+  { key: 'leather' as const, label: 'Piel/Cuero', multiplier: 1.3 },
 ];
 
 export function Calculator() {
