@@ -254,6 +254,28 @@
     "terms": "Termes i Condicions",
     "rights": "Tots els drets reservats"
   },
+  "homeCommunityBanner": {
+    "eyebrow": "Nou servei",
+    "title": "Neteja de comunitats, escales i portals",
+    "description": "Servei professional per a comunitats de veïns, presidents i administradors de finques a Sabadell, Terrassa, Sant Quirze i el Vallès Occidental.",
+    "areas": "Sabadell · Terrassa · Sant Quirze",
+    "benefits": {
+      "portals": "Portals i accessos",
+      "stairs": "Escales i replans",
+      "elevators": "Ascensors",
+      "garages": "Garatges i zones comunes"
+    },
+    "primaryCta": "Veure neteja de comunitats",
+    "secondaryCta": "Sol·licitar pressupost",
+    "whatsappMessage": "Hola, vull informació sobre el servei de neteja de comunitats."
+  },
+  "cookieConsent": {
+    "title": "La teva privacitat importa",
+    "description": "Utilitzem cookies per millorar la teva experiència i recordar les teves preferències.",
+    "policyLink": "Més informació",
+    "reject": "Rebutjar",
+    "accept": "Acceptar"
+  },
   "whatsapp": {
     "button": "Xatejar per WhatsApp",
     "message": "¡Hola! M'agradaria sol·licitar informació sobre els vostres serveis de neteja."

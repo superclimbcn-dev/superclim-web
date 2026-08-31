@@ -254,6 +254,28 @@
     "terms": "Términos y Condiciones",
     "rights": "Todos los derechos reservados"
   },
+  "homeCommunityBanner": {
+    "eyebrow": "Nuevo servicio",
+    "title": "Limpieza de comunidades, escaleras y portales",
+    "description": "Servicio profesional para comunidades de vecinos, presidentes y administradores de fincas en Sabadell, Terrassa, Sant Quirze y Vallès Occidental.",
+    "areas": "Sabadell · Terrassa · Sant Quirze",
+    "benefits": {
+      "portals": "Portales y accesos",
+      "stairs": "Escaleras y rellanos",
+      "elevators": "Ascensores",
+      "garages": "Garajes y zonas comunes"
+    },
+    "primaryCta": "Ver limpieza de comunidades",
+    "secondaryCta": "Solicitar presupuesto",
+    "whatsappMessage": "Hola, quiero información sobre el servicio de limpieza de comunidades."
+  },
+  "cookieConsent": {
+    "title": "Tu privacidad importa",
+    "description": "Utilizamos cookies para mejorar tu experiencia y recordar tus preferencias.",
+    "policyLink": "Más información",
+    "reject": "Rechazar",
+    "accept": "Aceptar"
+  },
   "whatsapp": {
     "button": "Chatear por WhatsApp",
     "message": "¡Hola! Me gustaría solicitar información sobre sus servicios de limpieza."
