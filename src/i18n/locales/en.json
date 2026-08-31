@@ -254,6 +254,21 @@
     "terms": "Terms and Conditions",
     "rights": "All rights reserved"
   },
+  "homeCommunityBanner": {
+    "eyebrow": "New service",
+    "title": "Community, stairway and entrance cleaning",
+    "description": "Professional cleaning for residential communities, property managers and community representatives in Sabadell, Terrassa, Sant Quirze and Vallès Occidental.",
+    "areas": "Sabadell · Terrassa · Sant Quirze",
+    "benefits": {
+      "portals": "Entrances and access areas",
+      "stairs": "Stairways and landings",
+      "elevators": "Elevators",
+      "garages": "Garages and shared areas"
+    },
+    "primaryCta": "View community cleaning",
+    "secondaryCta": "Request a quote",
+    "whatsappMessage": "Hello, I would like information about your community cleaning service."
+  },
   "cookieConsent": {
     "title": "Your privacy matters",
     "description": "We use cookies to improve your experience and remember your preferences.",
