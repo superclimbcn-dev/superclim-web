@@ -31,6 +31,8 @@ import LimpiezaSillones from '@/pages/services/LimpiezaSillones';
 import ServicioDomicilio from '@/pages/services/ServicioDomicilio';
 import ServicesPage from '@/pages/services/ServicesPage';
 import LimpiezaTapiceriaCocheSabadell from '@/pages/services/LimpiezaTapiceriaCocheSabadell';
+import LimpiezaComunidades from '@/pages/services/LimpiezaComunidades';
+import CommunityCityPage from '@/pages/services/communities/CommunityCityPage';
 
 // Legal Pages
 import LegalPage from '@/pages/legal/LegalPage';
@@ -108,6 +110,10 @@ function App() {
         <Route path={businessConfig.urls.services.armchairCleaning} element={<LimpiezaSillones />} />
         <Route path={businessConfig.urls.services.homeService} element={<ServicioDomicilio />} />
         <Route path="/servicios/limpieza-tapiceria-coche-sabadell" element={<LimpiezaTapiceriaCocheSabadell />} />
+        <Route path={businessConfig.urls.services.communityCleaning} element={<LimpiezaComunidades />} />
+        <Route path={businessConfig.urls.services.communityCleaningSabadell} element={<CommunityCityPage city="sabadell" />} />
+        <Route path={businessConfig.urls.services.communityCleaningTerrassa} element={<CommunityCityPage city="terrassa" />} />
+        <Route path={businessConfig.urls.services.communityCleaningSantQuirze} element={<CommunityCityPage city="sant-quirze" />} />
         
         {/* Additional service pages */}
         <Route path="/quienes-somos" element={<QuienesSomos />} />

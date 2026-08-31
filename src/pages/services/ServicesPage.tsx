@@ -11,6 +11,7 @@ import {
   Home,
   ArrowRight,
   Car,
+  Building2,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -28,21 +29,21 @@ const services = [
     icon: Sofa,
     title: 'Limpieza de Sofás',
     description: 'Recupera el aspecto y la comodidad de tus sofás con nuestra limpieza profesional. Eliminamos manchas, suciedad y malos olores.',
-    href: '/limpieza-de-sofas/',
+    href: '/limpieza-de-sofas',
     color: 'from-blue-500 to-cyan-500',
   },
   {
     icon: LayoutGrid,
     title: 'Limpieza de Alfombras',
     description: 'Servicio profesional de lavado de alfombras con recogida y entrega. Eliminamos manchas, ácaros y olores persistentes.',
-    href: '/limpieza-de-alfombras/',
+    href: '/limpieza-de-alfombras',
     color: 'from-emerald-500 to-teal-500',
   },
   {
     icon: Bed,
     title: 'Limpieza de Colchones',
     description: 'Eliminamos ácaros, bacterias y manchas de tu colchón. Garantizamos un descanso saludable y reparador.',
-    href: '/mas-servicios/',
+    href: '/mas-servicios',
     color: 'from-violet-500 to-purple-500',
   },
   {
@@ -72,6 +73,13 @@ const services = [
     description: 'Servicio en local para asientos, moquetas, alfombrillas, maletero e interior del vehículo en Sabadell.',
     href: '/servicios/limpieza-tapiceria-coche-sabadell',
     color: 'from-slate-600 to-cyan-600',
+  },
+  {
+    icon: Building2,
+    title: 'Limpieza de Comunidades',
+    description: 'Limpieza y mantenimiento de portales, escaleras, ascensores, garajes y zonas comunes en Sabadell y Vallès Occidental.',
+    href: '/limpieza-de-comunidades',
+    color: 'from-emerald-700 to-teal-600',
   },
 ];
 

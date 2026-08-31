@@ -13,6 +13,8 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
+import { businessConfig } from '@/config/business';
 
 const especialidades = [
   {
@@ -65,9 +67,10 @@ const especialidades = [
   },
   {
     icon: Building2,
-    title: 'Limpieza de Sofás en Comunidades de Vecinos',
+    title: 'Limpieza de Comunidades',
     description:
-      'Servicios coordinados para zonas comunes, porterías y salones sociales. Presupuestos especiales para comunidades y administradores de fincas.',
+      'Mantenimiento de portales, escaleras, rellanos, ascensores, garajes y zonas comunes para comunidades de vecinos y administradores de fincas.',
+    href: businessConfig.urls.services.communityCleaning,
   },
 ];
 
@@ -105,13 +108,18 @@ export function SpecializedServices() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg group">
+              <Card className="relative h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg group">
                 <CardContent className="p-8">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <item.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  {item.href && (
+                    <Link to={item.href} className="mt-5 inline-flex items-center font-semibold text-emerald-700 before:absolute before:inset-0">
+                      Saber más <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
