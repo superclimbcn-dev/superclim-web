@@ -438,18 +438,11 @@ export default function LimpiezaSofas() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     Limpieza de sofás con vapor
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
+                  <p className="text-gray-600 leading-relaxed">
                     Nuestra técnica de limpieza con vapor elimina el 99.9% de bacterias y ácaros sin
                     necesidad de productos químicos agresivos. Ideal para familias con bebés,
                     personas con alergias y quienes buscan una limpieza profunda y natural.
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {['vapor clean', 'sin químicos', 'desinfección natural'].map((kw, i) => (
-                      <span key={i} className="text-xs px-2 py-1 rounded-full bg-blue-50 text-blue-700">
-                        {kw}
-                      </span>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             </motion.div>

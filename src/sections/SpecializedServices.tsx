@@ -20,63 +20,54 @@ const especialidades = [
     title: 'Limpieza de Sofás con Vapor',
     description:
       'Técnica de limpieza con vapor que elimina el 99.9% de bacterias y ácaros sin productos químicos agresivos. Ideal para familias con bebés y personas alérgicas.',
-    keywords: ['vapor clean sofás', 'limpieza vapor barcelona', 'desinfección vapor'],
   },
   {
     icon: Leaf,
     title: 'Limpieza Ecológica de Tapicerías',
     description:
       'Productos 100% biodegradables y certificados por Ecocert. Limpieza profunda respetuosa con el medio ambiente y segura para mascotas.',
-    keywords: ['limpieza ecológica', 'productos biodegradables', 'eco-friendly'],
   },
   {
     icon: Shield,
     title: 'Limpieza de Sofás para Alérgicos',
     description:
       'Tratamiento especializado que elimina ácaros, polen y alérgenos. Recomendado para personas con asma, rinitis alérgica y eczema.',
-    keywords: ['antiácaros', 'alergias', 'asma', 'limpieza hipoalergénica'],
   },
   {
     icon: Hotel,
     title: 'Limpieza de Sofás para Airbnb Barcelona',
     description:
       'Servicio express para apartamentos turísticos y alquileres vacacionales. Secado rápido para poder recibir huéspedes el mismo día.',
-    keywords: ['airbnb', 'apartamentos turísticos', 'alquiler vacacional', 'limpieza express'],
   },
   {
     icon: Clock,
     title: 'Limpieza de Sofás a Domicilio Urgente',
     description:
       'Servicio de emergencia disponible en menos de 24 horas. Ideal para manchas recientes, derrames accidentales o preparación de eventos.',
-    keywords: ['urgente', 'emergencia', '24 horas', 'same day'],
   },
   {
     icon: Award,
     title: 'Empresa de Limpieza de Sofás Certificada',
     description:
       'Técnicos certificados con formación continua. Más de 16 años de experiencia y 36 reseñas verificadas en Google.',
-    keywords: ['certificada', 'profesional', 'experiencia', 'garantía'],
   },
   {
     icon: Droplets,
     title: 'Blindaje de Sofás e Impermeabilización',
     description:
       'Protección avanzada contra líquidos, manchas y desgaste. Tratamiento invisible que no altera la textura ni el color del tejido. Garantía de 2 años.',
-    keywords: ['blindaje', 'impermeabilización', 'protección sofás', 'garantía'],
   },
   {
     icon: Car,
     title: 'Limpieza de Tapizados de Coche y Vehículos',
     description:
       'Servicio especializado para tapicería de vehículos: asientos, techos, alfombrillas y maleteros. Eliminamos olores de tabaco y mascotas.',
-    keywords: ['coche', 'vehículos', 'tapicería coche', 'eliminar olores'],
   },
   {
     icon: Building2,
     title: 'Limpieza de Sofás en Comunidades de Vecinos',
     description:
       'Servicios coordinados para zonas comunes, porterías y salones sociales. Presupuestos especiales para comunidades y administradores de fincas.',
-    keywords: ['comunidades', 'vecinos', 'zonas comunes', 'administradores'],
   },
 ];
 
@@ -120,17 +111,7 @@ export function SpecializedServices() {
                     <item.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {item.keywords.map((kw, i) => (
-                      <span
-                        key={i}
-                        className="text-xs px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 font-medium"
-                      >
-                        {kw}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

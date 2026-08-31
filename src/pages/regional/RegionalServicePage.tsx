@@ -7,9 +7,7 @@ import {
   MessageCircle,
   MapPin,
   Star,
-  Clock,
   Wind,
-  Droplets,
   Sofa,
   Bed,
   LayoutGrid,
@@ -55,17 +53,6 @@ const serviceData = {
       'Prevención de plagas y microorganismos',
       'Productos 100% ecológicos y seguros',
     ],
-    keywords: [
-      'limpieza de sofás con vapor',
-      'limpieza ecológica de tapicerías',
-      'limpieza de sofás para alérgicos',
-      'desinfección de sofás virus y bacterias',
-      'limpieza de sofás a domicilio urgente',
-      'empresa de limpieza de sofás certificada',
-      'blindaje de sofás',
-      'limpieza de tapizados de coche',
-      'limpieza de sofás comunidades de vecinos',
-    ],
   },
   alfombras: {
     icon: LayoutGrid,
@@ -85,14 +72,6 @@ const serviceData = {
       'Servicio de recogida y entrega disponible',
       'Restauración de alfombras orientales',
     ],
-    keywords: [
-      'lavado de alfombras profesional',
-      'limpieza de alfombras persas',
-      'restauración de alfombras orientales',
-      'recogida y entrega de alfombras',
-      'limpieza alfombras antiácaros',
-      'alfombras industriales limpieza',
-    ],
   },
   colchones: {
     icon: Bed,
@@ -111,14 +90,6 @@ const serviceData = {
       'Alargamiento de la vida útil del colchón',
       'Tratamiento ideal para alérgicos',
       'Productos seguros para bebés',
-    ],
-    keywords: [
-      'limpieza de colchones antiácaros',
-      'desinfección de colchones',
-      'limpieza colchones alérgicos',
-      'eliminar ácaros colchón',
-      'limpieza colchones a domicilio',
-      'limpieza colchones bebés',
     ],
   },
 };
@@ -202,10 +173,10 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
       label: 'Servicios',
       href:
         serviceType === 'sofas'
-          ? '/limpieza-de-sofas/'
+          ? '/limpieza-de-sofas'
           : serviceType === 'alfombras'
-          ? '/limpieza-de-alfombras/'
-          : '/mas-servicios/',
+          ? '/limpieza-de-alfombras'
+          : '/mas-servicios',
     },
     { label: `${service.title} en ${city.displayName}` },
   ];
@@ -481,48 +452,6 @@ export default function RegionalServicePage({ serviceType, citySlug }: RegionalS
                   <Check className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-gray-700 font-medium">{beneficio}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Palabras clave en alta (nuevo contenido SEO) */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
-              Servicios Especializados
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Soluciones especializadas para <span className="text-emerald-600">{city.displayName}</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Además de nuestro servicio principal de {service.title.toLowerCase()}, ofrecemos
-              soluciones especializadas adaptadas a las necesidades de los hogares y negocios de{' '}
-              {city.displayName}.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.keywords.map((keyword, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-center gap-3 p-4 rounded-xl bg-white shadow-sm border border-gray-100"
-              >
-                <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                  <Droplets className="w-4 h-4 text-emerald-600" />
-                </div>
-                <span className="text-gray-700 text-sm font-medium capitalize">{keyword}</span>
               </motion.div>
             ))}
           </div>

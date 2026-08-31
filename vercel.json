@@ -100,8 +100,5 @@
     { "source": "/en/servicios/limpieza-de-sofas-sant-cugat", "destination": "/servicios/limpieza-de-sofas-sant-cugat", "statusCode": 301 },
     { "source": "/en/servicios/limpieza-de-sofas-barbera-del-valles", "destination": "/servicios/limpieza-de-sofas-barbera-del-valles", "statusCode": 301 },
     { "source": "/en/servicios/limpieza-de-sofas-en-sant-quirze", "destination": "/servicios/limpieza-de-sofas-en-sant-quirze", "statusCode": 301 }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
