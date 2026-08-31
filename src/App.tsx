@@ -20,6 +20,7 @@ import { FAQ } from '@/sections/FAQ';
 import { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import { SpecializedServices } from '@/sections/SpecializedServices';
+import { CommunityFeaturedBanner } from '@/sections/CommunityFeaturedBanner';
 import NotFound from '@/pages/NotFound';
 
 // Service Pages
@@ -76,6 +77,7 @@ function HomePage() {
       <main>
         <Hero />
         <Services />
+        <CommunityFeaturedBanner />
         <BeforeAfter />
         <Calculator />
         <WhyUs />

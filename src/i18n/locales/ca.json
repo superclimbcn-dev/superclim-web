@@ -254,6 +254,13 @@
     "terms": "Termes i Condicions",
     "rights": "Tots els drets reservats"
   },
+  "cookieConsent": {
+    "title": "La teva privacitat importa",
+    "description": "Utilitzem cookies per millorar la teva experiència i recordar les teves preferències.",
+    "policyLink": "Més informació",
+    "reject": "Rebutjar",
+    "accept": "Acceptar"
+  },
   "whatsapp": {
     "button": "Xatejar per WhatsApp",
     "message": "¡Hola! M'agradaria sol·licitar informació sobre els vostres serveis de neteja."

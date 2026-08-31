@@ -254,6 +254,13 @@
     "terms": "Términos y Condiciones",
     "rights": "Todos los derechos reservados"
   },
+  "cookieConsent": {
+    "title": "Tu privacidad importa",
+    "description": "Utilizamos cookies para mejorar tu experiencia y recordar tus preferencias.",
+    "policyLink": "Más información",
+    "reject": "Rechazar",
+    "accept": "Aceptar"
+  },
   "whatsapp": {
     "button": "Chatear por WhatsApp",
     "message": "¡Hola! Me gustaría solicitar información sobre sus servicios de limpieza."

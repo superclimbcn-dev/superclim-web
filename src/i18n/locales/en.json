@@ -254,6 +254,13 @@
     "terms": "Terms and Conditions",
     "rights": "All rights reserved"
   },
+  "cookieConsent": {
+    "title": "Your privacy matters",
+    "description": "We use cookies to improve your experience and remember your preferences.",
+    "policyLink": "Learn more",
+    "reject": "Reject",
+    "accept": "Accept"
+  },
   "whatsapp": {
     "button": "Chat on WhatsApp",
     "message": "Hello! I would like to request information about your cleaning services."
