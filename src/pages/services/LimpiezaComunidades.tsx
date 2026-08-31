@@ -65,7 +65,13 @@ export default function LimpiezaComunidades() {
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Button size="lg" variant="outline" className="w-full rounded-full border-white/40 bg-white/10 px-7 py-6 text-base text-white hover:bg-white/20 hover:text-white sm:w-auto"><MessageCircle className="mr-2 h-5 w-5" />Hablar por WhatsApp</Button></a>
                 </div>
               </div>
-              <div className="hidden rounded-3xl border border-white/20 bg-white/10 p-10 backdrop-blur-sm lg:block"><Building2 className="h-20 w-20 text-emerald-300" /><p className="mt-6 text-2xl font-bold">Mantenimiento organizado</p><p className="mt-3 text-white/75">Un alcance claro para cada edificio y cada zona común.</p></div>
+              <div className="hidden h-[440px] overflow-hidden rounded-3xl border border-white/20 bg-white/10 backdrop-blur-sm lg:block">
+                <img
+                  src="/images/profissional-limpeza-comunidades.png"
+                  alt="Profesional de limpieza de comunidades con equipo de trabajo"
+                  className="h-full w-full object-contain object-bottom p-3"
+                />
+              </div>
             </div>
           </div>
         </section>
