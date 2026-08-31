@@ -40,3 +40,5 @@ test-*.png
 # Vite
 .vite/
 *.local
+.vercel
+.env*

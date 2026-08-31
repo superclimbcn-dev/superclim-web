@@ -25,7 +25,7 @@ export function useSchemaOrg() {
     },
     openingHours: businessConfig.hours.schema,
     priceRange: businessConfig.priceRange,
-    image: `${businessConfig.urls.base}/og-image.jpg`,
+    image: `${businessConfig.urls.base}/images/logo-superclim.png`,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: businessConfig.reviews.google.ratingValue,
@@ -86,14 +86,6 @@ export function useSchemaOrg() {
           },
           geoRadius: '30 km',
         },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'EUR',
-      priceValidUntil: '2026-12-31',
-      availability: 'https://schema.org/InStock',
-      url: url,
-    },
   });
 
   const getFAQSchema = (faqs: { question: string; answer: string }[]) => ({

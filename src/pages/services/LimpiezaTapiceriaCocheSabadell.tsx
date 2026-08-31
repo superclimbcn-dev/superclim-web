@@ -76,7 +76,7 @@ export default function LimpiezaTapiceriaCocheSabadell() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
           <Breadcrumb
             items={[
-              { label: 'Servicios', href: '/servicios/' },
+              { label: 'Servicios', href: '/servicios' },
               { label: 'Limpieza de tapicería de coche en Sabadell' },
             ]}
           />

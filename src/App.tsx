@@ -20,6 +20,7 @@ import { FAQ } from '@/sections/FAQ';
 import { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import { SpecializedServices } from '@/sections/SpecializedServices';
+import NotFound from '@/pages/NotFound';
 
 // Service Pages
 import Impermeabilizacion from '@/pages/services/Impermeabilizacion';
@@ -100,46 +101,19 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/servicios" element={<ServicesPage />} />
-        <Route path="/servicios/" element={<ServicesPage />} />
-        <Route path="/servicios.html" element={<ServicesPage />} />
         <Route path={businessConfig.urls.services.sofaCleaning} element={<LimpiezaSofas />} />
-        <Route path="/limpieza-de-sofas.html" element={<LimpiezaSofas />} />
         <Route path={businessConfig.urls.services.carpetCleaning} element={<LimpiezaAlfombras />} />
-        <Route path="/limpieza-de-alfombras.html" element={<LimpiezaAlfombras />} />
         <Route path={businessConfig.urls.services.mattressCleaning} element={<LimpiezaColchones />} />
-        <Route path="/mas-servicios.html" element={<LimpiezaColchones />} />
         <Route path={businessConfig.urls.services.impermeabilization} element={<Impermeabilizacion />} />
-        <Route path="/impermeabilizacion-de-sofas.html" element={<Impermeabilizacion />} />
         <Route path={businessConfig.urls.services.armchairCleaning} element={<LimpiezaSillones />} />
-        <Route path="/limpieza-de-sofas/limpieza-de-sillones.html" element={<LimpiezaSillones />} />
         <Route path={businessConfig.urls.services.homeService} element={<ServicioDomicilio />} />
-        <Route path="/limpieza-de-sofas/limpieza-de-sofas-a-domicilio.html" element={<ServicioDomicilio />} />
         <Route path="/servicios/limpieza-tapiceria-coche-sabadell" element={<LimpiezaTapiceriaCocheSabadell />} />
-        <Route path="/servicios/limpieza-tapiceria-coche-sabadell.html" element={<LimpiezaTapiceriaCocheSabadell />} />
-        <Route path="/limpieza-de-sofa-barcelona.html" element={<RegionalServicePage serviceType="sofas" citySlug="barcelona" />} />
-        <Route path="/limpieza-de-sofa-sabadell.html" element={<RegionalServicePage serviceType="sofas" citySlug="sabadell" />} />
-        <Route path="/limpieza-de-sofa-cerdanyola.html" element={<RegionalServicePage serviceType="sofas" citySlug="cerdanyola" />} />
-        <Route path="/limpieza-de-sofas-terrassa.html" element={<RegionalServicePage serviceType="sofas" citySlug="terrassa" />} />
-        <Route path="/limpieza-de-sofas-sant-cugat.html" element={<RegionalServicePage serviceType="sofas" citySlug="sant-cugat" />} />
-        <Route path="/limpieza-de-sofas-barbera-del-valles.html" element={<RegionalServicePage serviceType="sofas" citySlug="barbera-del-valles" />} />
-        <Route path="/limpieza-de-sofa-sant-quirze.html" element={<RegionalServicePage serviceType="sofas" citySlug="sant-quirze" />} />
-        <Route path="/limpieza-de-colchones-sabadell.html" element={<RegionalServicePage serviceType="colchones" citySlug="sabadell" />} />
-        <Route path="/limpieza-de-colchones-barcelona.html" element={<RegionalServicePage serviceType="colchones" citySlug="barcelona" />} />
-        <Route path="/limpieza-de-colchones-castellar-del-valles.html" element={<RegionalServicePage serviceType="colchones" citySlug="castellar-del-valles" />} />
-        <Route path="/limpieza-de-colchones-cerdanyola.html" element={<RegionalServicePage serviceType="colchones" citySlug="cerdanyola" />} />
-        <Route path="/limpieza-de-colchones-terrassa.html" element={<RegionalServicePage serviceType="colchones" citySlug="terrassa" />} />
-        <Route path="/limpieza-de-colchones-sant-cugat-del-valles.html" element={<RegionalServicePage serviceType="colchones" citySlug="sant-cugat-del-valles" />} />
-        <Route path="/limpieza-de-sofas-en-sant-quirze.html" element={<RegionalServicePage serviceType="colchones" citySlug="sant-quirze-del-valles" />} />
         
         {/* Additional service pages */}
         <Route path="/quienes-somos" element={<QuienesSomos />} />
-        <Route path="/quienes-somos.html" element={<QuienesSomos />} />
         <Route path="/contacto" element={<ContactPage />} />
-        <Route path="/contacto.html" element={<ContactPage />} />
         <Route path="/restauracion-de-alfombras" element={<RestauracionAlfombras />} />
-        <Route path="/restauracion-de-alfombras.html" element={<RestauracionAlfombras />} />
         <Route path="/limpieza-de-muebles-en-cuero" element={<LimpiezaCuero />} />
-        <Route path="/limpieza-de-muebles-en-cuero.html" element={<LimpiezaCuero />} />
 
         {/* Legal pages */}
         <Route path="/politica-de-privacidad" element={<LegalPage type="privacy" />} />
@@ -154,26 +128,12 @@ function App() {
             element={<RegionalServicePage serviceType="sofas" citySlug={citySlug} />}
           />
         ))}
-        {Object.entries(regionalSofaUrls).map(([citySlug, urlPath]) => (
-          <Route
-            key={`sofas-html-${citySlug}`}
-            path={`/servicios/${urlPath}.html`}
-            element={<RegionalServicePage serviceType="sofas" citySlug={citySlug} />}
-          />
-        ))}
         
         {/* Regional pages - Colchones (URLs EXATAS do site antigo) */}
         {Object.entries(regionalMattressUrls).map(([citySlug, urlPath]) => (
           <Route
             key={`colchones-${citySlug}`}
             path={`/mas-servicios/${urlPath}`}
-            element={<RegionalServicePage serviceType="colchones" citySlug={citySlug} />}
-          />
-        ))}
-        {Object.entries(regionalMattressUrls).map(([citySlug, urlPath]) => (
-          <Route
-            key={`colchones-html-${citySlug}`}
-            path={`/mas-servicios/${urlPath}.html`}
             element={<RegionalServicePage serviceType="colchones" citySlug={citySlug} />}
           />
         ))}
@@ -186,13 +146,7 @@ function App() {
             element={<RegionalServicePage serviceType="alfombras" citySlug={citySlug} />}
           />
         ))}
-        {Object.entries(regionalCarpetUrls).map(([citySlug, urlPath]) => (
-          <Route
-            key={`alfombras-html-${citySlug}`}
-            path={`/limpieza-de-alfombras/${urlPath}.html`}
-            element={<RegionalServicePage serviceType="alfombras" citySlug={citySlug} />}
-          />
-        ))}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <CookieConsentBanner />
     </BrowserRouter>

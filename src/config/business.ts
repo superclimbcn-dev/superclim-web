@@ -36,9 +36,9 @@ export const businessConfig = {
   urls: {
     base: 'https://superclim.es',
     services: {
-      sofaCleaning: '/limpieza-de-sofas/',
-      carpetCleaning: '/limpieza-de-alfombras/',
-      mattressCleaning: '/mas-servicios/',
+      sofaCleaning: '/limpieza-de-sofas',
+      carpetCleaning: '/limpieza-de-alfombras',
+      mattressCleaning: '/mas-servicios',
       impermeabilization: '/impermeabilizacion-de-sofas',
       carpetRestoration: '/restauracion-de-alfombras',
       armchairCleaning: '/limpieza-de-sofas/limpieza-de-sillones',
