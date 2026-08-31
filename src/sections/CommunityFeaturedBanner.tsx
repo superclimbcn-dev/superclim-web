@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Check, MessageCircle } from 'lucide-react';
+import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -23,13 +23,13 @@ export function CommunityFeaturedBanner() {
           className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-emerald-950 via-teal-900 to-cyan-900 shadow-2xl shadow-emerald-950/20"
         >
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="relative flex min-h-64 items-center justify-center overflow-hidden p-10 sm:min-h-80 lg:min-h-full lg:p-12" aria-hidden="true">
-              <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full border-[2.5rem] border-emerald-300/10" />
-              <div className="absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-cyan-400/20 blur-2xl" />
-              <div className="absolute inset-x-10 bottom-8 top-16 rounded-t-[3rem] border border-white/15 bg-white/5 sm:inset-x-20" />
-              <div className="relative flex h-40 w-40 items-center justify-center rounded-[2.5rem] border border-emerald-300/30 bg-white/10 shadow-2xl backdrop-blur-sm sm:h-48 sm:w-48">
-                <Building2 className="h-24 w-24 text-emerald-200 sm:h-28 sm:w-28" strokeWidth={1.35} />
-              </div>
+            <div className="relative min-h-72 overflow-hidden sm:min-h-96 lg:min-h-full">
+              <img
+                src="/images/limpieza-de-escalera.png"
+                alt="Limpieza profesional de zonas comunes y escaleras"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/25 via-transparent to-teal-900/5" aria-hidden="true" />
               <div className="absolute bottom-8 left-8 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-medium text-emerald-100 backdrop-blur-sm sm:left-12">
                 {t('homeCommunityBanner.areas')}
               </div>
