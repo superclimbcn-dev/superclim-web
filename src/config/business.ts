@@ -43,6 +43,10 @@ export const businessConfig = {
       carpetRestoration: '/restauracion-de-alfombras',
       armchairCleaning: '/limpieza-de-sofas/limpieza-de-sillones',
       homeService: '/limpieza-de-sofas/limpieza-de-sofas-a-domicilio',
+      communityCleaning: '/limpieza-de-comunidades',
+      communityCleaningSabadell: '/limpieza-de-comunidades/sabadell',
+      communityCleaningTerrassa: '/limpieza-de-comunidades/terrassa',
+      communityCleaningSantQuirze: '/limpieza-de-comunidades/sant-quirze',
     },
   },
 

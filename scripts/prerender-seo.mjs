@@ -10,6 +10,10 @@ const baseUrl = 'https://superclim.es';
 const routeConfigKeys = new Map([
   ['/', 'home'],
   ['/servicios', 'services'],
+  ['/limpieza-de-comunidades', 'communityCleaning'],
+  ['/limpieza-de-comunidades/sabadell', 'communityCleaningSabadell'],
+  ['/limpieza-de-comunidades/terrassa', 'communityCleaningTerrassa'],
+  ['/limpieza-de-comunidades/sant-quirze', 'communityCleaningSantQuirze'],
   ['/limpieza-de-sofas', 'sofaCleaning'],
   ['/limpieza-de-alfombras', 'carpetCleaning'],
   ['/mas-servicios', 'mattressCleaning'],
