@@ -24,9 +24,12 @@ const cities = [
   ['Sabadell', businessConfig.urls.services.communityCleaningSabadell, 'Servicio local desde nuestra base en Sabadell.'],
   ['Terrassa', businessConfig.urls.services.communityCleaningTerrassa, 'Planes adaptados a fincas y frecuencias de mantenimiento.'],
   ['Sant Quirze', businessConfig.urls.services.communityCleaningSantQuirze, 'Cobertura próxima para comunidades residenciales.'],
+  ['Sant Cugat del Vallès', businessConfig.urls.services.communityCleaningSantCugat, 'Mantenimiento organizado por accesos y espacios compartidos.'],
+  ['Castellar del Vallès', businessConfig.urls.services.communityCleaningCastellar, 'Cuidado periódico de portales, escaleras y rellanos.'],
+  ['Barberà del Vallès', businessConfig.urls.services.communityCleaningBarbera, 'Coordinación de tareas para los recorridos comunes de la finca.'],
 ];
 
-const otherCoverage = ['Barberà del Vallès', 'Cerdanyola del Vallès', 'Sant Cugat del Vallès', 'Castellar del Vallès'];
+const otherCoverage = ['Cerdanyola del Vallès'];
 const budgetFactors = ['Número de plantas', 'Portales y rellanos', 'Ascensores', 'Superficie', 'Garaje', 'Patios', 'Cristales', 'Frecuencia', 'Estado inicial', 'Trabajos adicionales'];
 const process = ['Conocemos la finca', 'Definimos las tareas', 'Acordamos la frecuencia', 'Preparamos la propuesta'];
 const faqs = [

@@ -47,6 +47,9 @@ export const businessConfig = {
       communityCleaningSabadell: '/limpieza-de-comunidades/sabadell',
       communityCleaningTerrassa: '/limpieza-de-comunidades/terrassa',
       communityCleaningSantQuirze: '/limpieza-de-comunidades/sant-quirze',
+      communityCleaningSantCugat: '/limpieza-de-comunidades/sant-cugat',
+      communityCleaningCastellar: '/limpieza-de-comunidades/castellar-del-valles',
+      communityCleaningBarbera: '/limpieza-de-comunidades/barbera-del-valles',
     },
   },
 

@@ -83,7 +83,7 @@
   <!-- Limpieza de comunidades -->
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -102,6 +102,25 @@
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/sant-quirze</loc>
     <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://superclim.es/limpieza-de-comunidades/sant-cugat</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-de-comunidades/castellar-del-valles</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-de-comunidades/barbera-del-valles</loc>
+    <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>

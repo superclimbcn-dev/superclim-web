@@ -14,6 +14,9 @@ const routeConfigKeys = new Map([
   ['/limpieza-de-comunidades/sabadell', 'communityCleaningSabadell'],
   ['/limpieza-de-comunidades/terrassa', 'communityCleaningTerrassa'],
   ['/limpieza-de-comunidades/sant-quirze', 'communityCleaningSantQuirze'],
+  ['/limpieza-de-comunidades/sant-cugat', 'communityCleaningSantCugat'],
+  ['/limpieza-de-comunidades/castellar-del-valles', 'communityCleaningCastellar'],
+  ['/limpieza-de-comunidades/barbera-del-valles', 'communityCleaningBarbera'],
   ['/limpieza-de-sofas', 'sofaCleaning'],
   ['/limpieza-de-alfombras', 'carpetCleaning'],
   ['/mas-servicios', 'mattressCleaning'],
@@ -177,7 +180,17 @@ for (const routePath of routes) {
   if (!config?.canonical || !config?.title || !config?.description) {
     throw new Error(`Incomplete SEO config for route: ${routePath}`);
   }
-  writeRouteHtml(routePath, renderHtml(template, config));
+  let html = renderHtml(template, config);
+  if (routePath === '/limpieza-de-comunidades' || routePath.startsWith('/limpieza-de-comunidades/')) {
+    // Identify static tags for removal once SEOMeta mounts (React 19 hoists its own tags).
+    html = html.replace(
+      /<meta (?:name="(?:description|robots|keywords|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,
+      (tag) => tag.replace(/\s*\/?>$/, ' data-prerender-community="true">'),
+    );
+    html = html.replace('<title>', '<title data-prerender-community="true">');
+    html = html.replace(/<link rel="canonical"[^>]*>/g, (tag) => tag.replace(/\s*\/?>$/, ' data-prerender-community="true" />'));
+  }
+  writeRouteHtml(routePath, html);
 }
 
 console.log(`Prerendered SEO metadata for ${routes.length} routes.`);

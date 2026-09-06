@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Check, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, Check, MessageCircle, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Header } from '@/components/Header';
@@ -49,8 +49,15 @@ export default function CommunityCityPage({ city }: CommunityCityPageProps) {
                   </a>
                 </div>
               </div>
-              <div className="hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm lg:block">
-                <Building2 className="mb-6 h-16 w-16 text-emerald-300" />
+              <div className="rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm">
+                <img
+                  src={page.image}
+                  alt={page.imageAlt}
+                  width={960}
+                  height={640}
+                  decoding="async"
+                  className="mb-6 aspect-[3/2] w-full rounded-2xl object-cover"
+                />
                 <p className="text-2xl font-bold">Un plan definido para cada finca</p>
                 <p className="mt-3 leading-relaxed text-white/75">Zonas, tareas y frecuencia acordadas antes de comenzar el servicio.</p>
               </div>

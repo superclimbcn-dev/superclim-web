@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import type { SEOPageConfig } from '@/config/seo';
 
@@ -7,6 +8,11 @@ interface SEOMetaProps {
 }
 
 export function SEOMeta({ config, alternateLangs }: SEOMetaProps) {
+  useEffect(() => {
+    // React 19 creates its own head tags; discard only marked community prerender tags.
+    document.head.querySelectorAll('[data-prerender-community]').forEach((tag) => tag.remove());
+  }, [config.canonical]);
+
   return (
     <Helmet>
       {/* Basic Meta */}

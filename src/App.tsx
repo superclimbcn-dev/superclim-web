@@ -116,6 +116,9 @@ function App() {
         <Route path={businessConfig.urls.services.communityCleaningSabadell} element={<CommunityCityPage city="sabadell" />} />
         <Route path={businessConfig.urls.services.communityCleaningTerrassa} element={<CommunityCityPage city="terrassa" />} />
         <Route path={businessConfig.urls.services.communityCleaningSantQuirze} element={<CommunityCityPage city="sant-quirze" />} />
+        <Route path={businessConfig.urls.services.communityCleaningSantCugat} element={<CommunityCityPage city="sant-cugat" />} />
+        <Route path={businessConfig.urls.services.communityCleaningCastellar} element={<CommunityCityPage city="castellar-del-valles" />} />
+        <Route path={businessConfig.urls.services.communityCleaningBarbera} element={<CommunityCityPage city="barbera-del-valles" />} />
         
         {/* Additional service pages */}
         <Route path="/quienes-somos" element={<QuienesSomos />} />
