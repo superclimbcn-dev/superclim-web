@@ -117,7 +117,7 @@ export function Services() {
                       to={service.href}
                       className="inline-flex items-center text-emerald-600 font-medium group/btn hover:text-emerald-700"
                     >
-                      <span className="text-sm">Saber más</span>
+                      <span className="text-sm">{service.key === 'sofaCleaning' ? t('services.sofaCleaning.title') : 'Saber más'}</span>
                       <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
                   </CardContent>

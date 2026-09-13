@@ -4,12 +4,12 @@ import { businessConfig } from '@/config/business';
 export function SchemaOrg() {
   const { getLocalBusinessSchema } = useSchemaOrg();
 
-  const localBusinessSchema = getLocalBusinessSchema();
+  const localBusinessSchema = { ...getLocalBusinessSchema(), name: businessConfig.fullName };
 
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: `${businessConfig.name} - Limpieza Profesional de Sofás`,
+    name: businessConfig.fullName,
     url: businessConfig.urls.base,
   };
 

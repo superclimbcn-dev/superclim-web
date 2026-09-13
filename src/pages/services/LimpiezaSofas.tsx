@@ -22,6 +22,7 @@ import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { CityServiceLinks } from '@/components/CityServiceLinks';
 import { seoConfig } from '@/config/seo';
+import { useSchemaOrg } from '@/hooks/useSchemaOrg';
 
 const procesoLimpieza = [
   {
@@ -61,12 +62,24 @@ const beneficios = [
 
 export default function LimpiezaSofas() {
   useTranslation();
+  const { getServiceSchema } = useSchemaOrg();
+  const serviceSchema = {
+    ...getServiceSchema(
+      'Limpieza de Sofás Profesional a Domicilio',
+      seoConfig.sofaCleaning.description,
+      seoConfig.sofaCleaning.canonical,
+    ),
+    serviceType: 'Limpieza profesional de sofás a domicilio',
+    areaServed: ['Barcelona', 'Sabadell', 'Terrassa', 'Sant Cugat', 'Cerdanyola', 'Barberà del Vallès', 'Sant Quirze']
+      .map((name) => ({ '@type': 'City', name })),
+  };
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.1 });
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
     <div className="min-h-screen bg-white">
       <SEOMeta config={seoConfig.sofaCleaning} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <Breadcrumb items={[{ label: 'Limpieza de Sofás' }]} />
@@ -119,8 +132,9 @@ export default function LimpiezaSofas() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl text-white/80 mb-8 leading-relaxed"
               >
-                Recupera el aspecto y la comodidad de tus sofás con nuestra limpieza profesional. 
-                Eliminamos manchas, suciedad y malos olores, devolviendo a tus muebles su frescura original.
+                Nuestro servicio de limpieza de sofás a domicilio combina aspirado, tratamiento de manchas
+                e inyección-extracción para retirar la suciedad y tratar los malos olores de la tapicería.
+                Trabajamos en tu hogar, sin trasladar el sofá, y adaptamos el tratamiento al tejido y a su estado.
               </motion.p>
 
               <motion.div
@@ -301,10 +315,14 @@ export default function LimpiezaSofas() {
               Nuestro Proceso
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Proceso de <span className="text-blue-400">Limpieza Profesional</span>
+              Proceso de <span className="text-blue-400">Limpieza Profesional de Sofás</span>
             </h2>
           </motion.div>
 
+          <p className="text-center text-white/80 max-w-3xl mx-auto mb-10">
+            Limpiamos sofás de 2, 3 y más plazas. Antes de empezar, revisamos el tipo de tejido,
+            el estado del sofá y las manchas para elegir el tratamiento adecuado.
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {procesoLimpieza.map((paso, index) => (
               <motion.div
@@ -530,7 +548,7 @@ export default function LimpiezaSofas() {
 
       <CityServiceLinks
         title="Limpieza de Sofás por Ciudad"
-        subtitle="Servicio profesional a domicilio en tu zona. Selecciona tu ciudad para más información."
+        subtitle="Servicio a domicilio en Barcelona, Sabadell, Terrassa, Sant Cugat, Cerdanyola, Barberà y Sant Quirze. Selecciona tu ciudad para más información."
         serviceColor="from-blue-500 to-cyan-500"
         cities={[
           { name: 'Barcelona', href: '/servicios/limpieza-de-sofas-barcelona' },

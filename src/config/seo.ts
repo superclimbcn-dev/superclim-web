@@ -16,18 +16,18 @@ const defaultOgImage = `${baseUrl}/images/logo-superclim.png`;
 
 export const seoConfig: Record<string, SEOPageConfig> = {
   home: {
-    title: 'Limpieza de Sofás a Domicilio en Barcelona, Sabadell, Terrassa, Sant Cugat y alrededores | Superclim',
-    description: 'Limpieza profesional de sofás, colchones y alfombras a domicilio. Impermeabilización de sofás. Servicio en Sabadell, Terrassa, Sant Cugat Barcelona y alrededores. Presupuesto por WhatsApp.',
+    title: 'Superclim Servicios | Empresa de limpieza en Sabadell y Barcelona',
+    description: 'Superclim Servicios: limpieza de sofás, alfombras y colchones, impermeabilización y limpieza de comunidades en Sabadell, Barcelona y alrededores.',
     canonical: `${baseUrl}/`,
-    ogTitle: 'Superclim — Limpieza Profesional de Sofás en Barcelona',
-    ogDescription: 'Más de 16 años de experiencia. Limpieza de sofás, alfombras y colchones a domicilio. Productos ecológicos y garantía de 2 años.',
+    ogTitle: 'Superclim Servicios | Empresa de limpieza en Sabadell y Barcelona',
+    ogDescription: 'Superclim Servicios: limpieza de sofás, alfombras y colchones, impermeabilización y limpieza de comunidades en Sabadell, Barcelona y alrededores.',
     ogImage: defaultOgImage,
     ogType: 'website',
     keywords: 'limpieza de sofás, limpieza de alfombras, limpieza de colchones, impermeabilización de sofás, Barcelona, Sabadell, Terrassa',
   },
   sofaCleaning: {
     title: 'Limpieza de Sofás Profesional a Domicilio | Superclim',
-    description: 'Limpieza profesional de sofás en Barcelona. Eliminamos manchas, suciedad y malos olores, restaurando tus muebles a su estado original.',
+    description: 'Limpieza profesional de sofás a domicilio con inyección-extracción para tratar manchas y malos olores. Servicio en Barcelona y alrededores. Pide presupuesto.',
     canonical: `${baseUrl}/limpieza-de-sofas`,
     ogTitle: 'Limpieza de Sofás Profesional | Superclim',
     ogDescription: 'Recupera el aspecto y la comodidad de tus sofás con nuestra limpieza profesional. Eliminamos manchas, suciedad y malos olores.',
