@@ -9,25 +9,31 @@ interface SEOMetaProps {
 
 export function SEOMeta({ config, alternateLangs }: SEOMetaProps) {
   useEffect(() => {
-    // React 19 creates its own head tags; discard only marked community prerender tags.
+    // Keep React-owned tags; discard their static HTML counterparts after mount.
+    document.head.querySelectorAll(
+      'title:not([data-seo-managed]), meta[name="description"]:not([data-seo-managed]), ' +
+      'meta[name="robots"]:not([data-seo-managed]), link[rel="canonical"]:not([data-seo-managed])',
+    ).forEach((tag) => tag.remove());
+
+    // Preserve the existing cleanup of community prerender metadata.
     document.head.querySelectorAll('[data-prerender-community]').forEach((tag) => tag.remove());
   }, [config.canonical]);
 
   return (
     <Helmet>
       {/* Basic Meta */}
-      <title>{config.title}</title>
-      <meta name="description" content={config.description} />
+      <title data-seo-managed="true">{config.title}</title>
+      <meta data-seo-managed="true" name="description" content={config.description} />
       {config.keywords && <meta name="keywords" content={config.keywords} />}
       
       {/* Canonical */}
-      <link rel="canonical" href={config.canonical} />
+      <link data-seo-managed="true" rel="canonical" href={config.canonical} />
       
       {/* Robots */}
       {config.noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
+        <meta data-seo-managed="true" name="robots" content="noindex, nofollow" />
       ) : (
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta data-seo-managed="true" name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       )}
       
       {/* Open Graph */}
