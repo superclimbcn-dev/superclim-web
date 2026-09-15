@@ -279,5 +279,15 @@
   "whatsapp": {
     "button": "Xatejar per WhatsApp",
     "message": "¡Hola! M'agradaria sol·licitar informació sobre els vostres serveis de neteja."
+  },
+  "homeBusiness": {
+    "title": "Neteja professional per a empreses",
+    "description": "Serveis periòdics de neteja per a oficines, naus industrials, magatzems i centres de treball a Sabadell, Vallès Occidental i Barcelona.",
+    "offices": "Neteja d’oficines",
+    "industrial": "Neteja industrial",
+    "logistics": "Naus i magatzems",
+    "communities": "Neteja de comunitats",
+    "cta": "Veure serveis per a empreses",
+    "quote": "Sol·licitar pressupost"
   }
 }

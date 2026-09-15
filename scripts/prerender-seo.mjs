@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import ts from 'typescript';
+import { createServer } from 'vite';
 
 const rootDir = process.cwd();
 const distDir = path.join(rootDir, 'dist');
@@ -9,6 +10,11 @@ const baseUrl = 'https://superclim.es';
 
 const routeConfigKeys = new Map([
   ['/', 'home'],
+  ['/limpieza-para-empresas', 'businessCleaning'],
+  ['/limpieza-para-empresas/oficinas', 'officeCleaning'],
+  ['/limpieza-para-empresas/naves-industriales', 'industrialCleaning'],
+  ['/limpieza-para-empresas/centros-logisticos', 'logisticsCleaning'],
+
   ['/servicios', 'services'],
   ['/limpieza-de-comunidades', 'communityCleaning'],
   ['/limpieza-de-comunidades/sabadell', 'communityCleaningSabadell'],
@@ -175,6 +181,9 @@ const template = fs.readFileSync(templatePath, 'utf8');
 const seoModule = loadSeoModule();
 const routes = [...new Set(getSitemapRoutes())];
 
+const ssrServer = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
+try {
+const { renderBusinessPage } = await ssrServer.ssrLoadModule('/src/pages/business/prerender.tsx');
 for (const routePath of routes) {
   const config = getConfigForRoute(routePath, seoModule);
   if (!config?.canonical || !config?.title || !config?.description) {
@@ -190,7 +199,20 @@ for (const routePath of routes) {
     html = html.replace('<title>', '<title data-prerender-community="true">');
     html = html.replace(/<link rel="canonical"[^>]*>/g, (tag) => tag.replace(/\s*\/?>$/, ' data-prerender-community="true" />'));
   }
-  writeRouteHtml(routePath, html);
+  if (routePath === '/limpieza-para-empresas' || routePath.startsWith('/limpieza-para-empresas/')) {
+    html = html.replace(/<meta (?:name="(?:description|robots|keywords|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,
+      tag => tag.replace(/\s*\/?>$/, ' data-prerender-business="true">'));
+    const body = await renderBusinessPage(routeConfigKeys.get(routePath));
+    html = html.replace('<div id="root"></div>', () => `<div id="root">${body}</div>`);
+    // Match the existing host layout; canonical and public links stay extensionless.
+    writeRouteHtml(routePath, html);
+  } else {
+    writeRouteHtml(routePath, html);
+  }
 }
 
 console.log(`Prerendered SEO metadata for ${routes.length} routes.`);
+
+} finally {
+  await ssrServer.close();
+}

@@ -15,6 +15,11 @@ const baseUrl = 'https://superclim.es';
 const defaultOgImage = `${baseUrl}/images/logo-superclim.png`;
 
 export const seoConfig: Record<string, SEOPageConfig> = {
+  businessCleaning: {"title": "Empresa de Limpieza para Empresas en Sabadell y Barcelona | Superclim", "description": "Servicio profesional de limpieza para empresas, oficinas, naves industriales y centros logísticos en Sabadell, Vallès Occidental y Barcelona. Solicita presupuesto.", "h1": "Empresa de limpieza para empresas en Sabadell y Barcelona", "canonical": "https://superclim.es/limpieza-para-empresas", "ogImage": "https://superclim.es/images/logo-superclim.png"},
+  officeCleaning: {"title": "Limpieza de Oficinas en Sabadell y Barcelona | Superclim", "description": "Limpieza de oficinas, despachos y espacios de trabajo en Sabadell y Barcelona. Planes diarios o semanales y horarios adaptados. Solicita presupuesto.", "h1": "Limpieza profesional de oficinas en Sabadell y Barcelona", "canonical": "https://superclim.es/limpieza-para-empresas/oficinas", "ogImage": "https://superclim.es/images/logo-superclim.png"},
+  industrialCleaning: {"title": "Limpieza de Naves Industriales en Sabadell y Barcelona | Superclim", "description": "Limpieza de naves industriales en Sabadell y Barcelona: pavimentos, pasillos, vestuarios y zonas comunes. Planificación según la actividad de tu instalación.", "h1": "Limpieza de naves industriales en Sabadell y Barcelona", "canonical": "https://superclim.es/limpieza-para-empresas/naves-industriales", "ogImage": "https://superclim.es/images/logo-superclim.png"},
+  logisticsCleaning: {"title": "Limpieza de Almacenes y Centros Logísticos en Barcelona | Superclim", "description": "Limpieza recurrente de almacenes y centros logísticos en Barcelona y Vallès Occidental. Picking, pasillos y áreas comunes con horarios adaptados a la operativa.", "h1": "Limpieza de almacenes y centros logísticos", "canonical": "https://superclim.es/limpieza-para-empresas/centros-logisticos", "ogImage": "https://superclim.es/images/logo-superclim.png"},
+
   home: {
     title: 'Superclim Servicios | Empresa de limpieza en Sabadell y Barcelona',
     description: 'Superclim Servicios: limpieza de sofás, alfombras y colchones, impermeabilización y limpieza de comunidades en Sabadell, Barcelona y alrededores.',
