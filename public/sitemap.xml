@@ -286,4 +286,8 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url><loc>https://superclim.es/limpieza-para-empresas</loc></url>
+  <url><loc>https://superclim.es/limpieza-para-empresas/oficinas</loc></url>
+  <url><loc>https://superclim.es/limpieza-para-empresas/naves-industriales</loc></url>
+  <url><loc>https://superclim.es/limpieza-para-empresas/centros-logisticos</loc></url>
 </urlset>

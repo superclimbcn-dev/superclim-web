@@ -22,6 +22,8 @@ import { Footer } from '@/sections/Footer';
 import { SpecializedServices } from '@/sections/SpecializedServices';
 import { CommunityFeaturedBanner } from '@/sections/CommunityFeaturedBanner';
 import NotFound from '@/pages/NotFound';
+import BusinessPage from '@/pages/business/BusinessPage';
+import { BusinessFeaturedBanner } from '@/sections/BusinessFeaturedBanner';
 
 // Service Pages
 import Impermeabilizacion from '@/pages/services/Impermeabilizacion';
@@ -78,6 +80,7 @@ function HomePage() {
         <Hero />
         <Services />
         <CommunityFeaturedBanner />
+        <BusinessFeaturedBanner />
         <BeforeAfter />
         <Calculator />
         <WhyUs />
@@ -104,6 +107,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path={businessConfig.urls.services.businessCleaning} element={<BusinessPage key="businessCleaning" pageKey="businessCleaning" />} />
+        <Route path={businessConfig.urls.services.officeCleaning} element={<BusinessPage key="officeCleaning" pageKey="officeCleaning" />} />
+        <Route path={businessConfig.urls.services.industrialCleaning} element={<BusinessPage key="industrialCleaning" pageKey="industrialCleaning" />} />
+        <Route path={businessConfig.urls.services.logisticsCleaning} element={<BusinessPage key="logisticsCleaning" pageKey="logisticsCleaning" />} />
         <Route path="/servicios" element={<ServicesPage />} />
         <Route path={businessConfig.urls.services.sofaCleaning} element={<LimpiezaSofas />} />
         <Route path={businessConfig.urls.services.carpetCleaning} element={<LimpiezaAlfombras />} />

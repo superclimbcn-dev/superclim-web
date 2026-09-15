@@ -77,6 +77,7 @@ export function Footer() {
             >
               <h3 className="text-lg font-semibold mb-4">{t('footer.services')}</h3>
               <ul className="space-y-3">
+                <li><Link to={businessConfig.urls.services.businessCleaning} className="text-sm text-gray-400 hover:text-emerald-400">{t('homeBusiness.title')}</Link></li>
                 {services.map((service) => (
                   <li key={service.key}>
                     <Link

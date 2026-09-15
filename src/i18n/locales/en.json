@@ -279,5 +279,15 @@
   "whatsapp": {
     "button": "Chat on WhatsApp",
     "message": "Hello! I would like to request information about your cleaning services."
+  },
+  "homeBusiness": {
+    "title": "Professional cleaning for businesses",
+    "description": "Regular cleaning services for offices, industrial buildings, warehouses and workplaces in Sabadell, Vallès Occidental and Barcelona.",
+    "offices": "Office cleaning",
+    "industrial": "Industrial cleaning",
+    "logistics": "Industrial buildings and warehouses",
+    "communities": "Communal area cleaning",
+    "cta": "View business services",
+    "quote": "Request a quote"
   }
 }

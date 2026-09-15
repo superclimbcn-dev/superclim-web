@@ -1,0 +1,122 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import vm from 'node:vm';
+import ts from 'typescript';
+import test from 'node:test';
+import { chromium } from 'playwright';
+import { preview } from 'vite';
+
+const routes = ['/limpieza-para-empresas', '/limpieza-para-empresas/oficinas', '/limpieza-para-empresas/naves-industriales', '/limpieza-para-empresas/centros-logisticos'];
+function loadConfig(source) {
+  const context = { exports: {} };
+  vm.runInNewContext(ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText, context);
+  return JSON.parse(JSON.stringify(context.exports.seoConfig));
+}
+test('existing SEO configurations and community source files are preserved', async () => {
+  const before = loadConfig(execFileSync('git', ['show', 'HEAD:src/config/seo.ts'], { encoding: 'utf8' }));
+  const after = loadConfig(await fs.readFile('src/config/seo.ts', 'utf8'));
+  for (const key of Object.keys(before)) assert.deepEqual(after[key], before[key], key);
+  const changed = execFileSync('git', ['diff', '--name-only'], { encoding: 'utf8' });
+  assert.doesNotMatch(changed, /src\/(pages\/services\/(LimpiezaComunidades|communities\/)|config\/communityPages)/);
+});
+test('B2B prerender, routes, SEO, mobile layout and quote flow', async () => {
+  const server = await preview({ preview: { host: '127.0.0.1', port: 4174, strictPort: true, open: false } });
+  let browser;
+  try {
+    browser = await chromium.launch({ headless: true, ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : existsSync('/usr/bin/google-chrome') ? { executablePath: '/usr/bin/google-chrome' } : {}) });
+    const base = 'http://127.0.0.1:4174';
+    const sitemap = await fs.readFile('dist/sitemap.xml', 'utf8');
+    const robots = await fs.readFile('dist/robots.txt', 'utf8');
+    assert.match(robots, /Allow: \/\s/);
+    assert.match(robots, /Sitemap: https:\/\/superclim.es\/sitemap.xml/);
+    const output = 'audit/b2b';
+    await fs.mkdir(output, { recursive: true });
+    const report = [];
+    const titles = new Set();
+    const descriptions = new Set();
+    for (const route of routes) {
+      assert.ok(sitemap.includes(`https://superclim.es${route}</loc>`));
+      for (const javaScriptEnabled of [false, true]) {
+        const context = await browser.newContext({ javaScriptEnabled, viewport: { width: 1440, height: 1000 } });
+        await context.addInitScript(() => localStorage.setItem('superclim-cookie-consent', 'rejected'));
+        // Block external tracking/media: validation must not send production analytics or messages.
+        await context.route('**/*', r => new URL(r.request().url()).origin === base ? r.continue() : r.abort());
+        const page = await context.newPage();
+        const errors = [];
+        page.on('pageerror', error => errors.push(error.message));
+        const response = await page.goto(`${base}${route}`, { waitUntil: 'networkidle' });
+        assert.equal(response.status(), 200);
+        assert.equal(await page.locator('h1').count(), 1);
+        assert.ok((await page.locator('main').innerText()).length > 3000);
+        for (const selector of ['title', 'meta[name="description"]', 'meta[name="robots"]', 'link[rel="canonical"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]', 'meta[name="twitter:title"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).count(), 1, `${route} ${javaScriptEnabled} ${selector}`);
+        assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://superclim.es${route}`);
+        assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /^index, follow/);
+        const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
+        const parsed = schemas.map(JSON.parse);
+        assert.equal(parsed.filter(s => s['@type'] === 'Service').length, 1);
+        assert.equal(parsed.filter(s => s['@type'] === 'BreadcrumbList').length, 1);
+        assert.equal(parsed.filter(s => s['@type'] === 'Organization').length, route === routes[0] ? 1 : 0);
+        assert.doesNotMatch(schemas.join(''), /AggregateRating|"Review"|"price"|FAQPage/);
+        if (route === routes[0]) assert.equal(parsed.find(s => s['@type'] === 'Service').hasOfferCatalog.itemListElement.length, 5);
+        const links = await page.locator('main a[href^="/"]').evaluateAll(els => els.map(el => el.getAttribute('href')));
+        for (const target of [...routes, '/limpieza-de-comunidades'].filter(target => target !== route)) assert.ok(links.includes(target), `${route} missing ${target}`);
+        assert.equal(errors.length, 0, errors.join('\n'));
+        if (javaScriptEnabled) {
+          titles.add(await page.title());
+          descriptions.add(await page.locator('meta[name="description"]').getAttribute('content'));
+          await page.locator('footer').scrollIntoViewIfNeeded();
+          await page.waitForTimeout(700);
+          await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+          await page.screenshot({ path: `${output}/${route.split('/').at(-1)}-desktop.png`, fullPage: true });
+          await page.setViewportSize({ width: 390, height: 844 });
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${route} overflow`);
+          await page.screenshot({ path: `${output}/${route.split('/').at(-1)}-mobile.png`, fullPage: true });
+          await page.getByRole('link', { name: 'Solicitar presupuesto', exact: true }).click();
+          await page.getByRole('button', { name: 'Preparar solicitud para WhatsApp' }).click();
+          assert.equal(await page.getByRole('status').count(), 0);
+          await page.getByLabel('Nombre', { exact: false }).fill('Prueba B2B');
+          await page.getByLabel('Municipio').fill('Sabadell');
+          await page.getByLabel('Empresa', { exact: true }).fill('Empresa de prueba');
+          await page.getByLabel('Email', { exact: true }).fill('invalido');
+          await page.getByRole('button', { name: 'Preparar solicitud para WhatsApp' }).click();
+          assert.equal(await page.getByRole('status').count(), 0);
+          await page.getByLabel('Email', { exact: true }).fill('prueba@example.com');
+          await page.getByLabel('Mensaje', { exact: true }).fill('Acceso & turnos + horarios');
+          await page.getByRole('button', { name: 'Preparar solicitud para WhatsApp' }).click();
+          const link = page.getByRole('link', { name: 'Abrir WhatsApp y revisar solicitud' });
+          const target = new URL(await link.getAttribute('href'));
+          assert.equal(target.host, 'wa.me');
+          assert.match(target.searchParams.get('text'), /Acceso & turnos \+ horarios/);
+          assert.match(target.searchParams.get('text'), /Empresa: Empresa de prueba/);
+          await page.getByLabel('Municipio').fill('Terrassa');
+          assert.equal(await link.count(), 0, 'Old quote must disappear after edits');
+          report.push({ route, status: response.status(), title: await page.title(), description: await page.locator('meta[name="description"]').getAttribute('content'), schemas: parsed.map(s => s['@type']), desktop: '1440x1000', mobile: '390x844', errors });
+        }
+        await context.close();
+      }
+    }
+    assert.equal(titles.size, 4); assert.equal(descriptions.size, 4);
+    const page = await browser.newPage();
+    await page.addInitScript(() => localStorage.setItem('superclim-cookie-consent', 'rejected'));
+    await page.route('**/*', r => new URL(r.request().url()).origin === base ? r.continue() : r.abort());
+    const sitemapPaths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => new URL(m[1]).pathname);
+    for (const path of sitemapPaths) assert.equal((await page.request.get(`${base}${path}`)).status(), 200, path);
+    await page.goto(`${base}/`, { waitUntil: 'networkidle' });
+    assert.equal(await page.locator('#business-title').count(), 1);
+    await page.locator('section[aria-labelledby="business-title"]').screenshot({ path: `${output}/home-business-desktop.png` });
+    await page.getByRole('link', { name: 'Ver servicios para empresas', exact: true }).click();
+    await page.waitForURL(`${base}${routes[0]}`);
+    assert.equal(await page.locator('h1').count(), 1);
+    await page.getByRole('link', { name: 'Limpieza de oficinas', exact: true }).click();
+    await page.waitForURL(`${base}${routes[1]}`);
+    await page.waitForFunction(() => document.querySelector('h1')?.textContent === 'Limpieza profesional de oficinas en Sabadell y Barcelona');
+    assert.equal(await page.locator('script[type="application/ld+json"]').count(), 2, (await page.locator('script[type="application/ld+json"]').allTextContents()).join('\n'));
+    for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]', 'link[rel="canonical"]']) assert.equal(await page.locator(selector).count(), 1, await page.locator(selector).evaluateAll(els => els.map(el => el.outerHTML).join('\n')));
+    await fs.writeFile(`${output}/validation.json`, JSON.stringify({ sitemapRoutes: sitemapPaths.length, results: report }, null, 2));
+  } finally {
+    await browser?.close();
+    await new Promise(resolve => server.httpServer.close(resolve));
+  }
+});

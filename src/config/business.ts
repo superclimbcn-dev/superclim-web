@@ -36,6 +36,11 @@ export const businessConfig = {
   urls: {
     base: 'https://superclim.es',
     services: {
+      businessCleaning: '/limpieza-para-empresas',
+      officeCleaning: '/limpieza-para-empresas/oficinas',
+      industrialCleaning: '/limpieza-para-empresas/naves-industriales',
+      logisticsCleaning: '/limpieza-para-empresas/centros-logisticos',
+
       sofaCleaning: '/limpieza-de-sofas',
       carpetCleaning: '/limpieza-de-alfombras',
       mattressCleaning: '/mas-servicios',

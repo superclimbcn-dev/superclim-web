@@ -279,5 +279,15 @@
   "whatsapp": {
     "button": "Chatear por WhatsApp",
     "message": "¡Hola! Me gustaría solicitar información sobre sus servicios de limpieza."
+  },
+  "homeBusiness": {
+    "title": "Limpieza profesional para empresas",
+    "description": "Servicios periódicos de limpieza para oficinas, naves industriales, almacenes y centros de trabajo en Sabadell, Vallès Occidental y Barcelona.",
+    "offices": "Limpieza de oficinas",
+    "industrial": "Limpieza industrial",
+    "logistics": "Naves y almacenes",
+    "communities": "Limpieza de comunidades",
+    "cta": "Ver servicios para empresas",
+    "quote": "Solicitar presupuesto"
   }
 }
