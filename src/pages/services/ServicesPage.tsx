@@ -81,6 +81,14 @@ const services = [
     href: '/limpieza-de-comunidades',
     color: 'from-emerald-700 to-teal-600',
   },
+  {
+    icon: Building2,
+    title: 'Limpieza para Empresas',
+    description: 'Servicios profesionales de limpieza para empresas, oficinas, naves industriales y centros logísticos.',
+    href: businessConfig.urls.services.businessCleaning,
+    color: 'from-teal-700 to-cyan-600',
+    linkText: 'Ver servicios para empresas',
+  },
 ];
 
 export default function ServicesPage() {
@@ -117,6 +125,12 @@ export default function ServicesPage() {
               y alfombras hasta colchones y cuero. Servicio a domicilio en toda el área
               metropolitana de Barcelona.
             </p>
+            <p className="mt-4 text-lg text-white/80">
+              <Link to="/quienes-somos" className="text-white underline underline-offset-4 hover:text-emerald-200">
+                Conoce nuestra empresa
+              </Link>{' '}
+              y cómo trabajamos.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -146,7 +160,7 @@ export default function ServicesPage() {
                       to={service.href}
                       className="inline-flex items-center text-emerald-600 font-semibold group-hover:text-emerald-700 transition-colors"
                     >
-                      Saber Más
+                      {service.linkText ?? 'Saber Más'}
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </CardContent>
@@ -243,7 +257,10 @@ export default function ServicesPage() {
               ¿Necesitas algún servicio?
             </h2>
             <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
-              Contáctanos y te ayudaremos a elegir el servicio que mejor se adapte a tus necesidades.
+              <Link to="/contacto" className="text-white underline underline-offset-4 hover:text-emerald-200">
+                Contáctanos
+              </Link>{' '}
+              y te ayudaremos a elegir el servicio que mejor se adapte a tus necesidades.
               Presupuesto gratuito sin compromiso.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
