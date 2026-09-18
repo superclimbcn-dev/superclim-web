@@ -4,7 +4,7 @@ export type BusinessPageKey = 'businessCleaning' | 'officeCleaning' | 'industria
 export const businessPages = {
   businessCleaning: {
     label: 'Servicios de limpieza para empresas', facility: '', eyebrow: 'Limpieza empresarial · Sabadell y Barcelona',
-    intro: 'Tu centro de trabajo necesita un servicio de limpieza que encaje con su actividad. En Superclim planificamos la limpieza recurrente o periódica, con nuestro propio personal, organización y seguimiento del servicio.',
+    intro: 'Superclim presta servicios de limpieza para empresas en Sabadell, el Vallès Occidental y Barcelona. Definimos un plan de mantenimiento recurrente según las instalaciones, las tareas y los horarios acordados. Tu empresa contrata el servicio; Superclim organiza el equipo, los turnos y la supervisión de su ejecución.',
     heading: 'Un plan para cada centro de trabajo',
     sections: [
       ['Oficinas y despachos', 'Cuidamos los espacios de trabajo, las salas de reunión, los aseos y las zonas compartidas con una frecuencia adaptada a su uso.'],
@@ -12,8 +12,8 @@ export const businessPages = {
       ['Almacenes y centros logísticos', 'Organizamos las tareas por zonas y franjas horarias para atender los espacios de almacenamiento y las áreas de uso común.'],
     ],
     tasks: ['Suelos y pasillos', 'Aseos y vestuarios', 'Zonas comunes y de descanso', 'Oficinas y salas de reunión', 'Papeleras y superficies de uso cotidiano', 'Cristales interiores cuando proceda'],
-    planningTitle: 'Frecuencia y alcance a medida',
-    planning: 'Desde pequeñas empresas hasta grandes instalaciones, adaptamos la frecuencia y el número de profesionales al tamaño y uso de cada espacio. El plan puede contemplar varias horas al día o varios días por semana, con horarios acordados y tareas definidas por zona.',
+    planningTitle: 'Contratos de limpieza con un alcance definido',
+    planning: 'La propuesta concreta qué zonas se limpian, qué tareas se realizan y con qué frecuencia. También recoge los horarios, las condiciones de acceso y los materiales previstos en la propuesta. Podemos plantear limpieza diaria, varias veces por semana o semanal, según las necesidades del centro. Las necesidades adicionales se revisan para acordar su alcance antes de incorporarlas al servicio.',
     faq: [
       ['¿Ofrecéis limpieza diaria para empresas?', 'Sí, podemos plantear un servicio diario, semanal o varias veces por semana según el uso del centro y el alcance acordado.'],
       ['¿Podéis trabajar varias horas al día?', 'El plan puede incluir varias horas al día o varios días por semana. Valoramos las instalaciones y las tareas antes de concretar la dedicación y el horario.'],
@@ -27,7 +27,7 @@ export const businessPages = {
   },
   officeCleaning: {
     label: 'Limpieza de oficinas', facility: 'Oficina', eyebrow: 'Oficinas · Despachos · Espacios de trabajo',
-    intro: 'Un entorno cuidado empieza por las zonas que tu equipo utiliza cada día. Organizamos la limpieza de oficinas en Sabadell y Barcelona para gerencia, responsables de oficina y facilities managers, con tareas claras y horarios compatibles con la jornada.',
+    intro: 'Organizamos la limpieza recurrente de oficinas y despachos en Sabadell y Barcelona para gerencia, responsables de oficina y facilities managers. Definimos las tareas de puestos de trabajo, salas de reunión, aseos y espacios compartidos, con una frecuencia y unos horarios acordados según el uso de cada zona.',
     heading: 'De la recepción al último puesto de trabajo',
     sections: [
       ['Puestos de trabajo y reuniones', 'Limpieza de escritorios y superficies accesibles, salas de reunión y despachos. Acordamos cómo intervenir sin desplazar documentación ni manipular equipos o efectos personales.'],
@@ -35,8 +35,8 @@ export const businessPages = {
       ['Office, cocina y aseos', 'Estas áreas requieren una planificación acorde al uso diario. Concretamos las superficies, los puntos de atención y la frecuencia para mantener los espacios compartidos.'],
     ],
     tasks: ['Escritorios y superficies accesibles', 'Salas de reunión y despachos', 'Recepción y zonas comunes', 'Office y cocina compartida', 'Aseos y papeleras', 'Suelos y cristales interiores acordados'],
-    planningTitle: 'Limpieza antes o después de la jornada',
-    planning: 'La limpieza diaria de oficinas puede ser adecuada para centros con mucho tránsito; otros despachos necesitan un servicio semanal o varias veces por semana. Acordamos el acceso, el cierre y los horarios antes o después de la jornada, así como las zonas que deben quedar disponibles durante el trabajo.',
+    planningTitle: 'Un servicio recurrente adaptado a la jornada',
+    planning: 'La frecuencia puede ser diaria, varias veces por semana o semanal, según la ocupación y el uso de los espacios. Acordamos el acceso, el cierre y las zonas disponibles durante cada intervención. El plan distingue las tareas habituales de otras actuaciones periódicas y permite revisar las prioridades con la persona responsable de la oficina.',
     faq: [
       ['¿Se puede limpiar con la oficina en funcionamiento?', 'Valoramos las zonas ocupadas y los momentos de menor actividad. Si conviene, planteamos el servicio antes o después de la jornada, con acceso previamente acordado.'],
       ['¿Qué ocurre con los documentos de los escritorios?', 'Acordamos limpiar las superficies accesibles sin manipular documentación. Conviene dejar despejadas las mesas que deban incluirse en cada visita.'],
@@ -46,7 +46,7 @@ export const businessPages = {
   },
   industrialCleaning: {
     label: 'Limpieza de naves industriales', facility: 'Nave industrial', eyebrow: 'Naves industriales · Talleres · Instalaciones productivas',
-    intro: 'La limpieza de una nave debe tener en cuenta sus recorridos, superficies y actividad. Preparamos un servicio de mantenimiento para naves industriales y talleres de Sabadell y Barcelona, definiendo las zonas accesibles y las tareas antes de comenzar.',
+    intro: 'Planificamos la limpieza industrial de pavimentos, pasillos y zonas comunes en naves y talleres de Sabadell y Barcelona. Para el mantenimiento recurrente de grandes superficies, valoramos los sectores de trabajo, los accesos y la actividad del centro antes de definir tareas, frecuencias y horarios.',
     heading: 'Mantenimiento según el uso de la nave',
     sections: [
       ['Pavimentos, pasillos y polvo', 'Valoramos el estado de los pavimentos y la acumulación de polvo industrial para definir el mantenimiento de suelos y pasillos. Es necesario identificar la naturaleza de los residuos antes de acordar su tratamiento.'],
@@ -54,8 +54,8 @@ export const businessPages = {
       ['Espacios de apoyo a la actividad', 'Oficinas interiores, vestuarios, aseos y zonas comunes tienen necesidades diferentes a las áreas productivas. Las zonas de carga pueden incluirse cuando proceda, previa valoración del acceso y del uso.'],
     ],
     tasks: ['Pavimentos y suelos industriales', 'Pasillos y recorridos accesibles', 'Zonas productivas acordadas', 'Oficinas interiores', 'Vestuarios, aseos y zonas comunes', 'Zonas de carga cuando proceda'],
-    planningTitle: 'Coordinación con la actividad industrial',
-    planning: 'Antes de presupuestar revisamos el tipo de instalación, las superficies, el polvo presente y las restricciones de acceso. La propuesta concreta las tareas de mantenimiento y su frecuencia. Los trabajos peligrosos, en altura o de limpieza técnica especializada no forman parte de esta oferta.',
+    planningTitle: 'Mantenimiento por sectores y frecuencias',
+    planning: 'En una nave, no todas las superficies requieren la misma frecuencia. La propuesta diferencia pavimentos y recorridos, áreas productivas accesibles y espacios de apoyo, como oficinas, aseos y vestuarios. Acordamos con el responsable del centro qué zonas estarán disponibles durante cada intervención. Los trabajos peligrosos, en altura o de limpieza técnica especializada no forman parte de esta oferta.',
     faq: [
       ['¿Limpiáis naves con actividad productiva?', 'Valoramos las áreas disponibles y coordinamos las tareas con el responsable de la instalación. El plan debe delimitar las zonas y los horarios de intervención.'],
       ['¿Incluye limpieza de maquinaria industrial?', 'No se presupone ese servicio. Esta propuesta se centra en pavimentos, espacios accesibles y áreas comunes; cualquier necesidad técnica requiere una valoración independiente de su viabilidad.'],
@@ -65,7 +65,7 @@ export const businessPages = {
   },
   logisticsCleaning: {
     label: 'Limpieza de almacenes y centros logísticos', facility: 'Almacén / centro logístico', eyebrow: 'Almacenes · Distribución · Plataformas logísticas',
-    intro: 'El movimiento de mercancías marca el ritmo de un almacén. Organizamos la limpieza recurrente de almacenes y centros logísticos en Barcelona y el Vallès Occidental con tareas por zonas y horarios adaptados a la operativa.',
+    intro: 'Organizamos la limpieza recurrente de almacenes y centros logísticos en Barcelona y el Vallès Occidental. El plan diferencia zonas de picking, pasillos, muelles acordados y oficinas internas, con horarios coordinados con la circulación de mercancías y los turnos del centro.',
     heading: 'Cada zona tiene su momento de limpieza',
     sections: [
       ['Almacenamiento, picking y pasillos', 'Acordamos la limpieza de superficies accesibles en almacenes y zonas de picking, respetando los recorridos de circulación. La planificación identifica los espacios disponibles sin manipular mercancía.'],
@@ -74,7 +74,7 @@ export const businessPages = {
     ],
     tasks: ['Superficies accesibles del almacén', 'Zonas de picking', 'Pasillos y áreas comunes', 'Muelles y zonas de carga acordados', 'Oficinas, aseos y vestuarios', 'Zonas de descanso'],
     planningTitle: 'Servicio recurrente compatible con los turnos',
-    planning: 'En centros de distribución y plataformas logísticas, definimos ventanas de trabajo por área. Si procede, organizamos el servicio por turnos y priorizamos los momentos de menor circulación. El seguimiento permite comunicar incidencias y ajustar las tareas al uso real del almacén dentro del alcance contratado.',
+    planning: 'Definimos ventanas de trabajo por área y frecuencias según su uso. El mantenimiento habitual y las necesidades adicionales se distinguen en la propuesta. Superclim organiza el equipo y realiza el seguimiento del servicio; las incidencias y los cambios de prioridad se revisan con el responsable del centro dentro del alcance contratado.',
     faq: [
       ['¿Podéis adaptar el servicio a nuestros turnos?', 'Sí, valoramos las franjas de actividad y los accesos para acordar horarios. La organización por turnos se concreta cuando las necesidades de la instalación lo requieren.'],
       ['¿Se incluyen los muelles de carga?', 'Pueden incluirse cuando corresponda, con zonas y horarios previamente acordados para coordinar la limpieza con las operaciones de carga y descarga.'],

@@ -21,7 +21,7 @@ test('existing SEO configurations and community source files are preserved', asy
   const changed = execFileSync('git', ['diff', '--name-only'], { encoding: 'utf8' });
   assert.doesNotMatch(changed, /src\/(pages\/services\/(LimpiezaComunidades|communities\/)|config\/communityPages)/);
 });
-test('B2B prerender, routes, SEO, mobile layout and quote flow', async () => {
+test('B2B prerender, routes, SEO, mobile layout and quote flow', async (t) => {
   const server = await preview({ preview: { host: '127.0.0.1', port: 4174, strictPort: true, open: false } });
   let browser;
   try {
@@ -38,18 +38,41 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async () => {
     const descriptions = new Set();
     for (const route of routes) {
       assert.ok(sitemap.includes(`https://superclim.es${route}</loc>`));
-      for (const javaScriptEnabled of [false, true]) {
-        const context = await browser.newContext({ javaScriptEnabled, viewport: { width: 1440, height: 1000 } });
+      for (const viewport of [{ width: 1440, height: 1000 }, { width: 375, height: 812 }]) for (const javaScriptEnabled of [false, true]) {
+        t.diagnostic(`${route} ${viewport.width}x${viewport.height} JS=${javaScriptEnabled}`);
+        const context = await browser.newContext({ javaScriptEnabled, locale: 'es-ES', viewport });
         await context.addInitScript(() => localStorage.setItem('superclim-cookie-consent', 'rejected'));
         // Block external tracking/media: validation must not send production analytics or messages.
         await context.route('**/*', r => new URL(r.request().url()).origin === base ? r.continue() : r.abort());
         const page = await context.newPage();
         const errors = [];
+        const documentRequests = [];
+        page.on('request', request => {
+          if (request.isNavigationRequest() && request.frame() === page.mainFrame()) documentRequests.push(request.url());
+        });
         page.on('pageerror', error => errors.push(error.message));
         const response = await page.goto(`${base}${route}`, { waitUntil: 'networkidle' });
         assert.equal(response.status(), 200);
         assert.equal(await page.locator('h1').count(), 1);
-        assert.ok((await page.locator('main').innerText()).length > 3000);
+        const content = await page.locator('main').innerText();
+        assert.ok(content.length > 3000);
+        assert.doesNotMatch(content, /alquiler de trabajadores|cesión de personal|personal puesto a disposición|\bETT\b|visita gratuita|visita inmediata|reservamos visita|visita garantizada/i);
+        assert.ok(content.includes('los materiales previstos en la propuesta'));
+        assert.ok(content.includes('Si hace falta conocer la instalación, acordamos una visita de valoración.'));
+        for (const name of ['Qué queda definido en la propuesta', 'Organización y control del servicio', 'Valoramos el alcance', 'Organizamos el servicio']) {
+          assert.equal(await page.getByRole('heading', { name, exact: true }).count(), 1);
+        }
+        const contact = page.getByRole('link', { name: 'Contacta con Superclim', exact: true });
+        assert.equal(await contact.count(), 1);
+        assert.equal(await contact.getAttribute('href'), '/contacto');
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${route} ${viewport.width} overflow`);
+        if (!javaScriptEnabled) {
+          assert.equal(await page.locator('form, input, select, textarea, button[type="submit"]').count(), 0, 'No native form can expose data through GET without JS');
+          const fallback = page.getByRole('link', { name: 'Solicitar presupuesto por WhatsApp', exact: true });
+          assert.equal(new URL(await fallback.getAttribute('href')).host, 'wa.me');
+          await fallback.focus();
+          assert.ok(await fallback.evaluate(el => el === document.activeElement));
+        }
         for (const selector of ['title', 'meta[name="description"]', 'meta[name="robots"]', 'link[rel="canonical"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]', 'meta[name="twitter:title"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).count(), 1, `${route} ${javaScriptEnabled} ${selector}`);
         assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://superclim.es${route}`);
         assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /^index, follow/);
@@ -61,7 +84,10 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async () => {
         assert.doesNotMatch(schemas.join(''), /AggregateRating|"Review"|"price"|FAQPage/);
         if (route === routes[0]) assert.equal(parsed.find(s => s['@type'] === 'Service').hasOfferCatalog.itemListElement.length, 5);
         const links = await page.locator('main a[href^="/"]').evaluateAll(els => els.map(el => el.getAttribute('href')));
-        for (const target of [...routes, '/limpieza-de-comunidades'].filter(target => target !== route)) assert.ok(links.includes(target), `${route} missing ${target}`);
+        for (const target of [...routes, '/limpieza-de-comunidades', '/contacto'].filter(target => target !== route)) {
+          assert.ok(links.includes(target), `${route} missing ${target}`);
+          assert.equal((await page.request.get(`${base}${target}`, { maxRedirects: 0 })).status(), 200, target);
+        }
         assert.equal(errors.length, 0, errors.join('\n'));
         if (javaScriptEnabled) {
           titles.add(await page.title());
@@ -69,10 +95,7 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async () => {
           await page.locator('footer').scrollIntoViewIfNeeded();
           await page.waitForTimeout(700);
           await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
-          await page.screenshot({ path: `${output}/${route.split('/').at(-1)}-desktop.png`, fullPage: true });
-          await page.setViewportSize({ width: 390, height: 844 });
-          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${route} overflow`);
-          await page.screenshot({ path: `${output}/${route.split('/').at(-1)}-mobile.png`, fullPage: true });
+          await page.screenshot({ path: `${output}/${route.split('/').at(-1)}-${viewport.width}.png`, fullPage: true });
           await page.getByRole('link', { name: 'Solicitar presupuesto', exact: true }).click();
           await page.getByRole('button', { name: 'Preparar solicitud para WhatsApp' }).click();
           assert.equal(await page.getByRole('status').count(), 0);
@@ -84,16 +107,33 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async () => {
           assert.equal(await page.getByRole('status').count(), 0);
           await page.getByLabel('Email', { exact: true }).fill('prueba@example.com');
           await page.getByLabel('Mensaje', { exact: true }).fill('Acceso & turnos + horarios');
+          assert.equal(await page.locator('form input, form select, form textarea').count(), 10);
+          assert.equal(await page.locator('form :required').count(), 2);
           await page.getByRole('button', { name: 'Preparar solicitud para WhatsApp' }).click();
           const link = page.getByRole('link', { name: 'Abrir WhatsApp y revisar solicitud' });
+          assert.equal(new URL(page.url()).search, '', 'No personal data in the page query string');
+          assert.deepEqual(documentRequests, [`${base}${route}`], 'Preparing WhatsApp must not submit a document GET');
           const target = new URL(await link.getAttribute('href'));
           assert.equal(target.host, 'wa.me');
           assert.match(target.searchParams.get('text'), /Acceso & turnos \+ horarios/);
           assert.match(target.searchParams.get('text'), /Empresa: Empresa de prueba/);
           await page.getByLabel('Municipio').fill('Terrassa');
           assert.equal(await link.count(), 0, 'Old quote must disappear after edits');
-          report.push({ route, status: response.status(), title: await page.title(), description: await page.locator('meta[name="description"]').getAttribute('content'), schemas: parsed.map(s => s['@type']), desktop: '1440x1000', mobile: '390x844', errors });
+          report.push({ route, status: response.status(), title: await page.title(), description: await page.locator('meta[name="description"]').getAttribute('content'), schemas: parsed.map(s => s['@type']), viewport, errors });
         }
+        await contact.evaluate(el => el.scrollIntoView({ behavior: 'instant', block: 'center' }));
+        assert.ok(await contact.isVisible());
+        await contact.focus();
+        assert.ok(await contact.evaluate(el => el === document.activeElement));
+        await page.keyboard.press('Enter');
+        await page.waitForURL(`${base}/contacto`);
+        await page.waitForFunction(() => document.querySelector('link[rel="canonical"]')?.getAttribute('href') === 'https://superclim.es/contacto');
+        assert.equal(await page.locator('link[rel="canonical"]').count(), 1);
+        if (javaScriptEnabled) {
+          const contactSchemas = (await page.locator('script[type="application/ld+json"]').allTextContents()).map(JSON.parse);
+          assert.ok(contactSchemas.every(schema => schema['@type'] !== 'Service'), 'No B2B Service left on contact');
+        }
+        assert.deepEqual(errors, []);
         await context.close();
       }
     }
