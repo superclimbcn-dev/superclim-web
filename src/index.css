@@ -73,3 +73,20 @@
     @apply bg-background text-foreground;
   }
 }
+@media (max-width: 639px) {
+  .floating-whatsapp, .floating-whatsapp > a { transform: none !important; }
+  .floating-whatsapp {
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: max(16px, env(safe-area-inset-right));
+  }
+  .floating-whatsapp[data-mobile-blocked="true"],
+  .floating-whatsapp-general[data-mobile-blocked="true"] .floating-whatsapp {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Keep off-screen entrance animations from widening the mobile viewport. */
+@media (max-width: 1023px) {
+  html, body { overflow-x: clip; }
+}

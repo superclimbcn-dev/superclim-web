@@ -289,5 +289,27 @@
     "communities": "Limpieza de comunidades",
     "cta": "Ver servicios para empresas",
     "quote": "Solicitar presupuesto"
+  },
+  "mobileNav": {
+    "title": "Menú principal",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "home": "Inicio",
+    "allServices": "Todos los servicios",
+    "services": "Servicios",
+    "communities": "Comunidades",
+    "business": "Empresas",
+    "company": "Empresa",
+    "sofas": "Limpieza de Sofás",
+    "carpets": "Limpieza de Alfombras",
+    "mattresses": "Limpieza de Colchones",
+    "waterproofing": "Impermeabilización",
+    "communityCleaning": "Limpieza de Comunidades",
+    "businessCleaning": "Limpieza para Empresas",
+    "offices": "Oficinas",
+    "industrial": "Naves Industriales",
+    "logistics": "Centros Logísticos",
+    "about": "Quiénes Somos",
+    "contact": "Contacto"
   }
 }

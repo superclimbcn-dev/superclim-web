@@ -289,5 +289,27 @@
     "communities": "Neteja de comunitats",
     "cta": "Veure serveis per a empreses",
     "quote": "Sol·licitar pressupost"
+  },
+  "mobileNav": {
+    "title": "Menú principal",
+    "open": "Obrir menú",
+    "close": "Tancar menú",
+    "home": "Inici",
+    "allServices": "Tots els serveis",
+    "services": "Serveis",
+    "communities": "Comunitats",
+    "business": "Empreses",
+    "company": "Empresa",
+    "sofas": "Neteja de sofàs",
+    "carpets": "Neteja de catifes",
+    "mattresses": "Neteja de matalassos",
+    "waterproofing": "Impermeabilització",
+    "communityCleaning": "Neteja de comunitats",
+    "businessCleaning": "Neteja per a empreses",
+    "offices": "Oficines",
+    "industrial": "Naus industrials",
+    "logistics": "Centres logístics",
+    "about": "Qui som",
+    "contact": "Contacte"
   }
 }

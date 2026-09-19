@@ -1,3 +1,4 @@
+import { BusinessWhatsAppButton } from '@/components/BusinessWhatsAppButton';
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Building2, Check, ClipboardList, CalendarDays, Users } from 'lucide-react';
@@ -59,6 +60,6 @@ export default function BusinessPage({ pageKey, prerender = false }: { pageKey: 
       <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6"><h2 className="mb-8 text-3xl font-bold">Preguntas frecuentes</h2><div className="divide-y divide-gray-200">{page.faq.map(([question, answer]) => <details key={question} className="py-5"><summary className="cursor-pointer text-lg font-semibold">{question}</summary><p className="mt-4 leading-relaxed text-gray-600">{answer}</p></details>)}</div></section>
       <BusinessQuoteForm facility={page.facility} />
     </main><Footer />
-    <a href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Consultar servicio de limpieza por WhatsApp" className="fixed bottom-4 right-4 z-40 rounded-full bg-emerald-700 px-5 py-3 font-bold text-white shadow-lg hover:bg-emerald-800">WhatsApp</a>
+    <BusinessWhatsAppButton href={whatsapp} />
   </>;
 }

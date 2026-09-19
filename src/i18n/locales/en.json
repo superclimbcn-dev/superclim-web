@@ -289,5 +289,27 @@
     "communities": "Communal area cleaning",
     "cta": "View business services",
     "quote": "Request a quote"
+  },
+  "mobileNav": {
+    "title": "Main menu",
+    "open": "Open menu",
+    "close": "Close menu",
+    "home": "Home",
+    "allServices": "All services",
+    "services": "Services",
+    "communities": "Communities",
+    "business": "Businesses",
+    "company": "Company",
+    "sofas": "Sofa cleaning",
+    "carpets": "Carpet cleaning",
+    "mattresses": "Mattress cleaning",
+    "waterproofing": "Waterproofing",
+    "communityCleaning": "Community cleaning",
+    "businessCleaning": "Business cleaning",
+    "offices": "Offices",
+    "industrial": "Industrial buildings",
+    "logistics": "Logistics centres",
+    "about": "About us",
+    "contact": "Contact"
   }
 }

@@ -1,8 +1,9 @@
+import { MobileNavigation } from '@/components/MobileNavigation';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
-import { LanguageSwitcher } from './LanguageSwitcher';
+import { motion } from 'framer-motion';
+import { Phone } from 'lucide-react';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import { businessConfig } from '@/config/business';
@@ -17,7 +18,6 @@ const navItems = [
 export function Header() {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const effectiveIsScrolled = !isHomePage || isScrolled;
@@ -41,7 +41,6 @@ export function Header() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -121,102 +120,13 @@ export function Header() {
                 </Button>
               )}
 
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`lg:hidden p-2 rounded-lg transition-colors duration-200 ${
-                  effectiveIsScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
-                }`}
-              >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+              <MobileNavigation isScrolled={effectiveIsScrolled} />
             </div>
           </div>
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 lg:hidden"
-          >
-            <div
-              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-            <motion.nav
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl"
-            >
-              <div className="p-6 pt-20">
-                <div className="flex flex-col gap-4">
-                  {isHomePage ? (
-                    navItems.map((item, index) => (
-                      <motion.a
-                        key={item.key}
-                        href={item.href}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection(item.href);
-                        }}
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="text-lg font-medium text-gray-700 hover:text-emerald-600 py-3 border-b border-gray-100"
-                      >
-                        {t(`nav.${item.key}`)}
-                      </motion.a>
-                    ))
-                  ) : (
-                    <Link
-                      to="/"
-                      className="text-lg font-medium text-gray-700 hover:text-emerald-600 py-3 border-b border-gray-100"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {t('nav.home')}
-                    </Link>
-                  )}
-                  
-                  {isHomePage && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
-                      className="mt-6"
-                    >
-                      <Button
-                        onClick={() => scrollToSection('#contact')}
-                        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full py-6"
-                      >
-                        {t('nav.quote')}
-                      </Button>
-                    </motion.div>
-                  )}
 
-                  <motion.a
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    href={`tel:${businessConfig.phone}`}
-                    className="flex items-center justify-center gap-2 text-emerald-600 font-medium mt-4"
-                  >
-                    <Phone className="w-5 h-5" />
-                    <span>{businessConfig.phoneDisplay.replace('+34 ', '')}</span>
-                  </motion.a>
-                </div>
-              </div>
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }

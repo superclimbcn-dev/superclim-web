@@ -1,3 +1,5 @@
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
+import { useFloatingWhatsAppSafety } from '@/hooks/useFloatingWhatsAppSafety';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X } from 'lucide-react';
@@ -6,6 +8,7 @@ import { businessConfig } from '@/config/business';
 
 export function WhatsAppButton() {
   const { t } = useTranslation();
+  const safetyRef = useFloatingWhatsAppSafety();
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
@@ -53,14 +56,14 @@ export function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(t('whatsapp.message'))}`;
 
   return (
-    <AnimatePresence>
+    <div ref={safetyRef} data-mobile-blocked="true" className="floating-whatsapp-general"><AnimatePresence>
       {isVisible && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-6 right-6 z-50"
+          className="floating-whatsapp fixed bottom-6 right-6 z-50"
         >
           {/* Tooltip */}
           <AnimatePresence>
@@ -69,7 +72,7 @@ export function WhatsAppButton() {
                 initial={{ opacity: 0, y: 10, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                className="absolute bottom-full right-0 mb-3 w-64"
+                className="absolute bottom-full right-0 mb-3 hidden w-64 sm:block"
               >
                 <div className="bg-white rounded-2xl shadow-2xl p-4 relative">
                   <button
@@ -89,22 +92,23 @@ export function WhatsAppButton() {
 
           {/* Button */}
           <motion.a
+            aria-label="WhatsApp"
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleClick}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full px-6 py-4 shadow-2xl shadow-green-500/30 hover:shadow-green-500/50 transition-shadow"
+            className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full h-[48px] w-[48px] justify-center sm:h-auto sm:w-auto sm:px-6 sm:py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 shadow-2xl shadow-green-500/30 hover:shadow-green-500/50 transition-shadow"
           >
             <div className="relative">
-              <MessageCircle className="w-6 h-6" />
-              <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75" />
+              <MessageCircle className="hidden w-6 h-6 sm:block" aria-hidden="true" /><WhatsAppIcon className="h-6 w-6 sm:hidden" />
+              <span className="absolute inset-0 hidden sm:block rounded-full bg-green-400 animate-ping opacity-75" />
             </div>
             <span className="font-semibold hidden sm:inline">{t('whatsapp.button')}</span>
           </motion.a>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence></div>
   );
 }
