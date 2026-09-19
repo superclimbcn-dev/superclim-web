@@ -9,6 +9,24 @@ import { chromium } from 'playwright';
 import { preview } from 'vite';
 
 const routes = ['/limpieza-para-empresas', '/limpieza-para-empresas/oficinas', '/limpieza-para-empresas/naves-industriales', '/limpieza-para-empresas/centros-logisticos'];
+const approvedRegionalContent = [
+  [
+    "Contratos recurrentes desde nuestra base en Sabadell",
+    "Desde nuestra base en Sabadell, valoramos la ubicación de tu instalación, los accesos y la frecuencia y los horarios más adecuados para el servicio. Según se trate de oficinas, naves o centros logísticos, concretamos las tareas y las condiciones del contrato recurrente. Tu empresa contrata el servicio; Superclim organiza la ejecución y su supervisión conforme al alcance acordado. Consulta la especialidad correspondiente para conocer qué podemos incluir en la propuesta."
+  ],
+  [
+    "Un servicio recurrente adaptado a la jornada",
+    "La frecuencia puede ser diaria, varias veces por semana o semanal, según la ocupación y el uso de los espacios. Para las oficinas en Barcelona, concretamos con la persona responsable de la instalación qué áreas privativas y qué zonas comunes forman parte del servicio contratado. Acordamos los accesos, el cierre y los horarios de intervención según la disponibilidad de cada zona. El plan distingue las tareas habituales de otras actuaciones periódicas y permite revisar las prioridades con esa persona responsable."
+  ],
+  [
+    "Planificación del servicio en Terrassa y Rubí",
+    "Para el mantenimiento recurrente de naves en Terrassa, definimos frecuencias según el uso de las áreas productivas accesibles, pasillos y espacios de apoyo, coordinando las intervenciones con la actividad de la instalación. En Rubí, valoramos el uso de la nave, los tipos de superficies, los accesos, la circulación y las prioridades para diferenciar las tareas habituales de las necesidades adicionales. En ambos municipios, la propuesta concreta las zonas disponibles, los horarios y el alcance del servicio. Si hace falta conocer la instalación, acordamos una visita de valoración. No incluye limpieza de maquinaria especializada, retirada de residuos peligrosos, trabajos en altura ni limpieza técnica fuera del alcance acordado."
+  ],
+  [
+    "Servicio recurrente compatible con los turnos",
+    "En los centros logísticos de Barcelona, acordamos con el responsable del centro ventanas de ejecución según los turnos y la circulación de personas y mercancías. La propuesta concreta cuándo estarán disponibles las zonas de picking, los pasillos, los muelles autorizados para la intervención y las oficinas internas, con frecuencias según su uso. El servicio se realiza sobre las áreas acordadas, sin mover mercancías. El mantenimiento habitual y las necesidades adicionales se distinguen en la propuesta. Superclim organiza el equipo y realiza el seguimiento del servicio; las incidencias y los cambios de prioridad se revisan con el responsable del centro dentro del alcance contratado."
+  ]
+];
 function loadConfig(source) {
   const context = { exports: {} };
   vm.runInNewContext(ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText, context);
@@ -64,6 +82,21 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async (t) => {
           await regionalHeading.scrollIntoViewIfNeeded();
           assert.ok(await regionalHeading.isVisible());
           assert.ok(await regionalHeading.evaluate(el => !!(el.compareDocumentPosition([...document.querySelectorAll('h2')].find(h => h.textContent === 'Otros servicios para tus instalaciones')) & Node.DOCUMENT_POSITION_FOLLOWING)));
+        }
+        const [approvedTitle, approvedText] = approvedRegionalContent[routes.indexOf(route)];
+        const approvedHeading = page.getByRole('heading', { name: approvedTitle, exact: true });
+        assert.equal(await approvedHeading.count(), 1);
+        const approvedParagraph = approvedHeading.locator('xpath=following-sibling::p[1]');
+        assert.equal((await approvedParagraph.innerText()).replace(/\s+/g, ' ').trim(), approvedText);
+        await approvedHeading.scrollIntoViewIfNeeded();
+        assert.ok(await approvedHeading.isVisible());
+        for (const [otherTitle] of approvedRegionalContent.filter(([title]) => title !== approvedTitle)) {
+          assert.equal(await page.getByRole('heading', { name: otherTitle, exact: true }).count(), 0);
+        }
+        if (route === routes[0] || route === routes[2]) {
+          const cards = approvedHeading.locator('xpath=../..').locator('article');
+          assert.equal(await cards.count(), 4);
+          assert.equal(await cards.nth(3).locator('h3').innerText(), approvedTitle);
         }
         assert.ok(content.length > 3000);
         assert.doesNotMatch(content, /alquiler de trabajadores|cesión de personal|personal puesto a disposición|\bETT\b|visita gratuita|visita inmediata|reservamos visita|visita garantizada/i);
