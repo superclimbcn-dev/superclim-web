@@ -55,6 +55,16 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async (t) => {
         assert.equal(response.status(), 200);
         assert.equal(await page.locator('h1').count(), 1);
         const content = await page.locator('main').innerText();
+        const regionalHeading = page.getByRole('heading', { name: 'Servicio recurrente de oficinas en Sant Cugat', exact: true });
+        assert.equal(await regionalHeading.count(), route === routes[1] ? 1 : 0, 'Regional block belongs only to offices');
+        if (route === routes[1]) {
+          const cards = page.locator('main section').filter({ has: page.getByRole('heading', { name: 'De la recepción al último puesto de trabajo', exact: true }) }).locator('article');
+          assert.deepEqual(await cards.locator('h3').allTextContents(), ['Puestos de trabajo y reuniones', 'Recepción y espacios compartidos', 'Office, cocina y aseos', 'Servicio recurrente de oficinas en Sant Cugat']);
+          assert.equal(await cards.nth(3).locator('p').innerText(), 'Atendemos oficinas y despachos en Sant Cugat con un servicio de limpieza recurrente adaptado a cada instalación. Revisamos con la persona responsable los accesos, la ocupación y las prioridades: salas de reunión, aseos y áreas comunes pueden necesitar frecuencias distintas. Acordamos los horarios y el alcance del contrato; Superclim organiza el equipo, los turnos y la supervisión. Si hace falta conocer la instalación, acordamos una visita de valoración.');
+          await regionalHeading.scrollIntoViewIfNeeded();
+          assert.ok(await regionalHeading.isVisible());
+          assert.ok(await regionalHeading.evaluate(el => !!(el.compareDocumentPosition([...document.querySelectorAll('h2')].find(h => h.textContent === 'Otros servicios para tus instalaciones')) & Node.DOCUMENT_POSITION_FOLLOWING)));
+        }
         assert.ok(content.length > 3000);
         assert.doesNotMatch(content, /alquiler de trabajadores|cesión de personal|personal puesto a disposición|\bETT\b|visita gratuita|visita inmediata|reservamos visita|visita garantizada/i);
         assert.ok(content.includes('los materiales previstos en la propuesta'));
