@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Sofa, BedDouble, Shield, Phone, Mail, MapPin, Grid3X3, Wrench, Building2 } from 'lucide-react';
+import { Sofa, BedDouble, Shield, Phone, Mail, MapPin, Grid3X3, Wrench, Building2, Instagram, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { businessConfig } from '@/config/business';
 
@@ -60,8 +60,31 @@ export function Footer() {
                 <a
                   href={`mailto:${businessConfig.email}`}
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
+                  aria-label="Enviar email a Superclim"
                 >
                   <Mail className="w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/superclimempresas/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram de Superclim Empresas"
+                  title="Instagram de Superclim Empresas"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
+                >
+                  <Instagram className="w-5 h-5" aria-hidden="true" />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/profile.php?id=61594542214536"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook de Superclim Empresas"
+                  title="Facebook de Superclim Empresas"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
+                >
+                  <Facebook className="w-5 h-5" aria-hidden="true" />
                 </a>
               </div>
             </motion.div>
