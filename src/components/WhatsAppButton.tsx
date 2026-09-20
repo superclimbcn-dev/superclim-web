@@ -77,9 +77,10 @@ export function WhatsAppButton() {
                 <div className="bg-white rounded-2xl shadow-2xl p-4 relative">
                   <button
                     onClick={() => setShowTooltip(false)}
+                    aria-label="Cerrar aviso"
                     className="absolute top-2 right-2 w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
                   >
-                    <X className="w-3 h-3" />
+                    <X className="w-3 h-3" aria-hidden="true" />
                   </button>
                   <p className="text-sm text-gray-700 pr-4">
                     ¿Tienes dudas? Escríbenos por WhatsApp y te respondemos en minutos.
@@ -92,7 +93,7 @@ export function WhatsAppButton() {
 
           {/* Button */}
           <motion.a
-            aria-label="WhatsApp"
+            aria-label="Chatear por WhatsApp"
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"

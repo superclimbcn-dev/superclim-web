@@ -188,6 +188,7 @@ Por favor, contacten conmigo para coordinar una visita. ¡Gracias!`;
                     min={1}
                     max={10}
                     step={1}
+                    aria-label="Cantidad de sofás"
                     className="w-full"
                   />
                 </div>
