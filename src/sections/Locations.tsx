@@ -13,31 +13,43 @@ const locations = [
   {
     key: 'sabadell',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=600',
+    width: 600,
+    height: 400,
     coordinates: { lat: 41.5463, lng: 2.1106 },
   },
   {
     key: 'barcelona',
     image: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&q=80&w=600',
+    width: 600,
+    height: 400,
     coordinates: { lat: 41.3851, lng: 2.1734 },
   },
   {
     key: 'terrassa',
     image: 'https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&q=80&w=600',
+    width: 600,
+    height: 480,
     coordinates: { lat: 41.5636, lng: 2.0116 },
   },
   {
     key: 'cerdanyola',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=600',
+    width: 600,
+    height: 398,
     coordinates: { lat: 41.4911, lng: 2.1406 },
   },
   {
     key: 'santCugat',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600',
+    width: 600,
+    height: 400,
     coordinates: { lat: 41.4728, lng: 2.0853 },
   },
   {
     key: 'rubi',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=600',
+    width: 600,
+    height: 408,
     coordinates: { lat: 41.4923, lng: 2.0321 },
   },
 ];
@@ -82,6 +94,10 @@ export function Locations() {
                   <img
                     src={location.image}
                     alt={t(`locations.cities.${location.key}.name`)}
+                    width={location.width}
+                    height={location.height}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

@@ -25,8 +25,13 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=2070"
-          alt="Sofa cleaning"
+          src="/images/hero-sofa-1920.webp"
+          srcSet="/images/hero-sofa-1080.webp 1080w, /images/hero-sofa-1920.webp 1920w"
+          sizes="100vw"
+          width={1920}
+          height={1280}
+          fetchPriority="high"
+          alt=""
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-900/80 to-emerald-800/70" />

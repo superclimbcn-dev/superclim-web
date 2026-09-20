@@ -14,23 +14,23 @@ type BeforeAfterItem = {
 const beforeAfterImages: BeforeAfterItem[] = [
   {
     id: '1',
-    before: '/images/before-after/img_1438.jpg',
-    after: '/images/before-after/img_1448.jpg',
+    before: '/images/before-after/img_1438.webp',
+    after: '/images/before-after/img_1448.webp',
     title: 'Limpieza de Sofá',
     description: 'Recuperación del color y eliminación de manchas visibles',
     desktopLayout: 'stacked',
   },
   {
     id: '2',
-    before: '/images/before-after/img_2870.jpg',
-    after: '/images/before-after/img_2875.jpg',
+    before: '/images/before-after/img_2870.webp',
+    after: '/images/before-after/img_2875.webp',
     title: 'Limpieza de Sofá Chaise Longue',
     description: 'Tratamiento profundo en zonas de uso diario',
   },
   {
     id: '3',
-    before: '/images/before-after/img_0640.jpg',
-    after: '/images/before-after/img_0647.jpg',
+    before: '/images/before-after/img_0640.webp',
+    after: '/images/before-after/img_0647.webp',
     title: 'Limpieza de Sillón',
     description: 'Resultado real en tapicería clara',
   },
@@ -41,12 +41,16 @@ function ResultImage({
   alt,
   label,
   tone,
+  width,
+  height,
   desktopLayout = 'split',
 }: {
   src: string;
   alt: string;
   label: string;
   tone: 'before' | 'after';
+  width: number;
+  height: number;
   desktopLayout?: 'split' | 'stacked';
 }) {
   return (
@@ -58,6 +62,8 @@ function ResultImage({
       <img
         src={src}
         alt={alt}
+        width={width}
+        height={height}
         loading="lazy"
         decoding="async"
         className={
@@ -123,6 +129,8 @@ export function BeforeAfter() {
                   alt={`${t('beforeAfter.before')} - ${item.title}`}
                   label={t('beforeAfter.before')}
                   tone="before"
+                  width={item.desktopLayout === 'stacked' ? 1200 : 900}
+                  height={item.desktopLayout === 'stacked' ? 675 : 1200}
                   desktopLayout={item.desktopLayout}
                 />
                 <ResultImage
@@ -130,6 +138,8 @@ export function BeforeAfter() {
                   alt={`${t('beforeAfter.after')} - ${item.title}`}
                   label={t('beforeAfter.after')}
                   tone="after"
+                  width={item.desktopLayout === 'stacked' ? 1200 : 900}
+                  height={item.desktopLayout === 'stacked' ? 675 : 1200}
                   desktopLayout={item.desktopLayout}
                 />
               </div>

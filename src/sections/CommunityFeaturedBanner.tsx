@@ -25,8 +25,12 @@ export function CommunityFeaturedBanner() {
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
             <div className="relative min-h-72 overflow-hidden sm:min-h-96 lg:min-h-full">
               <img
-                src="/images/limpieza-de-escalera.png"
+                src="/images/limpieza-de-escalera.webp"
                 alt="Limpieza profesional de zonas comunes y escaleras"
+                width={1600}
+                height={900}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/25 via-transparent to-teal-900/5" aria-hidden="true" />
