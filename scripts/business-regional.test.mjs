@@ -132,8 +132,8 @@ test('six regional B2B pages: SEO, prerender, scoped navigation, forms and Home 
       }
       await page.goto(base + '/'); await page.locator('h1').waitFor();
       assert.equal(await page.locator('h1').count(), 1);
-      assert.equal(await page.locator('[data-regional-home]').count(), 5);
-      assert.equal(await page.locator('[data-regional-home] a[href^="/limpieza-para-empresas"]').count(), 0, 'Home B2B cards belong to next release');
+      assert.equal(await page.locator('[data-regional-home]').count(), 6);
+      assert.equal(await page.locator('[data-regional-home] a[href^="/limpieza-para-empresas"]').count(), 6, 'Home links to the six published B2B destinations');
       await page.goto(base + cases[0].path); await page.waitForTimeout(700); await page.screenshot({ path: `${artifacts}/offices-${viewport.width}.png` });
       await page.goto(base + cases[5].path); await page.waitForTimeout(700); await page.screenshot({ path: `${artifacts}/industrial-${viewport.width}.png` });
       assert.deepEqual(errors, []); await client.close();

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { cityServiceLinks } from '@/config/regionalNavigation';
+import { cityServiceLinks, regionalCities, resolveRegionalCity } from '@/config/regionalNavigation';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { MapPin, ArrowRight, Navigation } from 'lucide-react';
@@ -98,14 +98,20 @@ export function Locations() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
                     {t(`locations.cities.${location.key}.description`)}
                   </p>
-                  {cityServiceLinks(location.key).length > 0 && (
+                  {cityServiceLinks(location.key, undefined, true).length > 0 && (
                     <div data-regional-home className="mb-4">
-                      <p className="mb-2 text-sm font-semibold text-gray-800">{t('regionalNavigation.available')}</p>
-                      <ul className="space-y-1">
-                        {cityServiceLinks(location.key).map(link => (
-                          <li key={link.href}><Link to={link.href} className="inline-block rounded py-2 text-sm font-medium text-emerald-800 underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700">{t(`regionalNavigation.${link.service}`, { city: t(`locations.cities.${location.key}.name`) })}</Link></li>
-                        ))}
-                      </ul>
+                      {(['specialized', 'business'] as const).map(group => {
+                        const links = cityServiceLinks(location.key, undefined, true).filter(link =>
+                          (link.service === 'oficinas' || link.service === 'naves') === (group === 'business')
+                        );
+                        if (!links.length) return null;
+                        return <div key={group} data-regional-group={group} className="mb-4 last:mb-0">
+                          <p className="mb-1 text-sm font-semibold text-gray-800">{t(`regionalNavigation.${group}`)}</p>
+                          <ul className="space-y-1">{links.map(link => (
+                            <li key={link.href}><Link to={link.href} className="inline-block rounded py-2 text-sm font-medium text-emerald-800 underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700">{t(`regionalNavigation.${link.service}`, { city: group === 'business' ? regionalCities[resolveRegionalCity(location.key)!] : t(`locations.cities.${location.key}.name`) })}</Link></li>
+                          ))}</ul>
+                        </div>;
+                      })}
                     </div>
                   )}
                   <a

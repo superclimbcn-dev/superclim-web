@@ -1,5 +1,9 @@
 {
   "regionalNavigation": {
+    "specialized": "Servicios especializados",
+    "business": "Servicios para empresas",
+    "oficinas": "Limpieza de oficinas en {{city}}",
+    "naves": "Limpieza de naves industriales en {{city}}",
     "available": "Servicios disponibles",
     "sofas": "Limpieza de sofás en {{city}}",
     "alfombras": "Limpieza de alfombras en {{city}}",

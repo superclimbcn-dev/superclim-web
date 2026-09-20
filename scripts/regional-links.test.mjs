@@ -118,7 +118,7 @@ test('regional network: published destinations, intent, keyboard and SPA at thre
         assert.equal(await page.locator('title').count(), 1);
       }
       await page.goto(base + '/');
-      assert.equal(await page.locator('[data-regional-home]').count(), 5);
+      assert.equal(await page.locator('[data-regional-home]').count(), 6);
       for (const href of await page.locator('[data-regional-home] a').evaluateAll(links => links.map(a => a.getAttribute('href')))) {
         assert.ok(routes.includes(href));
         assert.notEqual(href, '/limpieza-de-alfombras/lavado-de-alfombras-barcelona');

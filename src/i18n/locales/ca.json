@@ -1,5 +1,9 @@
 {
   "regionalNavigation": {
+    "specialized": "Serveis especialitzats",
+    "business": "Serveis per a empreses",
+    "oficinas": "Neteja d’oficines a {{city}}",
+    "naves": "Neteja de naus industrials a {{city}}",
     "available": "Serveis disponibles",
     "sofas": "Neteja de sofàs a {{city}}",
     "alfombras": "Neteja de catifes a {{city}}",
