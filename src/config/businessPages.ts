@@ -35,6 +35,8 @@ export const businessPages = {
       ['Recepción y espacios compartidos', 'Atendemos recepción, zonas comunes, papeleras y suelos según el tránsito. Los cristales interiores pueden incluirse cuando proceda y se hayan definido en el alcance.'],
       ['Office, cocina y aseos', 'Estas áreas requieren una planificación acorde al uso diario. Concretamos las superficies, los puntos de atención y la frecuencia para mantener los espacios compartidos.'],
       ['Servicio recurrente de oficinas en Sant Cugat', 'Atendemos oficinas y despachos en Sant Cugat con un servicio de limpieza recurrente adaptado a cada instalación. Revisamos con la persona responsable los accesos, la ocupación y las prioridades: salas de reunión, aseos y áreas comunes pueden necesitar frecuencias distintas. Acordamos los horarios y el alcance del contrato; Superclim organiza el equipo, los turnos y la supervisión. Si hace falta conocer la instalación, acordamos una visita de valoración.'],
+      ['Limpieza periódica y mantenimiento', 'Organizamos tareas recurrentes según la frecuencia acordada para mantener las zonas de trabajo, las superficies accesibles y los espacios comunes en buenas condiciones durante la semana.'],
+      ['Horarios y acceso a la oficina', 'Planificamos la intervención según los horarios disponibles, el acceso al centro y la actividad de la oficina, procurando trabajar sin interferir con el funcionamiento habitual de la instalación.'],
     ],
     tasks: ['Escritorios y superficies accesibles', 'Salas de reunión y despachos', 'Recepción y zonas comunes', 'Office y cocina compartida', 'Aseos y papeleras', 'Suelos y cristales interiores acordados'],
     planningTitle: 'Un servicio recurrente adaptado a la jornada',
