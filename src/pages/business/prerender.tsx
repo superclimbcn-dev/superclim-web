@@ -10,3 +10,13 @@ export async function renderBusinessPage(pageKey: BusinessPageKey) {
   await i18n.changeLanguage('es');
   return renderToString(<I18nextProvider i18n={i18n}><StaticRouter location={businessConfig.urls.services[pageKey]}><BusinessPage pageKey={pageKey} prerender /></StaticRouter></I18nextProvider>);
 }
+
+export { businessRegionalPages, businessRegionalPath, businessRegionalSEO } from '@/config/businessRegionalPages';
+import BusinessRegionalPage from '@/pages/business/BusinessRegionalPage';
+import { businessRegionalPath } from '@/config/businessRegionalPages';
+import type { BusinessRegionalConfig } from '@/config/businessRegionalPages';
+
+export async function renderBusinessRegionalPage(page: BusinessRegionalConfig) {
+  await i18n.changeLanguage('es');
+  return renderToString(<I18nextProvider i18n={i18n}><StaticRouter location={businessRegionalPath(page)}><BusinessRegionalPage page={page} prerender /></StaticRouter></I18nextProvider>);
+}

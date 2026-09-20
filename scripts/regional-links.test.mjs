@@ -73,7 +73,7 @@ test('regional network: published destinations, intent, keyboard and SPA at thre
   vm.runInNewContext(ts.transpileModule(await readFile('src/config/regionalNavigation.ts', 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText, configContext);
   const config = configContext.exports;
   const routes = [...(await readFile('dist/sitemap.xml', 'utf8')).matchAll(/<loc>(.*?)<\/loc>/g)].map(match => new URL(match[1]).pathname);
-  assert.equal(routes.length, 50);
+  assert.equal(routes.length, 56);
   const inventory = Object.entries(config.regionalNavigation).flatMap(([service, entry]) => Object.entries(entry.localUrls).map(([city, href]) => ({ service, city, href })));
   assert.equal(inventory.length, 28);
   assert.equal(new Set(inventory.map(item => item.href)).size, 28);

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { cityServiceLinks, regionalCities, resolveRegionalCity } from '@/config/regionalNavigation';
-import type { RegionalService } from '@/config/regionalNavigation';
+import type { RegionalService, BusinessRegionalService } from '@/config/regionalNavigation';
 
-export function RegionalRelatedServices({ city, service }: { city: string; service: RegionalService }) {
+export function RegionalRelatedServices({ city, service }: { city: string; service: RegionalService | BusinessRegionalService }) {
   const cityKey = resolveRegionalCity(city);
-  const links = cityServiceLinks(city, service);
+  const links = cityServiceLinks(city, service, service === 'oficinas' || service === 'naves');
   if (!cityKey || !links.length) return null;
   return (
     <section data-regional-related className="bg-white py-10">

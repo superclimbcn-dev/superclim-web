@@ -85,12 +85,32 @@ export const regionalNavigation: Record<RegionalService, RegionalNavigationEntry
   },
 };
 
-// Editorial candidates, not published destinations. No local URL is inferred.
-export const businessRegionalCandidates = {
-  oficinas: { generalUrl: '/limpieza-para-empresas/oficinas', localUrls: {}, futureCandidates: ['sant-cugat', 'sabadell', 'terrassa'] },
-  naves: { generalUrl: '/limpieza-para-empresas/naves-industriales', localUrls: {}, futureCandidates: ['rubi', 'terrassa', 'sabadell'] },
-  logistica: { generalUrl: '/limpieza-para-empresas/centros-logisticos', localUrls: {}, futureCandidates: [] },
-} as const;
+export type BusinessRegionalService = 'oficinas' | 'naves';
+export const businessRegionalNavigation: Record<BusinessRegionalService, RegionalNavigationEntry> = {
+  oficinas: {
+    label: 'Limpieza de oficinas', generalUrl: '/limpieza-para-empresas/oficinas',
+    localUrls: {
+      sabadell: '/limpieza-para-empresas/oficinas/sabadell',
+      'sant-cugat': '/limpieza-para-empresas/oficinas/sant-cugat',
+      terrassa: '/limpieza-para-empresas/oficinas/terrassa',
+    },
+    coverageWithoutUrl: ['sant-quirze', 'barbera-del-valles', 'cerdanyola', 'rubi', 'barcelona'], futureCandidates: [],
+  },
+  naves: {
+    label: 'Limpieza de naves industriales', generalUrl: '/limpieza-para-empresas/naves-industriales',
+    localUrls: {
+      sabadell: '/limpieza-para-empresas/naves-industriales/sabadell',
+      terrassa: '/limpieza-para-empresas/naves-industriales/terrassa',
+      rubi: '/limpieza-para-empresas/naves-industriales/rubi',
+    },
+    coverageWithoutUrl: ['sant-quirze', 'barbera-del-valles', 'cerdanyola', 'sant-cugat', 'barcelona'], futureCandidates: [],
+  },
+};
+
+export function businessLocalUrl(service: BusinessRegionalService, cityValue: string) {
+  const city = resolveRegionalCity(cityValue);
+  return city ? businessRegionalNavigation[service].localUrls[city] : undefined;
+}
 
 const aliases: Record<string, RegionalCity> = {
   'sant-cugat-del-valles': 'sant-cugat',
@@ -98,6 +118,7 @@ const aliases: Record<string, RegionalCity> = {
   'lavado-de-alfombras-barcelona': 'barcelona',
   santCugat: 'sant-cugat',
   'Sant Cugat': 'sant-cugat',
+  'Sant Cugat del Vallès': 'sant-cugat',
   'Sant Quirze del Vallès': 'sant-quirze',
   'Cerdanyola del Vallès': 'cerdanyola',
 };
@@ -107,12 +128,13 @@ export function resolveRegionalCity(value: string): RegionalCity | undefined {
   return aliases[value] ?? (Object.keys(regionalCities) as RegionalCity[]).find(key => regionalCities[key] === value);
 }
 
-export function cityServiceLinks(cityValue: string, exclude?: RegionalService) {
+export function cityServiceLinks(cityValue: string, exclude?: RegionalService | BusinessRegionalService, includeBusiness = false) {
   const city = resolveRegionalCity(cityValue);
   if (!city) return [];
-  return (Object.keys(regionalNavigation) as RegionalService[]).flatMap(service => {
-    const href = regionalNavigation[service].localUrls[city];
-    return href && service !== exclude ? [{ service, href, name: `${regionalNavigation[service].label} en ${regionalCities[city]}` }] : [];
+  const navigation: Record<string, RegionalNavigationEntry> = includeBusiness ? { ...regionalNavigation, ...businessRegionalNavigation } : regionalNavigation;
+  return Object.keys(navigation).flatMap(service => {
+    const href = navigation[service].localUrls[city];
+    return href && service !== exclude ? [{ service, href, name: `${navigation[service].label} en ${regionalCities[city]}` }] : [];
   });
 }
 

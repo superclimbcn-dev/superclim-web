@@ -22,6 +22,8 @@ import { Footer } from '@/sections/Footer';
 import { SpecializedServices } from '@/sections/SpecializedServices';
 import { CommunityFeaturedBanner } from '@/sections/CommunityFeaturedBanner';
 import NotFound from '@/pages/NotFound';
+import BusinessRegionalPage from '@/pages/business/BusinessRegionalPage';
+import { businessRegionalPages, businessRegionalPath } from '@/config/businessRegionalPages';
 import BusinessPage from '@/pages/business/BusinessPage';
 import { BusinessFeaturedBanner } from '@/sections/BusinessFeaturedBanner';
 
@@ -107,6 +109,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        {businessRegionalPages.map(page => <Route key={businessRegionalPath(page)} path={businessRegionalPath(page)} element={<BusinessRegionalPage key={businessRegionalPath(page)} page={page} />} />)}
         <Route path={businessConfig.urls.services.businessCleaning} element={<BusinessPage key="businessCleaning" pageKey="businessCleaning" />} />
         <Route path={businessConfig.urls.services.officeCleaning} element={<BusinessPage key="officeCleaning" pageKey="officeCleaning" />} />
         <Route path={businessConfig.urls.services.industrialCleaning} element={<BusinessPage key="industrialCleaning" pageKey="industrialCleaning" />} />

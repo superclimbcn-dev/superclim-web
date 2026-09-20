@@ -183,9 +183,10 @@ const routes = [...new Set(getSitemapRoutes())];
 
 const ssrServer = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
 try {
-const { renderBusinessPage } = await ssrServer.ssrLoadModule('/src/pages/business/prerender.tsx');
+const { renderBusinessPage, renderBusinessRegionalPage, businessRegionalPages, businessRegionalPath, businessRegionalSEO } = await ssrServer.ssrLoadModule('/src/pages/business/prerender.tsx');
 for (const routePath of routes) {
-  const config = getConfigForRoute(routePath, seoModule);
+  const regionalPage = businessRegionalPages.find(page => businessRegionalPath(page) === routePath);
+  const config = regionalPage ? businessRegionalSEO(regionalPage) : getConfigForRoute(routePath, seoModule);
   if (!config?.canonical || !config?.title || !config?.description) {
     throw new Error(`Incomplete SEO config for route: ${routePath}`);
   }
@@ -202,7 +203,7 @@ for (const routePath of routes) {
   if (routePath === '/limpieza-para-empresas' || routePath.startsWith('/limpieza-para-empresas/')) {
     html = html.replace(/<meta (?:name="(?:description|robots|keywords|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,
       tag => tag.replace(/\s*\/?>$/, ' data-prerender-business="true">'));
-    const body = await renderBusinessPage(routeConfigKeys.get(routePath));
+    const body = regionalPage ? await renderBusinessRegionalPage(regionalPage) : await renderBusinessPage(routeConfigKeys.get(routePath));
     html = html.replace('<div id="root"></div>', () => `<div id="root">${body}</div>`);
     // Match the existing host layout; canonical and public links stay extensionless.
     writeRouteHtml(routePath, html);

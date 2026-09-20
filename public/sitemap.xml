@@ -290,4 +290,23 @@
   <url><loc>https://superclim.es/limpieza-para-empresas/oficinas</loc></url>
   <url><loc>https://superclim.es/limpieza-para-empresas/naves-industriales</loc></url>
   <url><loc>https://superclim.es/limpieza-para-empresas/centros-logisticos</loc></url>
+  <!-- Páginas municipales B2B -->
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/oficinas/sabadell</loc>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/oficinas/sant-cugat</loc>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/oficinas/terrassa</loc>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/naves-industriales/sabadell</loc>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/naves-industriales/terrassa</loc>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/naves-industriales/rubi</loc>
+  </url>
 </urlset>
