@@ -1,4 +1,11 @@
 {
+  "regionalNavigation": {
+    "available": "Serveis disponibles",
+    "sofas": "Neteja de sofàs a {{city}}",
+    "alfombras": "Neteja de catifes a {{city}}",
+    "colchones": "Neteja de matalassos a {{city}}",
+    "comunidades": "Neteja de comunitats a {{city}}"
+  },
   "nav": {
     "home": "Inici",
     "services": "Serveis",

@@ -39,6 +39,8 @@ test('global mobile navigation and safe WhatsApp controls', async () => {
         assert.ok(await dialog.evaluate(el => el.contains(document.activeElement)));
         await page.keyboard.press('Escape');
         await dialog.waitFor({ state: 'hidden' });
+        // Radix restores focus after unmount; wait for that observable result.
+        await page.waitForFunction(() => document.activeElement?.getAttribute('aria-label') === 'Abrir menú');
         assert.ok(await trigger.evaluate(el => el === document.activeElement));
         assert.equal(await trigger.getAttribute('aria-expanded'), 'false');
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -63,7 +65,7 @@ test('global mobile navigation and safe WhatsApp controls', async () => {
       assert.equal(await page.locator('[data-mobile-navigation]').count(), 0);
       // Sample the entire page, including hero, cards, FAQs, form and footer.
       let visibleSamples = 0;
-      for (const route of ['/', '/limpieza-de-sofas', '/limpieza-para-empresas', '/limpieza-para-empresas/oficinas', '/limpieza-para-empresas/naves-industriales', '/limpieza-para-empresas/centros-logisticos']) {
+      for (const route of ['/', '/limpieza-de-sofas', '/servicios/limpieza-de-sofas-sant-cugat', '/limpieza-de-sofas/limpieza-de-sofas-a-domicilio', '/limpieza-para-empresas', '/limpieza-para-empresas/oficinas', '/limpieza-para-empresas/naves-industriales', '/limpieza-para-empresas/centros-logisticos']) {
         await page.goto(base + route); await page.waitForTimeout(600);
         const height = await page.evaluate(() => document.documentElement.scrollHeight);
         for (let y = 0; y <= height; y += 350) {

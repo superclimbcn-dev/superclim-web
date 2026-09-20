@@ -1,5 +1,7 @@
 import { ArrowRight, Check, MessageCircle, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { siblingCityLinks } from '@/config/regionalNavigation';
+import { RegionalRelatedServices } from '@/components/RegionalRelatedServices';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { Header } from '@/components/Header';
 import { SEOMeta } from '@/components/SEOMeta';
@@ -105,10 +107,11 @@ export default function CommunityCityPage({ city }: CommunityCityPageProps) {
             <p className="mx-auto mt-4 max-w-2xl text-white/75">Consulta las páginas locales o vuelve al servicio regional de limpieza de comunidades.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link to={businessConfig.urls.services.communityCleaning} className="inline-flex items-center rounded-full border border-white/30 px-5 py-3 font-semibold hover:bg-white/10">Servicio regional <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              {page.related.map((item) => <Link key={item.path} to={item.path} className="inline-flex items-center rounded-full bg-white px-5 py-3 font-semibold text-emerald-950 hover:bg-emerald-50">{item.label} <ArrowRight className="ml-2 h-4 w-4" /></Link>)}
+              {siblingCityLinks('comunidades', city).map((item) => <Link key={item.href} to={item.href} className="inline-flex items-center rounded-full bg-white px-5 py-3 font-semibold text-emerald-950 hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{item.name} <ArrowRight className="ml-2 h-4 w-4" /></Link>)}
             </div>
           </div>
         </section>
+        <RegionalRelatedServices city={city} service="comunidades" />
       </main>
       <Footer />
       <WhatsAppButton />

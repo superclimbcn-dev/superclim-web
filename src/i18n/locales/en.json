@@ -1,4 +1,11 @@
 {
+  "regionalNavigation": {
+    "available": "Available services",
+    "sofas": "Sofa cleaning in {{city}}",
+    "alfombras": "Carpet cleaning in {{city}}",
+    "colchones": "Mattress cleaning in {{city}}",
+    "comunidades": "Communal area cleaning in {{city}}"
+  },
   "nav": {
     "home": "Home",
     "services": "Services",

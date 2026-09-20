@@ -14,6 +14,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/Header';
+import { Link } from 'react-router-dom';
+import { cityServiceLinks } from '@/config/regionalNavigation';
 import { Footer } from '@/sections/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { businessConfig } from '@/config/business';
@@ -62,6 +64,7 @@ export default function ServicioDomicilio() {
     <div className="min-h-screen bg-white">
       <SEOMeta config={seoConfig.homeService} />
       <Header />
+      <main>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <Breadcrumb items={[{ label: 'Servicio a Domicilio' }]} />
       </div>
@@ -181,7 +184,9 @@ export default function ServicioDomicilio() {
                 <div className="w-8 h-8 rounded-full bg-violet-500/30 flex items-center justify-center flex-shrink-0">
                   <Check className="w-4 h-4 text-violet-300" />
                 </div>
-                <span className="text-white/90">{zona}</span>
+                {cityServiceLinks(zona).find(link => link.service === 'sofas') ? (
+                  <Link to={cityServiceLinks(zona).find(link => link.service === 'sofas')!.href} className="rounded text-white underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"><span className="sr-only">Limpieza de sofás en </span>{zona}</Link>
+                ) : <span className="text-white/90">{zona}</span>}
               </motion.div>
             ))}
           </div>
@@ -215,6 +220,7 @@ export default function ServicioDomicilio() {
         </div>
       </section>
 
+      </main>
       <Footer />
       <WhatsAppButton />
     </div>

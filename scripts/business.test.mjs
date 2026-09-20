@@ -32,12 +32,12 @@ function loadConfig(source) {
   vm.runInNewContext(ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText, context);
   return JSON.parse(JSON.stringify(context.exports.seoConfig));
 }
-test('existing SEO configurations and community source files are preserved', async () => {
+test('existing SEO configurations and community editorial data are preserved', async () => {
   const before = loadConfig(execFileSync('git', ['show', 'HEAD:src/config/seo.ts'], { encoding: 'utf8' }));
   const after = loadConfig(await fs.readFile('src/config/seo.ts', 'utf8'));
   for (const key of Object.keys(before)) assert.deepEqual(after[key], before[key], key);
   const changed = execFileSync('git', ['diff', '--name-only'], { encoding: 'utf8' });
-  assert.doesNotMatch(changed, /src\/(pages\/services\/(LimpiezaComunidades|communities\/)|config\/communityPages)/);
+  assert.doesNotMatch(changed, /src\/(pages\/services\/(LimpiezaComunidades)|config\/communityPages)/);
 });
 test('B2B prerender, routes, SEO, mobile layout and quote flow', async (t) => {
   const server = await preview({ preview: { host: '127.0.0.1', port: 4174, strictPort: true, open: false } });

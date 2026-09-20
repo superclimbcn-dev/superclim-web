@@ -56,7 +56,7 @@ export function CityServiceLinks({
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.04 }}
             >
-              <Link to={city.href}>
+              <Link to={city.href} className="block h-full rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700">
                 <Card className="group hover:shadow-lg transition-all duration-300 border-0 shadow-sm cursor-pointer h-full">
                   <CardContent className="p-4 flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
@@ -65,7 +65,7 @@ export function CityServiceLinks({
                       >
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-700 transition-colors truncate">
+                      <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-700 transition-colors break-words">
                         {city.name}
                       </span>
                     </div>
