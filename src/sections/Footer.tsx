@@ -16,7 +16,7 @@ const services = [
 const companyLinks = [
   { key: 'home', to: '/#home' },
   { key: 'services', to: '/#services' },
-  { key: 'about', to: '/#about' },
+  { key: 'about', to: '/quienes-somos' },
   { key: 'contact', to: '/#contact' },
 ];
 

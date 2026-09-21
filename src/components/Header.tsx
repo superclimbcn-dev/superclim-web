@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Button } from '@/components/ui/button';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { businessConfig } from '@/config/business';
 
 const navItems = [
   { key: 'home', href: '#home' },
   { key: 'services', href: '#services' },
-  { key: 'about', href: '#about' },
+  { key: 'about', href: '/quienes-somos' },
   { key: 'contact', href: '#contact' },
 ];
 
@@ -19,6 +19,7 @@ export function Header() {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const effectiveIsScrolled = !isHomePage || isScrolled;
 
@@ -75,6 +76,10 @@ export function Header() {
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
+                      if (item.href.startsWith('/')) {
+                        navigate(item.href);
+                        return;
+                      }
                       scrollToSection(item.href);
                     }}
                     className={`text-sm font-medium transition-colors duration-200 hover:text-emerald-500 ${
