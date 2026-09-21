@@ -91,14 +91,14 @@ export const seoConfig: Record<string, SEOPageConfig> = {
     keywords: 'limpieza de sofás a domicilio, limpieza sofás casa, servicio a domicilio barcelona, limpieza tapicerías a domicilio',
   },
   about: {
-    title: 'Quiénes Somos — Superclim, Empresa de Limpieza en Barcelona',
-    description: 'Superclim es líder en limpieza profesional de sofás, alfombras y colchones en Barcelona. Con más de 16 años de experiencia, ofrecemos servicios personalizados para garantizar un hogar más saludable y fresco. Descubre más sobre nuestra misión, equipo y beneficios de la limpieza profesional.',
+    title: 'Quiénes Somos | Superclim Servicios, Empresa de Limpieza',
+    description: 'Conoce Superclim Servicios, empresa de limpieza con base en Sabadell. Servicios para particulares, comunidades y empresas en Barcelona y el Vallès Occidental.',
     canonical: `${baseUrl}/quienes-somos`,
     ogTitle: 'Quiénes Somos | Superclim Servicios',
-    ogDescription: 'Conoce a Superclim: más de 16 años de experiencia en limpieza profesional de tapicerías en Barcelona y alrededores.',
+    ogDescription: 'Conoce nuestra experiencia en limpieza especializada, comunidades, oficinas, empresas e instalaciones profesionales.',
     ogImage: defaultOgImage,
     ogType: 'website',
-    keywords: 'quienes somos superclim, empresa limpieza sofás barcelona, historia superclim',
+    keywords: 'Superclim Servicios, empresa de limpieza Sabadell, limpieza profesional Barcelona, limpieza comunidades, limpieza empresas',
   },
   contact: {
     title: 'Contacto - SuperClim Servicios',
