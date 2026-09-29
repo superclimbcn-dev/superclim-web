@@ -42,3 +42,4 @@ test-*.png
 *.local
 .vercel
 .env*
+.luna-code/
