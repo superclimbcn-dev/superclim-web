@@ -67,11 +67,11 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/superclimempresas/"
+                  href="https://www.instagram.com/superclimbcn/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram de Superclim Empresas"
-                  title="Instagram de Superclim Empresas"
+                  aria-label="Instagram de Superclim"
+                  title="Instagram de Superclim"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
                 >
                   <Instagram className="w-5 h-5" aria-hidden="true" />

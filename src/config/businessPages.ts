@@ -11,6 +11,8 @@ export const businessPages = {
       ['Naves industriales y talleres', 'Definimos las superficies y los recorridos que necesitan mantenimiento, coordinando la limpieza con la actividad de la instalación.'],
       ['Almacenes y centros logísticos', 'Organizamos las tareas por zonas y franjas horarias para atender los espacios de almacenamiento y las áreas de uso común.'],
       ['Contratos recurrentes desde nuestra base en Sabadell', 'Desde nuestra base en Sabadell, valoramos la ubicación de tu instalación, los accesos y la frecuencia y los horarios más adecuados para el servicio. Según se trate de oficinas, naves o centros logísticos, concretamos las tareas y las condiciones del contrato recurrente. Tu empresa contrata el servicio; Superclim organiza la ejecución y su supervisión conforme al alcance acordado. Consulta la especialidad correspondiente para conocer qué podemos incluir en la propuesta.'],
+      ['Comunidades y espacios compartidos', 'Organizamos servicios de limpieza para portales, escaleras, zonas comunes y otros espacios compartidos, definiendo las tareas y la frecuencia según las características y el uso de cada instalación.'],
+      ['Planificación, seguimiento y continuidad', 'Definimos el alcance, los horarios y la frecuencia del servicio desde el inicio. Superclim organiza la ejecución, realiza el seguimiento y gestiona las incidencias o sustituciones que correspondan dentro de las condiciones acordadas.'],
     ],
     tasks: ['Suelos y pasillos', 'Aseos y vestuarios', 'Zonas comunes y de descanso', 'Oficinas y salas de reunión', 'Papeleras y superficies de uso cotidiano', 'Cristales interiores cuando proceda'],
     planningTitle: 'Contratos de limpieza con un alcance definido',
