@@ -12,11 +12,18 @@ export async function renderBusinessPage(pageKey: BusinessPageKey) {
 }
 
 export { businessRegionalPages, businessRegionalPath, businessRegionalSEO } from '@/config/businessRegionalPages';
+export { businessCityPages, businessCityPath, businessCitySEO } from '@/config/businessCityPages';
 import BusinessRegionalPage from '@/pages/business/BusinessRegionalPage';
+import BusinessCityPage from '@/pages/business/BusinessCityPage';
 import { businessRegionalPath } from '@/config/businessRegionalPages';
 import type { BusinessRegionalConfig } from '@/config/businessRegionalPages';
 
 export async function renderBusinessRegionalPage(page: BusinessRegionalConfig) {
   await i18n.changeLanguage('es');
   return renderToString(<I18nextProvider i18n={i18n}><StaticRouter location={businessRegionalPath(page)}><BusinessRegionalPage page={page} prerender /></StaticRouter></I18nextProvider>);
+}
+
+export async function renderBusinessCityPage(page: import('@/config/businessCityPages').BusinessCityPageConfig) {
+  await i18n.changeLanguage('es');
+  return renderToString(<I18nextProvider i18n={i18n}><StaticRouter location={`/limpieza-para-empresas/${page.slug}`}><BusinessCityPage page={page} prerender /></StaticRouter></I18nextProvider>);
 }
