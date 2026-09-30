@@ -23,6 +23,7 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { CityServiceLinks } from '@/components/CityServiceLinks';
 import { seoConfig } from '@/config/seo';
 import { useSchemaOrg } from '@/hooks/useSchemaOrg';
+import { UpholsteryClusterLinks } from '@/components/UpholsteryClusterLinks';
 
 const procesoLimpieza = [
   {
@@ -560,6 +561,7 @@ export default function LimpiezaSofas() {
           { name: 'Sant Quirze', href: '/servicios/limpieza-de-sofas-en-sant-quirze' },
         ]}
       />
+      <UpholsteryClusterLinks current="general" />
       <Footer />
       <WhatsAppButton />
     </div>

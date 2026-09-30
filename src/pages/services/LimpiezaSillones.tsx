@@ -16,6 +16,8 @@ import { businessConfig } from '@/config/business';
 import { SEOMeta } from '@/components/SEOMeta';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import { seoConfig } from '@/config/seo';
+import { UpholsteryClusterLinks } from '@/components/UpholsteryClusterLinks';
+import { useSchemaOrg } from '@/hooks/useSchemaOrg';
 
 const proceso = [
   "Evaluación del tipo de tapicería",
@@ -36,11 +38,14 @@ const tipos = [
 ];
 
 export default function LimpiezaSillones() {
+  const { getServiceSchema } = useSchemaOrg();
+  const serviceSchema = getServiceSchema('Limpieza de sillones, butacas y sillas tapizadas', seoConfig.armchairCleaning.description, seoConfig.armchairCleaning.canonical);
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
     <div className="min-h-screen bg-white">
       <SEOMeta config={seoConfig.armchairCleaning} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <Breadcrumb items={[{ label: 'Limpieza de Sillones' }]} />
@@ -192,6 +197,7 @@ export default function LimpiezaSillones() {
         </div>
       </section>
 
+      <UpholsteryClusterLinks current="sillones" />
       <Footer />
       <WhatsAppButton />
     </div>
