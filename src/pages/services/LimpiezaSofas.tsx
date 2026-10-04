@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { 
   Sofa, 
@@ -543,6 +544,113 @@ export default function LimpiezaSofas() {
                 </CardContent>
               </Card>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Search intent: consultas habituales sin acento */}
+      <section className="bg-white py-24" aria-labelledby="sofa-search-intent">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="mb-4 inline-block rounded-full bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-700">
+              Atención en casa
+            </span>
+            <h2 id="sofa-search-intent" className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Limpieza de sofas a domicilio: cómo trabajamos
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-gray-600">
+              Una limpieza profesional conviene cuando el aspirado habitual ya no retira la suciedad,
+              aparecen manchas o el tejido conserva olores. En hogares con niños, animales o un uso
+              diario intenso, revisar la tapicería periódicamente ayuda a decidir el tratamiento más
+              adecuado sin esperar a que la suciedad se acumule.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+              <h3 className="text-xl font-bold text-gray-900">Limpieza sofas para manchas, olores y uso diario</h3>
+              <p className="mt-4 leading-relaxed text-gray-600">
+                Primero identificamos el tejido y el estado de las manchas. El trabajo puede combinar
+                aspirado, tratamiento localizado e inyección-extracción para extraer suciedad y humedad.
+                La respuesta depende del material, la antigüedad de la mancha y los tratamientos previos.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+              <h3 className="text-xl font-bold text-gray-900">Limpieza de sofa y tapicerías en casa</h3>
+              <p className="mt-4 leading-relaxed text-gray-600">
+                La limpieza superficial sirve para el mantenimiento cotidiano, pero no sustituye una
+                extracción adaptada al tejido cuando hay suciedad incrustada. Realizamos la{' '}
+                <Link
+                  to="/limpieza-de-sofas/limpieza-de-sofas-a-domicilio"
+                  className="font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-800"
+                >
+                  limpieza de sofas a domicilio
+                </Link>{' '}
+                para evitar el traslado del mueble y trabajar directamente en la vivienda.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-7">
+              <h3 className="text-xl font-bold text-gray-900">Sillones, butacas y sillas tapizadas</h3>
+              <p className="mt-4 leading-relaxed text-gray-600">
+                El servicio no se limita al sofá principal. También valoramos asientos individuales,
+                butacas y sillas según su tapizado, estructura y nivel de uso. Consulta nuestra{' '}
+                <Link
+                  to="/limpieza-de-sofas/limpieza-de-sillones"
+                  className="font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-800"
+                >
+                  limpieza de sillones
+                </Link>{' '}
+                para conocer este tratamiento específico.
+              </p>
+            </article>
+          </div>
+
+          <div className="mt-12 rounded-2xl bg-gradient-to-br from-blue-900 to-cyan-900 p-8 text-white lg:p-10">
+            <h3 className="text-2xl font-bold">Servicio a domicilio en Barcelona y alrededores</h3>
+            <p className="mt-4 max-w-4xl leading-relaxed text-white/80">
+              Atendemos solicitudes de limpieza sofa en Barcelona, Sabadell, Terrassa, Sant Cugat,
+              Cerdanyola, Barberà del Vallès, Sant Quirze y otras poblaciones cercanas. Confírmanos tu
+              ubicación y el tipo de mueble para comprobar disponibilidad y preparar un presupuesto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-24" aria-labelledby="sofa-faq">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 id="sofa-faq" className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Preguntas frecuentes sobre limpieza de sofas
+          </h2>
+          <div className="mt-10 space-y-5">
+            {[
+              {
+                question: '¿Buscas limpieza de sofas a domicilio?',
+                answer: 'Podemos desplazarnos a tu vivienda y realizar allí la valoración y el tratamiento, sin trasladar el mueble. Indícanos la localidad, las plazas del sofá, el tejido si lo conoces y las manchas que te preocupan para orientarte mejor.',
+              },
+              {
+                question: '¿Cada cuánto conviene hacer una limpieza de sofas?',
+                answer: 'No hay una frecuencia única. Depende del uso, el tipo de tejido y de si conviven niños, mascotas o personas sensibles al polvo. El aspirado regular ayuda al mantenimiento; cuando aparecen manchas, olor o suciedad visible conviene solicitar una valoración profesional.',
+              },
+              {
+                question: '¿Se pueden quitar manchas y malos olores de un sofa?',
+                answer: 'Muchas manchas y olores pueden tratarse, pero el resultado depende de su origen, antigüedad, tejido y productos aplicados anteriormente. Antes de empezar revisamos la tapicería y elegimos un procedimiento compatible, sin prometer resultados absolutos.',
+              },
+              {
+                question: '¿La limpieza de sofas se realiza en el domicilio?',
+                answer: 'Sí, el servicio se realiza habitualmente en el domicilio. Llevamos el equipo necesario, protegemos la zona de trabajo y aplicamos el proceso previsto después de revisar el sofá.',
+              },
+              {
+                question: '¿También limpiáis sillones, butacas y sillas tapizadas?',
+                answer: 'Sí. Podemos valorar sillones, butacas y sillas tapizadas, siempre según el material y el estado de cada pieza. Puedes enviar fotos y medidas para que preparemos una orientación inicial.',
+              },
+            ].map((item) => (
+              <article key={item.question} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900">{item.question}</h3>
+                <p className="mt-3 leading-relaxed text-gray-600">{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
