@@ -131,6 +131,16 @@ export default function LimpiezaSofas() {
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="mb-4 text-lg font-semibold leading-relaxed text-blue-200"
+              >
+                Servicio para quienes buscan limpieza de sofas, limpieza sofas a domicilio o
+                limpieza de sofa profesional en Barcelona, Sabadell y localidades cercanas.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={heroVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl text-white/80 mb-8 leading-relaxed"
               >

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { 
   Armchair, 
@@ -194,6 +195,19 @@ export default function LimpiezaSillones() {
               </Button>
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-rose-50 py-10" aria-label="Servicio general de limpieza de sofás">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="leading-relaxed text-gray-700">
+            Para sofás de varias plazas, chaise longue y otros muebles tapizados, consulta el servicio
+            general de{' '}
+            <Link to="/limpieza-de-sofas" className="font-semibold text-rose-700 underline underline-offset-4 hover:text-rose-800">
+              limpieza sofa
+            </Link>{' '}
+            profesional y solicita una valoración según el tejido y el estado del mueble.
+          </p>
         </div>
       </section>
 

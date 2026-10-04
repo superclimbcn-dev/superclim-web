@@ -225,6 +225,19 @@ export default function ServicioDomicilio() {
         </div>
       </section>
 
+      <section className="bg-indigo-50 py-10" aria-label="Servicio general de limpieza de sofás">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="leading-relaxed text-gray-700">
+            Si necesitas comparar tratamientos, tejidos y tipos de manchas, consulta nuestro servicio
+            principal de{' '}
+            <Link to="/limpieza-de-sofas" className="font-semibold text-indigo-700 underline underline-offset-4 hover:text-indigo-800">
+              limpieza de sofas
+            </Link>{' '}
+            profesional para viviendas de Barcelona, Sabadell y alrededores.
+          </p>
+        </div>
+      </section>
+
       <UpholsteryClusterLinks current="domicilio" />
       </main>
       <Footer />
