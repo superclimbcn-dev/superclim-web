@@ -1,16 +1,12 @@
-import { createContext, useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import type { SEOPageConfig } from '@/config/seo';
+import { PrerenderContext } from '@/components/PrerenderContext';
 
 interface SEOMetaProps {
   config: SEOPageConfig;
   alternateLangs?: { lang: string; url: string }[];
 }
-
-/** When true (server prerender), SEOMeta renders nothing: the prerender
- * script already injects the static head tags. Prevents duplicate metadata
- * from being emitted inline in the SSR body. */
-export const PrerenderContext = createContext(false);
 
 export function SEOMeta({ config, alternateLangs }: SEOMetaProps) {
   const prerender = useContext(PrerenderContext);

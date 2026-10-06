@@ -4,7 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { I18nextProvider } from 'react-i18next';
 import { StaticRouter } from 'react-router-dom';
 import i18n from '@/i18n';
-import { PrerenderContext } from '@/components/SEOMeta';
+import { PrerenderContext } from '@/components/PrerenderContext';
 import { HomePage } from '@/pages/HomePage';
 import ServicesPage from '@/pages/services/ServicesPage';
 import LimpiezaAlfombras from '@/pages/services/LimpiezaAlfombras';

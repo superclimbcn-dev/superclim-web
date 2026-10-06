@@ -8,7 +8,7 @@ import LimpiezaSofas from '@/pages/services/LimpiezaSofas';
 import ServicioDomicilio from '@/pages/services/ServicioDomicilio';
 import LimpiezaSillones from '@/pages/services/LimpiezaSillones';
 import RegionalServicePage from '@/pages/regional/RegionalServicePage';
-import { PrerenderContext } from '@/components/SEOMeta';
+import { PrerenderContext } from '@/components/PrerenderContext';
 
 export { regionalSofaUrls, regionalMattressUrls, regionalCarpetUrls } from '@/config/regionalUrls';
 export type RegionalServiceType = 'sofas' | 'colchones' | 'alfombras';
