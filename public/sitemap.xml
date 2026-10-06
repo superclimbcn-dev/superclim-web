@@ -1,81 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Páginas principais -->
+  <!-- Páginas principales -->
   <url>
     <loc>https://superclim.es/</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
-  <url>
-    <loc>https://superclim.es/servicios</loc>
-    <lastmod>2026-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
+
+  <!-- Cluster sofás / tapicería (prioridad máxima) -->
   <url>
     <loc>https://superclim.es/limpieza-de-sofas</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/impermeabilizacion-de-sofas</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-sofas/limpieza-de-sofas-a-domicilio</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-sofas/limpieza-de-sillones</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Resto de servicios -->
+  <url>
+    <loc>https://superclim.es/servicios</loc>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://superclim.es/impermeabilizacion-de-sofas</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/quienes-somos</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/contacto</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/restauracion-de-alfombras</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-muebles-en-cuero</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-tapiceria-coche-sabadell</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -89,38 +93,37 @@
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/sabadell</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/terrassa</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/sant-quirze</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
-
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/sant-cugat</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/castellar-del-valles</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-comunidades/barbera-del-valles</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -128,43 +131,43 @@
   <!-- Páginas regionales de SOFÁS -->
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofas-barcelona</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofa-sabadell</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofa-cerdanyola</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofas-terrassa</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofas-sant-cugat</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofas-barbera-del-valles</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/servicios/limpieza-de-sofas-en-sant-quirze</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -172,43 +175,43 @@
   <!-- Páginas regionales de COLCHONES -->
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-sabadell</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-barcelona</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-castellar-del-valles</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-cerdanyola</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-terrassa</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-sant-cugat-del-valles</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/mas-servicios/limpieza-de-colchones-sant-quirze-del-valles</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -216,243 +219,285 @@
   <!-- Páginas regionales de ALFOMBRAS -->
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/sabadell</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/barcelona</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/sant-cugat</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/sant-quirze</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/cerdanyola</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/terrassa</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/barbera-del-valles</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/castellar-del-valles</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-de-alfombras/lavado-de-alfombras-barcelona</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+
+  <!-- Páginas legales -->
   <url>
     <loc>https://superclim.es/politica-de-privacidad</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.30</priority>
   </url>
   <url>
     <loc>https://superclim.es/politica-de-cookies</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.30</priority>
   </url>
   <url>
     <loc>https://superclim.es/terminos-y-condiciones</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.30</priority>
   </url>
-  <url><loc>https://superclim.es/limpieza-para-empresas</loc></url>
-  <url><loc>https://superclim.es/limpieza-para-empresas/oficinas</loc></url>
-  <url><loc>https://superclim.es/limpieza-para-empresas/naves-industriales</loc></url>
-  <url><loc>https://superclim.es/limpieza-para-empresas/centros-logisticos</loc></url>
+
+  <!-- Hub B2B (prioridad secundaria) -->
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/oficinas</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/naves-industriales</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://superclim.es/limpieza-para-empresas/centros-logisticos</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
   <!-- Páginas municipales B2B -->
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/oficinas/sabadell</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/oficinas/sant-cugat</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/oficinas/terrassa</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/naves-industriales/sabadell</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/naves-industriales/terrassa</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/naves-industriales/rubi</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <!-- Páginas generales B2B por municipio -->
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/barcelona</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/hospitalet-de-llobregat</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/badalona</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/sabadell</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/terrassa</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/sant-cugat-del-valles</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/rubi</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/cerdanyola-del-valles</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/santa-coloma-de-gramenet</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/cornella-de-llobregat</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/sant-boi-de-llobregat</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/el-prat-de-llobregat</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/castelldefels</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/gava</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/viladecans</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/esplugues-de-llobregat</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/sant-feliu-de-llobregat</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/montcada-i-reixac</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/ripollet</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/mollet-del-valles</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/granollers</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/barbera-del-valles</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/sant-quirze-del-valles</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://superclim.es/limpieza-para-empresas/castellar-del-valles</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.70</priority>
   </url>
 
 </urlset>

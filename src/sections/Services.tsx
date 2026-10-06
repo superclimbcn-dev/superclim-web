@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Sofa, BedDouble, Shield, Armchair, Home, ArrowRight, Grid3X3, Check } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { businessConfig } from '@/config/business';
+import { regionalCities, regionalNavigation } from '@/config/regionalNavigation';
+import type { RegionalCity } from '@/config/regionalNavigation';
 
 const services = [
   {
@@ -126,6 +128,35 @@ export function Services() {
             );
           })}
         </div>
+
+        {/* Regional sofa cleaning links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 rounded-2xl bg-white p-6 lg:p-8 shadow-lg"
+        >
+          <h3 className="text-xl font-bold text-gray-900 mb-2">
+            {regionalNavigation.sofas.label} en tu ciudad
+          </h3>
+          <p className="text-sm text-gray-600 mb-5">
+            Servicio profesional a domicilio en todo el área de Barcelona.
+          </p>
+          <ul className="flex flex-wrap gap-3">
+            {Object.entries(regionalNavigation.sofas.localUrls)
+              .filter((entry): entry is [RegionalCity, string] => Boolean(entry[1]))
+              .map(([city, url]) => (
+                <li key={url}>
+                  <Link
+                    to={url}
+                    className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-700"
+                  >
+                    {regionalNavigation.sofas.label} en {regionalCities[city]}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </motion.div>
       </div>
     </section>
   );

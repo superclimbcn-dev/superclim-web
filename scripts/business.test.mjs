@@ -77,7 +77,7 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async (t) => {
         assert.equal(await regionalHeading.count(), route === routes[1] ? 1 : 0, 'Regional block belongs only to offices');
         if (route === routes[1]) {
           const cards = page.locator('main section').filter({ has: page.getByRole('heading', { name: 'De la recepción al último puesto de trabajo', exact: true }) }).locator('article');
-          assert.deepEqual(await cards.locator('h3').allTextContents(), ['Puestos de trabajo y reuniones', 'Recepción y espacios compartidos', 'Office, cocina y aseos', 'Servicio recurrente de oficinas en Sant Cugat']);
+          assert.deepEqual(await cards.locator('h3').allTextContents(), ['Puestos de trabajo y reuniones', 'Recepción y espacios compartidos', 'Office, cocina y aseos', 'Servicio recurrente de oficinas en Sant Cugat', 'Limpieza periódica y mantenimiento', 'Horarios y acceso a la oficina']);
           assert.equal(await cards.nth(3).locator('p').innerText(), 'Atendemos oficinas y despachos en Sant Cugat con un servicio de limpieza recurrente adaptado a cada instalación. Revisamos con la persona responsable los accesos, la ocupación y las prioridades: salas de reunión, aseos y áreas comunes pueden necesitar frecuencias distintas. Acordamos los horarios y el alcance del contrato; Superclim organiza el equipo, los turnos y la supervisión. Si hace falta conocer la instalación, acordamos una visita de valoración.');
           await regionalHeading.scrollIntoViewIfNeeded();
           assert.ok(await regionalHeading.isVisible());
@@ -95,7 +95,9 @@ test('B2B prerender, routes, SEO, mobile layout and quote flow', async (t) => {
         }
         if (route === routes[0] || route === routes[2]) {
           const cards = approvedHeading.locator('xpath=../..').locator('article');
-          assert.equal(await cards.count(), 4);
+          // The hub grid was completed to 6 cards (service grid completion, Oct 2026);
+          // the industrial page keeps 4.
+          assert.equal(await cards.count(), route === routes[0] ? 6 : 4);
           assert.equal(await cards.nth(3).locator('h3').innerText(), approvedTitle);
         }
         assert.ok(content.length > 3000);

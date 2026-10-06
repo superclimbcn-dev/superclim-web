@@ -23,15 +23,6 @@ const companyLinks = [
 export function Footer() {
   const { t } = useTranslation();
 
-  const scrollToSection = (href: string) => {
-    if (href.startsWith('#')) {
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -101,7 +92,6 @@ export function Footer() {
             >
               <h3 className="text-lg font-semibold mb-4">{t('footer.services')}</h3>
               <ul className="space-y-3">
-                <li><Link to={businessConfig.urls.services.businessCleaning} className="text-sm text-gray-400 hover:text-emerald-400">{t('homeBusiness.title')}</Link></li>
                 {services.map((service) => (
                   <li key={service.key}>
                     <Link
@@ -113,6 +103,7 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li><Link to={businessConfig.urls.services.businessCleaning} className="text-sm text-gray-400 hover:text-emerald-400">{t('homeBusiness.title')}</Link></li>
               </ul>
             </motion.div>
           </div>
