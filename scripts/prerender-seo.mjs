@@ -184,13 +184,18 @@ const routes = [...new Set(getSitemapRoutes())];
 const ssrServer = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
 try {
 const { renderBusinessPage, renderBusinessRegionalPage, renderBusinessCityPage, businessRegionalPages, businessRegionalPath, businessRegionalSEO, businessCityPages, businessCityPath, businessCitySEO } = await ssrServer.ssrLoadModule('/src/pages/business/prerender.tsx');
-const { renderSofaServicePage, renderRegionalSofaPage, regionalSofaUrls } = await ssrServer.ssrLoadModule('/src/pages/services/prerender.tsx');
+const { renderSofaServicePage, renderRegionalServicePage, regionalSofaUrls, regionalMattressUrls, regionalCarpetUrls } = await ssrServer.ssrLoadModule('/src/pages/services/prerender.tsx');
+const { renderStaticPage } = await ssrServer.ssrLoadModule('/src/prerender-pages.tsx');
 for (const routePath of routes) {
   const regionalPage = businessRegionalPages.find(page => businessRegionalPath(page) === routePath);
   const cityPage = businessCityPages.find(page => businessCityPath(page) === routePath);
   const sofaRouteKey = routeConfigKeys.get(routePath);
   const sofaPageKey = ['sofaCleaning', 'homeService', 'armchairCleaning'].includes(sofaRouteKey) ? sofaRouteKey : undefined;
   const regionalSofaCity = Object.entries(regionalSofaUrls).find(([, urlPath]) => '/servicios/' + urlPath === routePath)?.[0];
+  const regionalColchonesCity = Object.entries(regionalMattressUrls).find(([, urlPath]) => '/mas-servicios/' + urlPath === routePath)?.[0];
+  const regionalAlfombrasCity = Object.entries(regionalCarpetUrls).find(([, urlPath]) => '/limpieza-de-alfombras/' + urlPath === routePath)?.[0];
+  const regionalServiceType = regionalColchonesCity ? 'colchones' : regionalAlfombrasCity ? 'alfombras' : regionalSofaCity ? 'sofas' : undefined;
+  const regionalCitySlug = regionalSofaCity ?? regionalColchonesCity ?? regionalAlfombrasCity;
   const config = regionalPage ? businessRegionalSEO(regionalPage) : cityPage ? businessCitySEO(cityPage) : getConfigForRoute(routePath, seoModule);
   if (!config?.canonical || !config?.title || !config?.description) {
     throw new Error(`Incomplete SEO config for route: ${routePath}`);
@@ -205,8 +210,8 @@ for (const routePath of routes) {
     html = html.replace('<title>', '<title data-prerender-community="true">');
     html = html.replace(/<link rel="canonical"[^>]*>/g, (tag) => tag.replace(/\s*\/?>$/, ' data-prerender-community="true" />'));
   }
-  if (sofaPageKey || regionalSofaCity) {
-    const body = sofaPageKey ? await renderSofaServicePage(sofaPageKey, routePath) : await renderRegionalSofaPage(regionalSofaCity, routePath);
+  if (sofaPageKey || regionalCitySlug) {
+    const body = sofaPageKey ? await renderSofaServicePage(sofaPageKey, routePath) : await renderRegionalServicePage(regionalServiceType, regionalCitySlug, routePath);
     html = html.replace('<div id="root"></div>', () => '<div id="root">' + body + '</div>');
     writeRouteHtml(routePath, html);
   } else if (routePath === '/limpieza-para-empresas' || routePath.startsWith('/limpieza-para-empresas/')) {
@@ -217,6 +222,10 @@ for (const routePath of routes) {
     // Match the existing host layout; canonical and public links stay extensionless.
     writeRouteHtml(routePath, html);
   } else {
+    const body = await renderStaticPage(routePath);
+    if (body) {
+      html = html.replace('<div id="root"></div>', () => `<div id="root">${body}</div>`);
+    }
     writeRouteHtml(routePath, html);
   }
 }

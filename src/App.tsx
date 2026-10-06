@@ -1,33 +1,15 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { businessConfig } from '@/config/business';
-import { Header } from '@/components/Header';
-import { WhatsAppButton } from '@/components/WhatsAppButton';
-import { SchemaOrg } from '@/components/SchemaOrg';
-import { SEOMeta } from '@/components/SEOMeta';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
-import { seoConfig } from '@/config/seo';
-import { Hero } from '@/sections/Hero';
-import { Services } from '@/sections/Services';
-import { BeforeAfter } from '@/sections/BeforeAfter';
-import { Calculator } from '@/sections/Calculator';
-import { WhyUs } from '@/sections/WhyUs';
-import { Testimonials } from '@/sections/Testimonials';
-import { Locations } from '@/sections/Locations';
-import { FAQ } from '@/sections/FAQ';
-import { Contact } from '@/sections/Contact';
-import { Footer } from '@/sections/Footer';
-import { SpecializedServices } from '@/sections/SpecializedServices';
-import { CommunityFeaturedBanner } from '@/sections/CommunityFeaturedBanner';
+import { HomePage } from '@/pages/HomePage';
 import NotFound from '@/pages/NotFound';
 import BusinessRegionalPage from '@/pages/business/BusinessRegionalPage';
 import { businessRegionalPages, businessRegionalPath } from '@/config/businessRegionalPages';
 import BusinessCityPage from '@/pages/business/BusinessCityPage';
 import { businessCityPages, businessCityPath } from '@/config/businessCityPages';
 import BusinessPage from '@/pages/business/BusinessPage';
-import { BusinessFeaturedBanner } from '@/sections/BusinessFeaturedBanner';
 
 // Service Pages
 import Impermeabilizacion from '@/pages/services/Impermeabilizacion';
@@ -57,48 +39,6 @@ import { regionalSofaUrls, regionalMattressUrls, regionalCarpetUrls } from '@/co
 import './i18n';
 import './App.css';
 
-function useHashScroll() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    }
-  }, [location]);
-}
-
-function HomePage() {
-  useHashScroll();
-
-  return (
-    <>
-      <SEOMeta config={seoConfig.home} />
-      <SchemaOrg />
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <CommunityFeaturedBanner />
-        <BusinessFeaturedBanner />
-        <BeforeAfter />
-        <Calculator />
-        <WhyUs />
-        <Testimonials />
-        <Locations />
-        <FAQ />
-        <SpecializedServices />
-        <Contact />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </>
-  );
-}
 
 function App() {
   const { i18n } = useTranslation();

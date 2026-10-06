@@ -1,0 +1,127 @@
+{
+  "sitemapRoutes": 80,
+  "results": [
+    {
+      "route": "/limpieza-para-empresas",
+      "status": 200,
+      "title": "Empresa de Limpieza para Empresas en Sabadell y Barcelona | Superclim",
+      "description": "Servicio profesional de limpieza para empresas, oficinas, naves industriales y centros logísticos en Sabadell, Vallès Occidental y Barcelona. Solicita presupuesto.",
+      "schemas": [
+        "Service",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas",
+      "status": 200,
+      "title": "Empresa de Limpieza para Empresas en Sabadell y Barcelona | Superclim",
+      "description": "Servicio profesional de limpieza para empresas, oficinas, naves industriales y centros logísticos en Sabadell, Vallès Occidental y Barcelona. Solicita presupuesto.",
+      "schemas": [
+        "Service",
+        "Organization",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas/oficinas",
+      "status": 200,
+      "title": "Limpieza de Oficinas en Sabadell y Barcelona | Superclim",
+      "description": "Limpieza de oficinas, despachos y espacios de trabajo en Sabadell y Barcelona. Planes diarios o semanales y horarios adaptados. Solicita presupuesto.",
+      "schemas": [
+        "Service",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas/oficinas",
+      "status": 200,
+      "title": "Limpieza de Oficinas en Sabadell y Barcelona | Superclim",
+      "description": "Limpieza de oficinas, despachos y espacios de trabajo en Sabadell y Barcelona. Planes diarios o semanales y horarios adaptados. Solicita presupuesto.",
+      "schemas": [
+        "Service",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas/naves-industriales",
+      "status": 200,
+      "title": "Limpieza de Naves Industriales en Sabadell y Barcelona | Superclim",
+      "description": "Limpieza de naves industriales en Sabadell y Barcelona: pavimentos, pasillos, vestuarios y zonas comunes. Planificación según la actividad de tu instalación.",
+      "schemas": [
+        "Service",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas/naves-industriales",
+      "status": 200,
+      "title": "Limpieza de Naves Industriales en Sabadell y Barcelona | Superclim",
+      "description": "Limpieza de naves industriales en Sabadell y Barcelona: pavimentos, pasillos, vestuarios y zonas comunes. Planificación según la actividad de tu instalación.",
+      "schemas": [
+        "Service",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas/centros-logisticos",
+      "status": 200,
+      "title": "Limpieza de Almacenes y Centros Logísticos en Barcelona | Superclim",
+      "description": "Limpieza recurrente de almacenes y centros logísticos en Barcelona y Vallès Occidental. Picking, pasillos y áreas comunes con horarios adaptados a la operativa.",
+      "schemas": [
+        "Service",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "errors": []
+    },
+    {
+      "route": "/limpieza-para-empresas/centros-logisticos",
+      "status": 200,
+      "title": "Limpieza de Almacenes y Centros Logísticos en Barcelona | Superclim",
+      "description": "Limpieza recurrente de almacenes y centros logísticos en Barcelona y Vallès Occidental. Picking, pasillos y áreas comunes con horarios adaptados a la operativa.",
+      "schemas": [
+        "Service",
+        "BreadcrumbList"
+      ],
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "errors": []
+    }
+  ]
+}

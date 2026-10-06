@@ -8,8 +8,10 @@ import LimpiezaSofas from '@/pages/services/LimpiezaSofas';
 import ServicioDomicilio from '@/pages/services/ServicioDomicilio';
 import LimpiezaSillones from '@/pages/services/LimpiezaSillones';
 import RegionalServicePage from '@/pages/regional/RegionalServicePage';
+import { PrerenderContext } from '@/components/SEOMeta';
 
-export { regionalSofaUrls } from '@/config/regionalUrls';
+export { regionalSofaUrls, regionalMattressUrls, regionalCarpetUrls } from '@/config/regionalUrls';
+export type RegionalServiceType = 'sofas' | 'colchones' | 'alfombras';
 
 type SofaPageKey = 'sofaCleaning' | 'homeService' | 'armchairCleaning';
 
@@ -25,18 +27,18 @@ export async function renderSofaServicePage(pageKey: SofaPageKey, routePath: str
   return renderToString(
     <HelmetProvider>
       <I18nextProvider i18n={i18n}>
-        <StaticRouter location={routePath}><Page /></StaticRouter>
+        <StaticRouter location={routePath}><PrerenderContext.Provider value={true}><Page /></PrerenderContext.Provider></StaticRouter>
       </I18nextProvider>
     </HelmetProvider>,
   );
 }
 
-export async function renderRegionalSofaPage(citySlug: string, routePath: string) {
+export async function renderRegionalServicePage(serviceType: RegionalServiceType, citySlug: string, routePath: string) {
   await i18n.changeLanguage('es');
   return renderToString(
     <HelmetProvider>
       <I18nextProvider i18n={i18n}>
-        <StaticRouter location={routePath}><RegionalServicePage serviceType="sofas" citySlug={citySlug} /></StaticRouter>
+        <StaticRouter location={routePath}><PrerenderContext.Provider value={true}><RegionalServicePage serviceType={serviceType} citySlug={citySlug} /></PrerenderContext.Provider></StaticRouter>
       </I18nextProvider>
     </HelmetProvider>,
   );
