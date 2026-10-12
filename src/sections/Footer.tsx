@@ -69,11 +69,11 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/profile.php?id=61594542214536"
+                  href="https://www.facebook.com/superclimbcn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook de Superclim Empresas"
-                  title="Facebook de Superclim Empresas"
+                  aria-label="Facebook de Superclim"
+                  title="Facebook de Superclim"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-emerald-500 transition-colors"
                 >
                   <Facebook className="w-5 h-5" aria-hidden="true" />

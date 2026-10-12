@@ -32,7 +32,7 @@ export function useSchemaOrg() {
       reviewCount: businessConfig.reviews.google.reviewCount,
     },
     sameAs: [
-      'https://www.facebook.com/superclimbcn/',
+      'https://www.facebook.com/superclimbcn',
       'https://www.instagram.com/superclimbcn/',
     ],
     areaServed: {
